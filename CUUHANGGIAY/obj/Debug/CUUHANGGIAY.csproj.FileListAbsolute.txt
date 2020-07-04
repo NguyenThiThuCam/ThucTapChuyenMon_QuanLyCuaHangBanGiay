@@ -1,0 +1,17 @@
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.exe.config
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.exe
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.pdb
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csprojAssemblyReference.cache
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Form1.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Properties.Resources.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csproj.GenerateResource.cache
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csproj.CoreCompileInputs.cache
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.exe
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.pdb
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\Guna.UI.dll
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csproj.CopyComplete
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Login.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.NhanVien.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.KhachHang.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.SanPham.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.HoaDon.resources
