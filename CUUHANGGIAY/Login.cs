@@ -42,32 +42,47 @@ namespace CUUHANGGIAY
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection camcam = new SqlConnection(@"Data Source = CAMCAM\SQLEXPRESS; Initial Catalog = CUAHANGGIAY; Integrated Security = True");
-            try
-            {
-                camcam.Open();
-                string TK = txtUser.Text;
-                string MK = TxtPassword.Text;
-                string Sql = " select *from TaiKhoan where TenTK= '" + TK + "' and MatKhau='" + MK + "'";
-                SqlCommand command = new SqlCommand(Sql, camcam);
-                SqlDataReader data = command.ExecuteReader();
-                if (data.Read() == true)
-                {
-                    MessageBox.Show("Đăng nhập thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    Form1 f = new Form1();
-                    this.Hide();
-                    f.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Sai mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+        //    SqlConnection camcam = new SqlConnection(@"Data Source = CAMCAM\SQLEXPRESS; Initial Catalog = CUAHANGGIAY; Integrated Security = True");
+        //    try
+        //    {
+        //        camcam.Open();
+        //        string TK = txtUser.Text;
+        //        string MK = TxtPassword.Text;
+        //        string Sql = " select *from TaiKhoan where TenTK= '" + TK + "' and MatKhau='" + MK + "'";
+        //        SqlCommand command = new SqlCommand(Sql, camcam);
+        //        SqlDataReader data = command.ExecuteReader();
+        //        if (data.Read() == true)
+        //        {
+        //            MessageBox.Show("Đăng nhập thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        //            Form1 f = new Form1();
+        //            this.Hide();
+        //            f.ShowDialog();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Sai mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
                
-            }
-            catch (Exception ex)
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối.");
+        //    }
+        if(txtUser.Text=="CamCam"&& TxtPassword.Text== "2222")
             {
-                MessageBox.Show("Lỗi kết nối.");
+                Form1 f = new Form1();
+                this.Hide();
+                f.ShowDialog();
+            }
+        else if(txtUser.Text==""&& TxtPassword.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Bạn nhập sai tài khoản hoặc mật khẩu.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }

@@ -32,27 +32,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham));
             this.lbMaSP = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbMaSP = new System.Windows.Forms.ComboBox();
+            this.cbTenSP = new System.Windows.Forms.ComboBox();
             this.lbTenSP = new System.Windows.Forms.Label();
-            this.txtTenSP = new Guna.UI.WinForms.GunaTextBox();
+            this.txtMaSP = new Guna.UI.WinForms.GunaTextBox();
             this.laMaloai = new System.Windows.Forms.Label();
             this.cbMaLoai = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnAnh = new System.Windows.Forms.Panel();
             this.btnSua = new Guna.UI.WinForms.GunaButton();
             this.btnXoa = new Guna.UI.WinForms.GunaButton();
             this.btnTimKiem = new Guna.UI.WinForms.GunaButton();
             this.btnlammoi = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.dgvSP = new System.Windows.Forms.DataGridView();
             this.lbThongtinKH = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,13 +84,13 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // cbMaSP
+            // cbTenSP
             // 
-            this.cbMaSP.FormattingEnabled = true;
-            this.cbMaSP.Location = new System.Drawing.Point(293, 43);
-            this.cbMaSP.Name = "cbMaSP";
-            this.cbMaSP.Size = new System.Drawing.Size(121, 21);
-            this.cbMaSP.TabIndex = 4;
+            this.cbTenSP.FormattingEnabled = true;
+            this.cbTenSP.Location = new System.Drawing.Point(586, 41);
+            this.cbTenSP.Name = "cbTenSP";
+            this.cbTenSP.Size = new System.Drawing.Size(121, 21);
+            this.cbTenSP.TabIndex = 4;
             // 
             // lbTenSP
             // 
@@ -99,21 +103,21 @@
             this.lbTenSP.TabIndex = 5;
             this.lbTenSP.Text = "Tên Sản Phẩm:";
             // 
-            // txtTenSP
+            // txtMaSP
             // 
-            this.txtTenSP.BaseColor = System.Drawing.Color.White;
-            this.txtTenSP.BorderColor = System.Drawing.Color.Silver;
-            this.txtTenSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenSP.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtTenSP.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTenSP.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtTenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenSP.Location = new System.Drawing.Point(599, 39);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.PasswordChar = '\0';
-            this.txtTenSP.SelectedText = "";
-            this.txtTenSP.Size = new System.Drawing.Size(160, 30);
-            this.txtTenSP.TabIndex = 6;
+            this.txtMaSP.BaseColor = System.Drawing.Color.White;
+            this.txtMaSP.BorderColor = System.Drawing.Color.Silver;
+            this.txtMaSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaSP.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtMaSP.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtMaSP.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtMaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaSP.Location = new System.Drawing.Point(268, 43);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.PasswordChar = '\0';
+            this.txtMaSP.SelectedText = "";
+            this.txtMaSP.Size = new System.Drawing.Size(160, 30);
+            this.txtMaSP.TabIndex = 6;
             // 
             // laMaloai
             // 
@@ -129,9 +133,9 @@
             // cbMaLoai
             // 
             this.cbMaLoai.FormattingEnabled = true;
-            this.cbMaLoai.Location = new System.Drawing.Point(293, 88);
+            this.cbMaLoai.Location = new System.Drawing.Point(268, 86);
             this.cbMaLoai.Name = "cbMaLoai";
-            this.cbMaLoai.Size = new System.Drawing.Size(121, 21);
+            this.cbMaLoai.Size = new System.Drawing.Size(160, 21);
             this.cbMaLoai.TabIndex = 8;
             // 
             // label4
@@ -145,13 +149,13 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Hình Sản Phẩm:";
             // 
-            // panel1
+            // pnAnh
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(586, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 156);
-            this.panel1.TabIndex = 10;
+            this.pnAnh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnAnh.Location = new System.Drawing.Point(586, 88);
+            this.pnAnh.Name = "pnAnh";
+            this.pnAnh.Size = new System.Drawing.Size(214, 156);
+            this.pnAnh.TabIndex = 10;
             // 
             // btnSua
             // 
@@ -176,6 +180,7 @@
             this.btnSua.TabIndex = 21;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -200,6 +205,7 @@
             this.btnXoa.TabIndex = 22;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
@@ -252,21 +258,27 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dgvKH);
+            this.panel2.Controls.Add(this.dgvSP);
             this.panel2.Controls.Add(this.lbThongtinKH);
             this.panel2.Location = new System.Drawing.Point(1, 250);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(851, 241);
             this.panel2.TabIndex = 26;
             // 
-            // dgvKH
+            // dgvSP
             // 
-            this.dgvKH.BackgroundColor = System.Drawing.Color.White;
-            this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH.Location = new System.Drawing.Point(0, 29);
-            this.dgvKH.Name = "dgvKH";
-            this.dgvKH.Size = new System.Drawing.Size(851, 217);
-            this.dgvKH.TabIndex = 49;
+            this.dgvSP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSP,
+            this.TenSP,
+            this.HinhAnh,
+            this.TenLoai});
+            this.dgvSP.Location = new System.Drawing.Point(0, 29);
+            this.dgvSP.Name = "dgvSP";
+            this.dgvSP.Size = new System.Drawing.Size(851, 217);
+            this.dgvSP.TabIndex = 49;
+            this.dgvSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSP_CellContentClick);
             // 
             // lbThongtinKH
             // 
@@ -323,12 +335,37 @@
             this.btnThem.Size = new System.Drawing.Size(113, 42);
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã SP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên SP";
+            this.TenSP.Name = "TenSP";
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình Ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            // 
+            // TenLoai
+            // 
+            this.TenLoai.DataPropertyName = "TenLoai";
+            this.TenLoai.HeaderText = "Tên Loại";
+            this.TenLoai.Name = "TenLoai";
             // 
             // SanPham
             // 
@@ -342,13 +379,13 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnAnh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbMaLoai);
             this.Controls.Add(this.laMaloai);
-            this.Controls.Add(this.txtTenSP);
+            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.lbTenSP);
-            this.Controls.Add(this.cbMaSP);
+            this.Controls.Add(this.cbTenSP);
             this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SanPham";
@@ -356,7 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -368,23 +405,27 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbMaSP;
-        private System.Windows.Forms.ComboBox cbMaSP;
+        private System.Windows.Forms.ComboBox cbTenSP;
         private System.Windows.Forms.Label lbTenSP;
-        private Guna.UI.WinForms.GunaTextBox txtTenSP;
+        private Guna.UI.WinForms.GunaTextBox txtMaSP;
         private System.Windows.Forms.Label laMaloai;
         private System.Windows.Forms.ComboBox cbMaLoai;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnAnh;
         private Guna.UI.WinForms.GunaButton btnSua;
         private Guna.UI.WinForms.GunaButton btnXoa;
         private Guna.UI.WinForms.GunaButton btnTimKiem;
         private Guna.UI.WinForms.GunaButton btnlammoi;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvKH;
+        private System.Windows.Forms.DataGridView dgvSP;
         private System.Windows.Forms.Label lbThongtinKH;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton btnThem;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoai;
     }
 }

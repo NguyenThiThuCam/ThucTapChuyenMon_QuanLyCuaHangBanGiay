@@ -37,12 +37,10 @@
             this.lbGmail = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtNgaySinh = new Guna.UI.WinForms.GunaTextBox();
             this.txtSDT = new Guna.UI.WinForms.GunaTextBox();
             this.txtTenKH = new Guna.UI.WinForms.GunaTextBox();
             this.txtGmail = new Guna.UI.WinForms.GunaTextBox();
             this.txtDiaChi = new Guna.UI.WinForms.GunaTextBox();
-            this.cbMaKH = new System.Windows.Forms.ComboBox();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.btnSua = new Guna.UI.WinForms.GunaButton();
             this.btnXoa = new Guna.UI.WinForms.GunaButton();
@@ -51,6 +49,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvKH = new System.Windows.Forms.DataGridView();
             this.lbThongtinKH = new System.Windows.Forms.Label();
+            this.cbMaKH = new Guna.UI.WinForms.GunaTextBox();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
@@ -133,22 +133,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.BaseColor = System.Drawing.Color.White;
-            this.txtNgaySinh.BorderColor = System.Drawing.Color.Silver;
-            this.txtNgaySinh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNgaySinh.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtNgaySinh.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtNgaySinh.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNgaySinh.Location = new System.Drawing.Point(99, 93);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.PasswordChar = '\0';
-            this.txtNgaySinh.SelectedText = "";
-            this.txtNgaySinh.Size = new System.Drawing.Size(160, 30);
-            this.txtNgaySinh.TabIndex = 8;
-            // 
             // txtSDT
             // 
             this.txtSDT.BaseColor = System.Drawing.Color.White;
@@ -213,14 +197,6 @@
             this.txtDiaChi.Size = new System.Drawing.Size(160, 30);
             this.txtDiaChi.TabIndex = 12;
             // 
-            // cbMaKH
-            // 
-            this.cbMaKH.FormattingEnabled = true;
-            this.cbMaKH.Location = new System.Drawing.Point(117, 29);
-            this.cbMaKH.Name = "cbMaKH";
-            this.cbMaKH.Size = new System.Drawing.Size(121, 21);
-            this.cbMaKH.TabIndex = 13;
-            // 
             // btnThem
             // 
             this.btnThem.AnimationHoverSpeed = 0.07F;
@@ -243,6 +219,7 @@
             this.btnThem.Size = new System.Drawing.Size(113, 42);
             this.btnThem.TabIndex = 14;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -266,6 +243,7 @@
             this.btnSua.Size = new System.Drawing.Size(113, 42);
             this.btnSua.TabIndex = 21;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -289,6 +267,7 @@
             this.btnXoa.Size = new System.Drawing.Size(113, 42);
             this.btnXoa.TabIndex = 22;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
@@ -368,23 +347,49 @@
             this.lbThongtinKH.TabIndex = 48;
             this.lbThongtinKH.Text = "THÔNG TIN  KHÁCH HÀNG";
             // 
+            // cbMaKH
+            // 
+            this.cbMaKH.BaseColor = System.Drawing.Color.White;
+            this.cbMaKH.BorderColor = System.Drawing.Color.Silver;
+            this.cbMaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cbMaKH.FocusedBaseColor = System.Drawing.Color.White;
+            this.cbMaKH.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbMaKH.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbMaKH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbMaKH.Location = new System.Drawing.Point(106, 20);
+            this.cbMaKH.Name = "cbMaKH";
+            this.cbMaKH.PasswordChar = '\0';
+            this.cbMaKH.SelectedText = "";
+            this.cbMaKH.Size = new System.Drawing.Size(160, 30);
+            this.cbMaKH.TabIndex = 26;
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "yyyy-MM-dd";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(85, 92);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(181, 20);
+            this.txtNgaySinh.TabIndex = 27;
+            this.txtNgaySinh.ValueChanged += new System.EventHandler(this.txtNgaySinh_ValueChanged);
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 486);
+            this.Controls.Add(this.txtNgaySinh);
+            this.Controls.Add(this.cbMaKH);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnlammoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.cbMaKH);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtGmail);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.txtSDT);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.lbDiaChi);
             this.Controls.Add(this.lbGmail);
             this.Controls.Add(this.lbSDT);
@@ -414,12 +419,10 @@
         private System.Windows.Forms.Label lbGmail;
         private System.Windows.Forms.Label lbDiaChi;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaTextBox txtNgaySinh;
         private Guna.UI.WinForms.GunaTextBox txtSDT;
         private Guna.UI.WinForms.GunaTextBox txtTenKH;
         private Guna.UI.WinForms.GunaTextBox txtGmail;
         private Guna.UI.WinForms.GunaTextBox txtDiaChi;
-        private System.Windows.Forms.ComboBox cbMaKH;
         private Guna.UI.WinForms.GunaButton btnThem;
         private Guna.UI.WinForms.GunaButton btnSua;
         private Guna.UI.WinForms.GunaButton btnXoa;
@@ -428,5 +431,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbThongtinKH;
         private System.Windows.Forms.DataGridView dgvKH;
+        private Guna.UI.WinForms.GunaTextBox cbMaKH;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
     }
 }

@@ -13,30 +13,19 @@ namespace CUUHANGGIAY
 {
     public partial class KhachHang : Form
     {
-        SqlConnection connection;
-        SqlCommand command;
-        string camcam = @"Data Source=CAMCAM\SQLEXPRESS;Initial Catalog=CUAHANGGIAY;Integrated Security=True";
-        SqlDataAdapter adapter= new SqlDataAdapter();
-        DataTable table = new DataTable();
-        void loadDuLieu()
-        {
-            command = connection.CreateCommand();
-            command.CommandText = " select * from KhachHang";
-            adapter.SelectCommand = command;
-            table.Clear();
-            adapter.Fill(table);
-            dgvKH.DataSource = table;
-        }
+
+
         public KhachHang()
         {
             InitializeComponent();
+            LoadDL();
         }
         void lammoi()
         {
             cbMaKH.Text = " ";
             txtTenKH.Text = " ";
             txtSDT.Text = " ";
-            txtNgaySinh.Text = " ";
+         //   txtNgaySinh.Text = " ";
             txtGmail.Text = " ";
             txtDiaChi.Text = " ";
         }
@@ -45,12 +34,16 @@ namespace CUUHANGGIAY
         {
             lammoi();
         }
+        public void LoadDL()
+        {
+            string query = " select * from KhachHang";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvKH.DataSource = data;
+        }
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(camcam);
-            connection.Open();
-            loadDuLieu();
+
         }
 
         private void dgvKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -59,9 +52,9 @@ namespace CUUHANGGIAY
             i = dgvKH.CurrentRow.Index;
             cbMaKH.Text = dgvKH.Rows[i].Cells[0].Value.ToString();
             txtTenKH.Text = dgvKH.Rows[i].Cells[1].Value.ToString();
-            txtNgaySinh.Text= dgvKH.Rows[i].Cells[2].Value.ToString();
-            txtSDT.Text= dgvKH.Rows[i].Cells[3].Value.ToString();
-            txtDiaChi.Text= dgvKH.Rows[i].Cells[4].Value.ToString();
+            txtNgaySinh.Text = dgvKH.Rows[i].Cells[2].Value.ToString();
+            txtSDT.Text = dgvKH.Rows[i].Cells[3].Value.ToString();
+            txtDiaChi.Text = dgvKH.Rows[i].Cells[4].Value.ToString();
             txtGmail.Text = dgvKH.Rows[i].Cells[5].Value.ToString();
         }
 
@@ -69,5 +62,110 @@ namespace CUUHANGGIAY
         {
 
         }
+        public bool KiemTraMa(string MaKH)
+        {
+            string query = "select* from KhachHang";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            int dem = 0;
+            foreach (DataRow item in data.Rows)
+            {
+                dem++;
+
+            }
+            if (dem > 0)
+                return true;
+            return false;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+
+        {
+            if (cbMaKH.Text == ""||txtTenKH.Text=="" )
+            {
+                MessageBox.Show(" Vui lòng nhập thông tin đầy đủ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                //if (KiemTraMa(cbMaKH.Text) == true)
+                //{
+                //    MessageBox.Show(" trung ma");
+                //    return;
+                //}
+               
+                try
+                    {
+                        string query = " insert into KhachHang values('" + cbMaKH.Text + "',N'" + txtTenKH.Text + "','" + txtNgaySinh.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "','" + txtGmail.Text + "')";
+                        DataTable data = clsConnect.Instance.exQuery(query);
+                        MessageBox.Show(" Thêm Thành Công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        LoadDL();
+                    }
+                catch
+                    {
+                        MessageBox.Show(" Thêm thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }               
+               
+            }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (cbMaKH.Text == "")
+            {
+                MessageBox.Show(" Vui lòng nhập thông tin cần sửa","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            else
+
+            {
+                try
+                {
+                    string query = " update KhachHang set TenKH=N'" + txtTenKH.Text + "',NgaySinh='" + txtNgaySinh.Text + "',SDT='" + txtSDT.Text + "',DiaChi=N'" + txtDiaChi.Text + "',GmailKH='" + txtGmail.Text + "' where MaKH='" + cbMaKH.Text + "'";
+                    DataTable data = clsConnect.Instance.exQuery(query);
+                    MessageBox.Show(" Sửa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    LoadDL();
+
+                }
+                catch
+                {
+                    MessageBox.Show(" Sửa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+               
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (cbMaKH.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn dòng xóa","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+            try
+            {
+                string query = " delete KhachHang where MaKH='" + cbMaKH.Text + "'";
+                DataTable data = clsConnect.Instance.exQuery(query);
+               
+                MessageBox.Show(" Xóa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                LoadDL();
+                
+            }
+            catch
+            {
+                MessageBox.Show(" Xóa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+           
+
+
+
+
+
+
+        }
+
+        private void txtNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }

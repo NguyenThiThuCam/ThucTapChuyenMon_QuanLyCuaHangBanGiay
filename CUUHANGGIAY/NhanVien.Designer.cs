@@ -32,8 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.lbNgaySinh = new System.Windows.Forms.Label();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
-            this.txtMaTaiKhoan = new Guna.UI.WinForms.GunaTextBox();
             this.lbMaTK = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
@@ -42,13 +40,23 @@
             this.lbGmail = new System.Windows.Forms.Label();
             this.txtMail = new Guna.UI.WinForms.GunaTextBox();
             this.lbNgayVaoLam = new System.Windows.Forms.Label();
-            this.txtNgayvaolam = new Guna.UI.WinForms.GunaTextBox();
             this.lbLuong = new System.Windows.Forms.Label();
             this.txtLuong = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThongtinNV = new System.Windows.Forms.Label();
-            this.txtNgaySinh = new Guna.UI.WinForms.GunaTextBox();
+            this.txtmnv = new Guna.UI.WinForms.GunaTextBox();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayvaolam = new System.Windows.Forms.DateTimePicker();
+            this.txtMaTaiKhoan = new System.Windows.Forms.ComboBox();
             this.btnlammoi = new Guna.UI.WinForms.GunaButton();
             this.btnTimKiem = new Guna.UI.WinForms.GunaButton();
             this.btnXoa = new Guna.UI.WinForms.GunaButton();
@@ -71,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 27;
             this.label1.Text = "NHÂN VIÊN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbMaNV
             // 
@@ -90,40 +99,14 @@
             this.lbNgaySinh.TabIndex = 29;
             this.lbNgaySinh.Text = "Ngày Sinh:";
             // 
-            // cbMaNV
-            // 
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(106, 37);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(160, 21);
-            this.cbMaNV.TabIndex = 30;
-            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.cbMaNV_SelectedIndexChanged);
-            // 
-            // txtMaTaiKhoan
-            // 
-            this.txtMaTaiKhoan.BaseColor = System.Drawing.Color.White;
-            this.txtMaTaiKhoan.BorderColor = System.Drawing.Color.Silver;
-            this.txtMaTaiKhoan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaTaiKhoan.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtMaTaiKhoan.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtMaTaiKhoan.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtMaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaTaiKhoan.Location = new System.Drawing.Point(106, 141);
-            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.PasswordChar = '\0';
-            this.txtMaTaiKhoan.SelectedText = "";
-            this.txtMaTaiKhoan.Size = new System.Drawing.Size(160, 26);
-            this.txtMaTaiKhoan.TabIndex = 32;
-            this.txtMaTaiKhoan.TextChanged += new System.EventHandler(this.txtTenTaiKhoan_TextChanged);
-            // 
             // lbMaTK
             // 
             this.lbMaTK.AutoSize = true;
             this.lbMaTK.Location = new System.Drawing.Point(9, 144);
             this.lbMaTK.Name = "lbMaTK";
-            this.lbMaTK.Size = new System.Drawing.Size(77, 13);
+            this.lbMaTK.Size = new System.Drawing.Size(78, 13);
             this.lbMaTK.TabIndex = 33;
-            this.lbMaTK.Text = "Mã Tài Khoản:";
+            this.lbMaTK.Text = "TênTài Khoản:";
             // 
             // lbTenNV
             // 
@@ -211,23 +194,6 @@
             this.lbNgayVaoLam.TabIndex = 42;
             this.lbNgayVaoLam.Text = "Ngày Vào Làm:";
             // 
-            // txtNgayvaolam
-            // 
-            this.txtNgayvaolam.BaseColor = System.Drawing.Color.White;
-            this.txtNgayvaolam.BorderColor = System.Drawing.Color.Silver;
-            this.txtNgayvaolam.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNgayvaolam.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtNgayvaolam.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtNgayvaolam.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNgayvaolam.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNgayvaolam.Location = new System.Drawing.Point(664, 77);
-            this.txtNgayvaolam.Name = "txtNgayvaolam";
-            this.txtNgayvaolam.PasswordChar = '\0';
-            this.txtNgayvaolam.SelectedText = "";
-            this.txtNgayvaolam.Size = new System.Drawing.Size(160, 26);
-            this.txtNgayvaolam.TabIndex = 43;
-            this.txtNgayvaolam.TextChanged += new System.EventHandler(this.txtNgayvaolam_TextChanged);
-            // 
             // lbLuong
             // 
             this.lbLuong.AutoSize = true;
@@ -258,20 +224,78 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.dgv);
-            this.panel1.Location = new System.Drawing.Point(0, 237);
+            this.panel1.Location = new System.Drawing.Point(0, 241);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(852, 254);
             this.panel1.TabIndex = 47;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgv
             // 
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(0, 67);
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.TenNV,
+            this.NgaySinh,
+            this.NgayVaoLam,
+            this.Luong,
+            this.SDTNV,
+            this.GmailNV,
+            this.TenTK});
+            this.dgv.Location = new System.Drawing.Point(-1, 32);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(852, 187);
+            this.dgv.Size = new System.Drawing.Size(852, 218);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên NV";
+            this.TenNV.Name = "TenNV";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // NgayVaoLam
+            // 
+            this.NgayVaoLam.DataPropertyName = "NgayVaoLam";
+            this.NgayVaoLam.HeaderText = "Ngày Vào Làm";
+            this.NgayVaoLam.Name = "NgayVaoLam";
+            // 
+            // Luong
+            // 
+            this.Luong.DataPropertyName = "Luong";
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
+            // 
+            // SDTNV
+            // 
+            this.SDTNV.DataPropertyName = "SDTNV";
+            this.SDTNV.HeaderText = "SDT NhanVien";
+            this.SDTNV.Name = "SDTNV";
+            // 
+            // GmailNV
+            // 
+            this.GmailNV.DataPropertyName = "GmailNV";
+            this.GmailNV.HeaderText = "Gmail";
+            this.GmailNV.Name = "GmailNV";
+            // 
+            // TenTK
+            // 
+            this.TenTK.DataPropertyName = "TenTK";
+            this.TenTK.HeaderText = "Ten TK";
+            this.TenTK.Name = "TenTK";
             // 
             // lbThongtinNV
             // 
@@ -284,21 +308,50 @@
             this.lbThongtinNV.TabIndex = 47;
             this.lbThongtinNV.Text = "THÔNG TIN NHÂN VIÊN";
             // 
+            // txtmnv
+            // 
+            this.txtmnv.BaseColor = System.Drawing.Color.White;
+            this.txtmnv.BorderColor = System.Drawing.Color.Silver;
+            this.txtmnv.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtmnv.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtmnv.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtmnv.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtmnv.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtmnv.Location = new System.Drawing.Point(106, 32);
+            this.txtmnv.Name = "txtmnv";
+            this.txtmnv.PasswordChar = '\0';
+            this.txtmnv.SelectedText = "";
+            this.txtmnv.Size = new System.Drawing.Size(160, 26);
+            this.txtmnv.TabIndex = 49;
+            // 
             // txtNgaySinh
             // 
-            this.txtNgaySinh.BaseColor = System.Drawing.Color.White;
-            this.txtNgaySinh.BorderColor = System.Drawing.Color.Silver;
-            this.txtNgaySinh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNgaySinh.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtNgaySinh.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtNgaySinh.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNgaySinh.Location = new System.Drawing.Point(106, 90);
+            this.txtNgaySinh.CustomFormat = "yyyy-MM-dd";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(106, 84);
+            this.txtNgaySinh.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.PasswordChar = '\0';
-            this.txtNgaySinh.SelectedText = "";
-            this.txtNgaySinh.Size = new System.Drawing.Size(160, 26);
-            this.txtNgaySinh.TabIndex = 48;
+            this.txtNgaySinh.Size = new System.Drawing.Size(160, 20);
+            this.txtNgaySinh.TabIndex = 50;
+            // 
+            // txtNgayvaolam
+            // 
+            this.txtNgayvaolam.CustomFormat = "yyyy-MM-dd";
+            this.txtNgayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgayvaolam.Location = new System.Drawing.Point(664, 83);
+            this.txtNgayvaolam.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.txtNgayvaolam.Name = "txtNgayvaolam";
+            this.txtNgayvaolam.Size = new System.Drawing.Size(160, 20);
+            this.txtNgayvaolam.TabIndex = 51;
+            // 
+            // txtMaTaiKhoan
+            // 
+            this.txtMaTaiKhoan.FormattingEnabled = true;
+            this.txtMaTaiKhoan.Location = new System.Drawing.Point(106, 136);
+            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
+            this.txtMaTaiKhoan.Size = new System.Drawing.Size(121, 21);
+            this.txtMaTaiKhoan.TabIndex = 52;
+            this.txtMaTaiKhoan.SelectedIndexChanged += new System.EventHandler(this.txtMaTaiKhoan_SelectedIndexChanged);
             // 
             // btnlammoi
             // 
@@ -426,8 +479,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightBlue;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(852, 491);
@@ -441,12 +494,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.txtMaTaiKhoan);
+            this.Controls.Add(this.txtNgayvaolam);
             this.Controls.Add(this.txtNgaySinh);
+            this.Controls.Add(this.txtmnv);
             this.Controls.Add(this.lbThongtinNV);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.lbLuong);
-            this.Controls.Add(this.txtNgayvaolam);
             this.Controls.Add(this.lbNgayVaoLam);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.lbGmail);
@@ -455,8 +510,6 @@
             this.Controls.Add(this.lbSDT);
             this.Controls.Add(this.lbTenNV);
             this.Controls.Add(this.lbMaTK);
-            this.Controls.Add(this.txtMaTaiKhoan);
-            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.lbNgaySinh);
             this.Controls.Add(this.lbMaNV);
             this.Controls.Add(this.label1);
@@ -488,8 +541,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.Label lbNgaySinh;
-        private System.Windows.Forms.ComboBox cbMaNV;
-        private Guna.UI.WinForms.GunaTextBox txtMaTaiKhoan;
         private System.Windows.Forms.Label lbMaTK;
         private System.Windows.Forms.Label lbTenNV;
         private System.Windows.Forms.Label lbSDT;
@@ -498,12 +549,22 @@
         private System.Windows.Forms.Label lbGmail;
         private Guna.UI.WinForms.GunaTextBox txtMail;
         private System.Windows.Forms.Label lbNgayVaoLam;
-        private Guna.UI.WinForms.GunaTextBox txtNgayvaolam;
         private System.Windows.Forms.Label lbLuong;
         private Guna.UI.WinForms.GunaTextBox txtLuong;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label lbThongtinNV;
-        private Guna.UI.WinForms.GunaTextBox txtNgaySinh;
+        private Guna.UI.WinForms.GunaTextBox txtmnv;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
+        private System.Windows.Forms.DateTimePicker txtNgayvaolam;
+        private System.Windows.Forms.ComboBox txtMaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDTNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GmailNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
     }
 }

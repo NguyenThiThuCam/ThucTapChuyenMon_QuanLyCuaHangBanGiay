@@ -13,29 +13,38 @@ namespace CUUHANGGIAY
 {
     public partial class NhanVien : Form
     {
-        SqlConnection connection;
-        SqlCommand command;
-        string camcam = @"Data Source=CAMCAM\SQLEXPRESS;Initial Catalog=CUAHANGGIAY;Integrated Security=True";
-        SqlDataAdapter adapter= new SqlDataAdapter();
-        DataTable table = new DataTable();
-        void loadDuLieu()
-        {
-           
-            command = connection.CreateCommand();
-            command.CommandText = "select *from NhanVien";
-            adapter.SelectCommand=command;
-            table.Clear();
-            adapter.Fill(table);
-            dgv.DataSource = table;
-
-
-        }
+        
+        
         
 
         public NhanVien()
         {
             InitializeComponent();
+            LoadDL();
+            LoadComBobox();
+            txtMaTaiKhoan.SelectedIndex = -1;
         }
+        public void LoadDL()
+        {
+            string query = "select * from NhanVien nv,TaiKhoan tk where nv.MaTK=tk.MaTK ";
+
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgv.AutoGenerateColumns = false;
+
+            dgv.DataSource = data;
+            
+          
+        }
+        public void LoadComBobox()
+        {
+            string query = " select * from TaiKhoan";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            txtMaTaiKhoan.DataSource = data;
+            txtMaTaiKhoan.ValueMember = "MaTK";
+            txtMaTaiKhoan.DisplayMember = "TenTK";
+
+        }
+        
 
         private void txtLuong_TextChanged(object sender, EventArgs e)
         {
@@ -76,56 +85,97 @@ namespace CUUHANGGIAY
         {
 
         }
-
+        public bool KiemTraMa(string MaNV)
+        {
+            string query = "select* from NhanVien";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            int dem = 0;
+            foreach (DataRow item in data.Rows)
+            {
+                dem++;
+            
+            }
+            if (dem > 0)
+                return true;
+            return false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(camcam);
-            try
+            if (txtmnv.Text == "" || txttenNV.Text == "")
             {
-                if (cbMaNV.Text != "" && txttenNV.Text != "" && txtNgaySinh.Text != "" && txtNgayvaolam.Text != "" && txtLuong.Text != "" && txtSDT.Text != "" && txtMail.Text != "")
-                {
-                    connection.Open();
-                    string cc = " insert into  NhanVien  values('" + cbMaNV.Text + "','" + txttenNV.Text + "','" + txtNgaySinh.Text + "','" + txtNgayvaolam.Text + "'," +
-                        "'" + txtLuong.Text + "','" + txtSDT.Text + "','" + txtMail.Text + "')";
-                    SqlCommand command = new SqlCommand(cc, connection);
-                    int kq = (int)command.ExecuteNonQuery();
-                    if (kq > 0)
-                    {
-                        MessageBox.Show("Thêm thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        loadDuLieu();
-                    }
-                    else
-                        MessageBox.Show(" Thêm thất bại.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    connection.Close();
-                }
-                else
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.");
-            }catch(Exception ex)
-            {
+                MessageBox.Show(" Vui long nhap day du thong tin");
 
             }
+            else
+            {
+                //if (KiemTraMa(txtmnv.Text) == true)
+                //{
+                //    MessageBox.Show(" Ma da trung");
+                //    return;
+                //}
+               try
+               {
+                    string query = " insert into NhanVien values('" + txtmnv.Text + "',N'" + txttenNV.Text + "','" + txtNgaySinh.Text + "','" + txtNgayvaolam.Text + "','" + txtLuong.Text + "','" + txtSDT.Text + "','" + txtMail.Text + "','" + txtMaTaiKhoan.SelectedValue.ToString()+ "')";
+                    DataTable data = clsConnect.Instance.exQuery(query);
+                    MessageBox.Show(" Them thanh cong");
+               
+
+                    LoadDL();
+                lammoi();
+
+                  }
+               catch
+               {
+                   MessageBox.Show(" Them That bai");
+               }
+            }
+            
            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (txtmnv.Text==" ")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+            else
+            {
+                try
+                {
+                    string query = "update NhanVien set TenNV=N'" + txttenNV.Text + "',NgaySinh='" + txtNgaySinh.Text + "',NgayVaoLam='" + txtNgayvaolam.Text + "',Luong='" + txtLuong.Text + "',SDTNV='" + txtSDT.Text + "',GmailNV='" + txtMail.Text + "' where MANV='"+txtmnv.Text+"'";
+                    DataTable data = clsConnect.Instance.exQuery(query);
+                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadDL();
+                    lammoi();
+                }
+                catch
+                {
+                    MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                    }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult tb;
-            tb = MessageBox.Show("Bạn có muốn xoá hay không?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
-            if (tb==DialogResult.OK)
+            if (txtmnv.Text=="") {
+                MessageBox.Show("Vui lòng chọn dòng xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
+            try
             {
-                SqlConnection connection = new SqlConnection(camcam);
-                connection.Open();
-                String cc = " delete from NhanVien where MaNV='"+ cbMaNV.Text + "'";
-                SqlCommand command = new SqlCommand(cc, connection);
-                command.ExecuteNonQuery();
-                MessageBox.Show("Xóa thành công.");
-                loadDuLieu();
-                connection.Close();
+                string query = "delete NhanVien where MaNV='" + txtmnv.Text + "'";
+                DataTable data = clsConnect.Instance.exQuery(query);
+                
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDL();
+                lammoi();
+            }
+            catch {
+                MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
 
         }
@@ -136,11 +186,11 @@ namespace CUUHANGGIAY
         }
         void lammoi()
         {
-            cbMaNV.Text = " ";
+            txtmnv.Text = " ";
             
             txtMail.Text = " ";
-            txtNgaySinh.Text = " ";
-            txtNgayvaolam.Text = " ";
+            //txtNgaySinh.Text = " ";
+            //txtNgayvaolam.Text = " ";
             txtSDT.Text = " ";
             txttenNV.Text = " ";
             txtMaTaiKhoan.Text =" ";
@@ -153,9 +203,7 @@ namespace CUUHANGGIAY
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(camcam);
-            connection.Open();
-            loadDuLieu();
+            
 
         }
 
@@ -163,7 +211,7 @@ namespace CUUHANGGIAY
         {
             int i;
             i = dgv.CurrentRow.Index;
-            cbMaNV.Text = dgv.Rows[i].Cells[0].Value.ToString();
+            txtmnv.Text = dgv.Rows[i].Cells[0].Value.ToString();
             txtNgaySinh.Text = dgv.Rows[i].Cells[2].Value.ToString();
             txtMaTaiKhoan.Text = dgv.Rows[i].Cells[7].Value.ToString();
             txttenNV.Text = dgv.Rows[i].Cells[1].Value.ToString();
@@ -174,6 +222,16 @@ namespace CUUHANGGIAY
         }
 
         private void txtNgayvaolam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtMaTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

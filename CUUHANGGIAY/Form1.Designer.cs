@@ -53,19 +53,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnfb = new Guna.UI.WinForms.GunaButton();
             this.btnDX = new Guna.UI.WinForms.GunaButton();
             this.btninsta = new Guna.UI.WinForms.GunaButton();
             this.btnMail = new Guna.UI.WinForms.GunaButton();
-            this.btnfb = new Guna.UI.WinForms.GunaButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,7 +105,7 @@
             this.lbChucVu.AutoSize = true;
             this.lbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChucVu.ForeColor = System.Drawing.Color.Beige;
-            this.lbChucVu.Location = new System.Drawing.Point(89, 50);
+            this.lbChucVu.Location = new System.Drawing.Point(85, 29);
             this.lbChucVu.Name = "lbChucVu";
             this.lbChucVu.Size = new System.Drawing.Size(162, 22);
             this.lbChucVu.TabIndex = 5;
@@ -148,6 +147,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 41);
             this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
             // lbMenu
             // 
@@ -401,6 +401,7 @@
             this.btnSP.TabIndex = 0;
             this.btnSP.Text = "SẢN PHẨM";
             this.btnSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSP.Click += new System.EventHandler(this.btnSP_Click);
             // 
             // timer1
             // 
@@ -423,16 +424,42 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
+            this.panel4.Controls.Add(this.btnfb);
             this.panel4.Controls.Add(this.btnDX);
             this.panel4.Controls.Add(this.btninsta);
             this.panel4.Controls.Add(this.btnMail);
-            this.panel4.Controls.Add(this.btnfb);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(250, 1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(868, 92);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // btnfb
+            // 
+            this.btnfb.AnimationHoverSpeed = 0.07F;
+            this.btnfb.AnimationSpeed = 0.03F;
+            this.btnfb.BackColor = System.Drawing.Color.LightBlue;
+            this.btnfb.BaseColor = System.Drawing.Color.LightBlue;
+            this.btnfb.BorderColor = System.Drawing.Color.Black;
+            this.btnfb.Cursor = System.Windows.Forms.Cursors.NoMoveHoriz;
+            this.btnfb.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnfb.FocusedColor = System.Drawing.Color.Empty;
+            this.btnfb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnfb.ForeColor = System.Drawing.Color.White;
+            this.btnfb.Image = ((System.Drawing.Image)(resources.GetObject("btnfb.Image")));
+            this.btnfb.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnfb.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnfb.Location = new System.Drawing.Point(698, 11);
+            this.btnfb.Name = "btnfb";
+            this.btnfb.OnHoverBaseColor = System.Drawing.Color.LightBlue;
+            this.btnfb.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnfb.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnfb.OnHoverImage = null;
+            this.btnfb.OnPressedColor = System.Drawing.Color.Black;
+            this.btnfb.Size = new System.Drawing.Size(45, 42);
+            this.btnfb.TabIndex = 7;
+            this.btnfb.Click += new System.EventHandler(this.gunaButton4_Click_1);
             // 
             // btnDX
             // 
@@ -481,6 +508,7 @@
             this.btninsta.OnPressedColor = System.Drawing.Color.Black;
             this.btninsta.Size = new System.Drawing.Size(45, 42);
             this.btninsta.TabIndex = 4;
+            this.btninsta.Click += new System.EventHandler(this.btninsta_Click_1);
             // 
             // btnMail
             // 
@@ -506,30 +534,6 @@
             this.btnMail.TabIndex = 3;
             this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
-            // btnfb
-            // 
-            this.btnfb.AnimationHoverSpeed = 0.07F;
-            this.btnfb.AnimationSpeed = 0.03F;
-            this.btnfb.BaseColor = System.Drawing.Color.LightBlue;
-            this.btnfb.BorderColor = System.Drawing.Color.Black;
-            this.btnfb.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnfb.FocusedColor = System.Drawing.Color.Empty;
-            this.btnfb.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnfb.ForeColor = System.Drawing.Color.White;
-            this.btnfb.Image = ((System.Drawing.Image)(resources.GetObject("btnfb.Image")));
-            this.btnfb.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnfb.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnfb.Location = new System.Drawing.Point(692, 10);
-            this.btnfb.Name = "btnfb";
-            this.btnfb.OnHoverBaseColor = System.Drawing.Color.LightBlue;
-            this.btnfb.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnfb.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnfb.OnHoverImage = null;
-            this.btnfb.OnPressedColor = System.Drawing.Color.Black;
-            this.btnfb.Size = new System.Drawing.Size(58, 43);
-            this.btnfb.TabIndex = 2;
-            this.btnfb.Click += new System.EventHandler(this.gunaButton4_Click);
-            // 
             // timer2
             // 
             this.timer2.Enabled = true;
@@ -541,16 +545,13 @@
             this.gunaElipse1.Radius = 15;
             this.gunaElipse1.TargetControl = this;
             // 
-            // pictureBox1
+            // pnMain
             // 
-            this.pictureBox1.Image = global::CUUHANGGIAY.Properties.Resources.h4;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(868, 530);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pnMain.Location = new System.Drawing.Point(250, 93);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(868, 533);
+            this.pnMain.TabIndex = 3;
+            this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint);
             // 
             // Form1
             // 
@@ -558,7 +559,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1118, 625);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -575,7 +576,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,12 +606,12 @@
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton btninsta;
         private Guna.UI.WinForms.GunaButton btnMail;
-        private Guna.UI.WinForms.GunaButton btnfb;
         private Guna.UI.WinForms.GunaButton btnDX;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaButton btnfb;
+        private System.Windows.Forms.Panel pnMain;
     }
 }
 
