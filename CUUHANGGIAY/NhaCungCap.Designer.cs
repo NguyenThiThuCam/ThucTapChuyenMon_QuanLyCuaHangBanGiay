@@ -33,12 +33,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.btnSua = new Guna.UI.WinForms.GunaButton();
-            this.btnXoa = new Guna.UI.WinForms.GunaButton();
             this.btnTimKiem = new Guna.UI.WinForms.GunaButton();
             this.btnlammoi = new Guna.UI.WinForms.GunaButton();
             this.lbMaNCC = new System.Windows.Forms.Label();
             this.lbTenNCC = new System.Windows.Forms.Label();
-            this.txtMaNCC = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,12 +48,17 @@
             this.lbThongtinHD = new System.Windows.Forms.Label();
             this.cbTenNCC = new System.Windows.Forms.ComboBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnHienThi = new Guna.UI.WinForms.GunaButton();
+            this.btnXoa = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
+            this.txtMaNCC = new Guna.UI.WinForms.GunaTextBox();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChiNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDTNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GmailNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +111,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSua.Location = new System.Drawing.Point(1, 55);
+            this.btnSua.Location = new System.Drawing.Point(1, 52);
             this.btnSua.Name = "btnSua";
             this.btnSua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSua.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -119,31 +122,6 @@
             this.btnSua.TabIndex = 23;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AnimationHoverSpeed = 0.07F;
-            this.btnXoa.AnimationSpeed = 0.03F;
-            this.btnXoa.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
-            this.btnXoa.BorderColor = System.Drawing.Color.Black;
-            this.btnXoa.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnXoa.FocusedColor = System.Drawing.Color.Empty;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnXoa.Location = new System.Drawing.Point(1, 107);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnXoa.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnXoa.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnXoa.OnHoverImage = null;
-            this.btnXoa.OnPressedColor = System.Drawing.Color.Black;
-            this.btnXoa.Size = new System.Drawing.Size(113, 42);
-            this.btnXoa.TabIndex = 24;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
@@ -157,7 +135,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnTimKiem.Location = new System.Drawing.Point(1, 160);
+            this.btnTimKiem.Location = new System.Drawing.Point(1, 148);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnTimKiem.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -168,6 +146,7 @@
             this.btnTimKiem.TabIndex = 25;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnlammoi
             // 
@@ -181,7 +160,7 @@
             this.btnlammoi.ForeColor = System.Drawing.Color.White;
             this.btnlammoi.Image = ((System.Drawing.Image)(resources.GetObject("btnlammoi.Image")));
             this.btnlammoi.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnlammoi.Location = new System.Drawing.Point(1, 213);
+            this.btnlammoi.Location = new System.Drawing.Point(1, 198);
             this.btnlammoi.Name = "btnlammoi";
             this.btnlammoi.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnlammoi.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -214,22 +193,6 @@
             this.lbTenNCC.Size = new System.Drawing.Size(118, 14);
             this.lbTenNCC.TabIndex = 28;
             this.lbTenNCC.Text = "Tên  Nhà Cung Cấp:";
-            // 
-            // txtMaNCC
-            // 
-            this.txtMaNCC.BaseColor = System.Drawing.Color.White;
-            this.txtMaNCC.BorderColor = System.Drawing.Color.Silver;
-            this.txtMaNCC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaNCC.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtMaNCC.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtMaNCC.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtMaNCC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaNCC.Location = new System.Drawing.Point(281, 61);
-            this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.PasswordChar = '\0';
-            this.txtMaNCC.SelectedText = "";
-            this.txtMaNCC.Size = new System.Drawing.Size(160, 26);
-            this.txtMaNCC.TabIndex = 51;
             // 
             // label1
             // 
@@ -317,9 +280,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.dgvNCC);
             this.panel1.Controls.Add(this.lbThongtinHD);
-            this.panel1.Location = new System.Drawing.Point(3, 285);
+            this.panel1.Location = new System.Drawing.Point(2, 302);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 204);
+            this.panel1.Size = new System.Drawing.Size(846, 187);
             this.panel1.TabIndex = 59;
             // 
             // dgvNCC
@@ -362,44 +325,132 @@
             this.gunaElipse1.Radius = 9;
             this.gunaElipse1.TargetControl = this.label5;
             // 
-            // MaNCC
-            // 
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã NCC";
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Width = 50;
-            // 
-            // TenNCC
-            // 
-            this.TenNCC.DataPropertyName = "TenNCC";
-            this.TenNCC.HeaderText = "Tên NCC";
-            this.TenNCC.Name = "TenNCC";
-            this.TenNCC.Width = 200;
-            // 
-            // DiaChiNCC
-            // 
-            this.DiaChiNCC.DataPropertyName = "DiaChiNCC";
-            this.DiaChiNCC.HeaderText = "Địa Chỉ NCC";
-            this.DiaChiNCC.Name = "DiaChiNCC";
-            // 
-            // SDTNCC
-            // 
-            this.SDTNCC.DataPropertyName = "SDTNCC";
-            this.SDTNCC.HeaderText = "SĐT NCC";
-            this.SDTNCC.Name = "SDTNCC";
-            this.SDTNCC.Width = 150;
-            // 
-            // GmailNCC
-            // 
-            this.GmailNCC.DataPropertyName = "GmailNCC";
-            this.GmailNCC.HeaderText = "Gmail";
-            this.GmailNCC.Name = "GmailNCC";
-            this.GmailNCC.Width = 303;
-            // 
             // gunaElipse2
             // 
             this.gunaElipse2.Radius = 9;
             this.gunaElipse2.TargetControl = this;
+            // 
+            // btnHienThi
+            // 
+            this.btnHienThi.AnimationHoverSpeed = 0.07F;
+            this.btnHienThi.AnimationSpeed = 0.03F;
+            this.btnHienThi.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnHienThi.BorderColor = System.Drawing.Color.Black;
+            this.btnHienThi.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnHienThi.FocusedColor = System.Drawing.Color.Empty;
+            this.btnHienThi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienThi.ForeColor = System.Drawing.Color.White;
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnHienThi.Location = new System.Drawing.Point(0, 246);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnHienThi.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnHienThi.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnHienThi.OnHoverImage = null;
+            this.btnHienThi.OnPressedColor = System.Drawing.Color.Black;
+            this.btnHienThi.Size = new System.Drawing.Size(113, 42);
+            this.btnHienThi.TabIndex = 61;
+            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AnimationHoverSpeed = 0.07F;
+            this.btnXoa.AnimationSpeed = 0.03F;
+            this.btnXoa.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnXoa.BorderColor = System.Drawing.Color.Black;
+            this.btnXoa.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnXoa.FocusedColor = System.Drawing.Color.Empty;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnXoa.Location = new System.Drawing.Point(0, 100);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnXoa.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnXoa.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnXoa.OnHoverImage = null;
+            this.btnXoa.OnPressedColor = System.Drawing.Color.Black;
+            this.btnXoa.Size = new System.Drawing.Size(113, 42);
+            this.btnXoa.TabIndex = 62;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaElipse3
+            // 
+            this.gunaElipse3.Radius = 15;
+            this.gunaElipse3.TargetControl = this.txtTimKiem;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTimKiem.BaseColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.FocusedBaseColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.FocusedForeColor = System.Drawing.Color.Black;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTimKiem.Location = new System.Drawing.Point(680, 263);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(160, 26);
+            this.txtTimKiem.TabIndex = 63;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // txtMaNCC
+            // 
+            this.txtMaNCC.BaseColor = System.Drawing.Color.White;
+            this.txtMaNCC.BorderColor = System.Drawing.Color.Silver;
+            this.txtMaNCC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaNCC.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtMaNCC.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtMaNCC.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtMaNCC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaNCC.Location = new System.Drawing.Point(281, 61);
+            this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.PasswordChar = '\0';
+            this.txtMaNCC.SelectedText = "";
+            this.txtMaNCC.Size = new System.Drawing.Size(160, 26);
+            this.txtMaNCC.TabIndex = 51;
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // DiaChiNCC
+            // 
+            this.DiaChiNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiaChiNCC.DataPropertyName = "DiaChiNCC";
+            this.DiaChiNCC.HeaderText = "Địa Chỉ Nhà Cung Cấp";
+            this.DiaChiNCC.Name = "DiaChiNCC";
+            // 
+            // SDTNCC
+            // 
+            this.SDTNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDTNCC.DataPropertyName = "SDTNCC";
+            this.SDTNCC.HeaderText = "SĐT Nhà Cung Cấp";
+            this.SDTNCC.Name = "SDTNCC";
+            // 
+            // GmailNCC
+            // 
+            this.GmailNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GmailNCC.DataPropertyName = "GmailNCC";
+            this.GmailNCC.HeaderText = "Gmail Nhà Cung Cấp";
+            this.GmailNCC.Name = "GmailNCC";
             // 
             // NhaCungCap
             // 
@@ -407,6 +458,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.cbTenNCC);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDiaChi);
@@ -420,7 +474,6 @@
             this.Controls.Add(this.lbMaNCC);
             this.Controls.Add(this.btnlammoi);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label5);
@@ -441,12 +494,10 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaButton btnThem;
         private Guna.UI.WinForms.GunaButton btnSua;
-        private Guna.UI.WinForms.GunaButton btnXoa;
         private Guna.UI.WinForms.GunaButton btnTimKiem;
         private Guna.UI.WinForms.GunaButton btnlammoi;
         private System.Windows.Forms.Label lbMaNCC;
         private System.Windows.Forms.Label lbTenNCC;
-        private Guna.UI.WinForms.GunaTextBox txtMaNCC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -458,11 +509,16 @@
         private System.Windows.Forms.Label lbThongtinHD;
         private System.Windows.Forms.ComboBox cbTenNCC;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private Guna.UI.WinForms.GunaButton btnHienThi;
+        private Guna.UI.WinForms.GunaButton btnXoa;
+        private Guna.UI.WinForms.GunaElipse gunaElipse3;
+        private Guna.UI.WinForms.GunaTextBox txtTimKiem;
+        private Guna.UI.WinForms.GunaTextBox txtMaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDTNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn GmailNCC;
-        private Guna.UI.WinForms.GunaElipse gunaElipse2;
     }
 }

@@ -83,11 +83,11 @@
             // 
             // txtUser
             // 
-            this.txtUser.BaseColor = System.Drawing.Color.White;
-            this.txtUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUser.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtUser.BorderColor = System.Drawing.Color.Silver;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtUser.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtUser.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtUser.FocusedBorderColor = System.Drawing.Color.White;
             this.txtUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUser.ForeColor = System.Drawing.SystemColors.ButtonShadow;
@@ -100,11 +100,11 @@
             // 
             // TxtPassword
             // 
-            this.TxtPassword.BaseColor = System.Drawing.Color.White;
-            this.TxtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtPassword.BaseColor = System.Drawing.Color.Gainsboro;
+            this.TxtPassword.BorderColor = System.Drawing.Color.Silver;
             this.TxtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtPassword.FocusedBaseColor = System.Drawing.Color.White;
-            this.TxtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TxtPassword.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.TxtPassword.FocusedBorderColor = System.Drawing.Color.White;
             this.TxtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TxtPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

@@ -148,6 +148,34 @@ namespace CUUHANGGIAY
 
             }
         }
+        public void TimKiemMa()
+        {
+            string query = " select *from SanPham where MaSP like N'%" + txtMaSP.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvSP.DataSource = data;
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();
+
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadCombobox();
+        }
+        public void TimKiemTheoTextChan()
+        {
+           
+            string query = " select *from SanPham sp,LoaiSP lsp where sp.MaLoai=lsp.MaLoai and MaSP like N'%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvSP.DataSource = data;
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
+        }
 
         Random random = new Random();
         private void timer1_Tick(object sender, EventArgs e)

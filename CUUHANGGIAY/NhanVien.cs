@@ -179,9 +179,17 @@ namespace CUUHANGGIAY
             }
 
         }
+        public void TimKiemMa()
+        {
+            string query = " select *from NhanVien where MaNV like '%" + txtmnv.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgv.DataSource = data;
+        }
+
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            TimKiemMa();
 
         }
         void lammoi()
@@ -233,6 +241,24 @@ namespace CUUHANGGIAY
 
         private void txtMaTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadComBobox();
+        }
+        public void TimKiemTheoTextChan()
+        {
+
+            string query = " select *from NhanVien nv,TaiKhoan tk where nv.MaTK=tk.MaTK and MaNV like '%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgv.DataSource = data;
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
 
         }
     }

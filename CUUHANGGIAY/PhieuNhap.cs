@@ -16,8 +16,8 @@ namespace CUUHANGGIAY
         public PhieuNhap()
         {
             InitializeComponent();
-            LoadDL();
-            LoadComBobox();
+           
+            cbTenNV.SelectedIndex = -1;
         }
         void lammoi()
         {
@@ -29,21 +29,32 @@ namespace CUUHANGGIAY
         }
         public void LoadDL()
         {
-            string query = "select *from PhieuNhap ";
+            string query = "select *from PhieuNhap pn,NhanVien nv,NhaCungCap ncc where pn.MaNV=nv.MaNV and pn.MaNCC=ncc.MaNCC ";
             DataTable data = clsConnect.Instance.exQuery(query);
+            dgvPN.AutoGenerateColumns = false;
             dgvPN.DataSource = data;
             
         } public void LoadComBobox()
         {
-            string query = "select *from PhieuNhap";
+            string query = "select *from NhanVien";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            cbTenNV.DataSource = data;
+            cbTenNV.ValueMember = "MaNV";
+            cbTenNV.DisplayMember = "TenNV";
+        } 
+        public void LoadComBoboxNCC()
+        {
+            string query = "select *from NhaCungCap ";
             DataTable data = clsConnect.Instance.exQuery(query);
             CbNCC.DataSource = data;
             CbNCC.ValueMember = "MaNCC";
-            cbTenNV.DataSource = data;
-            cbTenNV.ValueMember = "MaNV";
-            cbTinhTrang.DataSource = data;
-            cbTinhTrang.ValueMember = "TinhTrang";
+            CbNCC.DisplayMember = "TenNCC";
+
+
+
+
         }
+
         public bool KiemTraMa(string MaPN)
         {
             string query = "select *from PhieuNhap";
@@ -149,7 +160,37 @@ namespace CUUHANGGIAY
 
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
+            LoadDL();
+            LoadComBobox();
+            LoadComBoboxNCC();
 
+        }
+        public void TimKiemMa()
+        {
+            string query = " select *from PhieuNhap where MaPN like '%" + txtMaPN.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvPN.DataSource = data;
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadComBobox();
+        }
+        public void TimKiemTheoTextChan()
+        {
+            string query = " select *from PhieuNhap pn,NhanVien nv,NhaCungCap ncc where pn.MaNV=nv.MaNV and MaPN like '%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvPN.DataSource = data;
+
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
         }
     }
 }

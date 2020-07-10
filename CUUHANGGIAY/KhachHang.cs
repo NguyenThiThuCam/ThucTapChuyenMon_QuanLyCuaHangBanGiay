@@ -167,5 +167,36 @@ namespace CUUHANGGIAY
         {
 
         }
+        public void TimKiemMa()
+        {
+            string query = " select *from KhachHang where MaKH like '%" + cbMaKH.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvKH.DataSource = data;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();
+
+
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            
+        }
+        public void TimKiemTheoTextChan()
+        {
+            string query = " select *from KhachHang where MaKH like '%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvKH.DataSource = data;
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
+        }
     }
     }

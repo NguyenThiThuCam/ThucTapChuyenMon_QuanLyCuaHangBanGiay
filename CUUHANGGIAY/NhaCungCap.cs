@@ -134,5 +134,35 @@ namespace CUUHANGGIAY
                 MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        public void TimKiemMa()
+        {
+            string query = " select *from NhaCungCap where MaNCC like '%" + txtMaNCC.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvNCC.DataSource = data;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();
+
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadCombobox();
+        }
+        public void TimKiemTheoTextChan()
+        {
+
+            string query = " select *from NhaCungCap where MaNCC like '%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvNCC.DataSource = data;
+
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
+        }
     }
 }

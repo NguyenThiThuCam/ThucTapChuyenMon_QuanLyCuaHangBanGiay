@@ -13,20 +13,19 @@ namespace CUUHANGGIAY
 {
     public partial class HoaDon : Form
     {
-      
+        private string strConn = @"Data Source=CAMCAM\SQLEXPRESS;Initial Catalog=CUAHANGGIAY;Integrated Security=True";
         public HoaDon()
         {
             InitializeComponent();
-            LoadDL();
-            LoadComBoBox();
+           
             cbTenNV.SelectedIndex = -1;
 
         }
         public void LoadDL()
         {
-            string query = " select *from HoaDon hd, NhanVien nv where hd.MaNV=hd.MaNV and MaHD='"+txtMaHD.Text+"' ";
+            string query = " select* from HoaDon hd, NhanVien nv,KhachHang kh  where hd.MaNV = nv.MaNV and hd.MaKH = kh.MaKH";
             DataTable data = clsConnect.Instance.exQuery(query);
-          //  dgvHD.AutoGenerateColumns = false;
+            dgvHD.AutoGenerateColumns = false;
             dgvHD.DataSource = data;
         } public void LoadComBoBox()
         {
@@ -35,19 +34,32 @@ namespace CUUHANGGIAY
             cbTenNV.DataSource = data;
             cbTenNV.ValueMember = "MaNV";
             cbTenNV.DisplayMember = "TenNV";
+
         }
+        public void loadkh()
+        {
+            string query = " select *from KhachHang";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            txtMaKH.DataSource = data;
+            txtMaKH.ValueMember = "MaKH";
+            txtMaKH.DisplayMember="TenKH";
+
+        }
+       
 
         private void HoaDon_Load(object sender, EventArgs e)
         {
+            LoadDL();
+            LoadComBoBox();
+            loadkh();
 
-            
         }
         void lammoi()
         {
             txtMaHD.Text = " ";
             txtMaKH.Text = " ";
             cbTenNV.Text = " ";
-            txtNgayLap.Text = " ";
+            //txtNgayLap.Text = " ";
             txtTongTien.Text = " ";
             txtTinhTrang.Text = " ";
         }
@@ -61,29 +73,38 @@ namespace CUUHANGGIAY
             int i;
             i = dgvHD.CurrentRow.Index;
             txtMaHD.Text=dgvHD.Rows[i].Cells[0].Value.ToString();
+
             txtNgayLap.Text=dgvHD.Rows[i].Cells[1].Value.ToString();
             txtTongTien.Text=dgvHD.Rows[i].Cells[2].Value.ToString();
-            
+            txtTinhTrang.Text=dgvHD.Rows[i].Cells[3].Value.ToString();
+
             cbTenNV.Text=dgvHD.Rows[i].Cells[4].Value.ToString();
            txtMaKH.Text=dgvHD.Rows[i].Cells[5].Value.ToString();
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-           // try
-           // {
-                string query = "insert into HoaDon values('"+cbTenNV.SelectedValue.ToString()+"','"+txtMaKH.Text+"','"+txtNgayLap.Text+"','"+txtTongTien.Text+"','"+txtTinhTrang.Text+"')";
-                DataTable data = clsConnect.Instance.exQuery(query);
-                MessageBox.Show("Thêm thành công","Thông báo" ,MessageBoxButtons.OK,MessageBoxIcon.Information);
-                LoadDL();
-              
-         //   }
-            //catch
-            //{
-            //    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //}
+            string querry = "insert into hoadon values(@ngaylap,@tongtien,@tinhtranghd,@manv,@makh)";
+            SqlConnection conn = new SqlConnection(strConn);
+            conn.Open();
+            SqlCommand command = new SqlCommand(querry, conn);
+           
+            command.Parameters.AddWithValue("@ngaylap", txtNgayLap.Value.ToString("yyyy/MM/dd"));
+           
+            command.Parameters.AddWithValue("@tongtien", 0);
+            command.Parameters.AddWithValue("@tinhtranghd", false);
+            command.Parameters.AddWithValue("@manv", cbTenNV.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@makh", txtMaKH.SelectedValue.ToString());
+            int a = command.ExecuteNonQuery();
+            if (a > 0)
+            {
+                HoaDon_Load(sender, e);
+                MessageBox.Show("thêm thanh cong");
+            }
+            conn.Close();
+       
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -95,11 +116,11 @@ namespace CUUHANGGIAY
             }
             try
             {
-                string query = "delete HoaDon set MaHD='"+txtMaHD.Text+"'";
+                string query = "delete HoaDon where MaHD='"+txtMaHD.Text+"'";
                 DataTable data = clsConnect.Instance.exQuery(query);
                 MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDL();
-                LoadComBoBox();
+
             }
             catch
             {
@@ -116,7 +137,7 @@ namespace CUUHANGGIAY
             {
                 try
                 {
-                    string query = "update HoaDon set NgayLap='"+txtNgayLap.Text+"',TongTien='"+txtTongTien.Text+"',TinhTrangHD=N'"+txtTinhTrang.Text+"',MaKH='"+txtMaKH.Text+"',TenKH=N'"+cbTenNV.Text+"' where MaHD='"+txtMaHD.Text+"'";
+                    string query = "update HoaDon set NgayLap='"+txtNgayLap.Text+"',TongTien='"+txtTongTien.Text+"',TinhTrangHD=N'"+txtTinhTrang.Text+"',MaKH='"+txtMaKH.SelectedValue.ToString()+"',MaNV=N'"+cbTenNV.SelectedValue.ToString()+"' where MaHD='"+txtMaHD.Text+"'";
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Sửa thành công", "Thông bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
@@ -128,6 +149,53 @@ namespace CUUHANGGIAY
 
                 }
             }
+        }
+        public void TimKiemMa()
+        {
+            string query = " select *from HoaDon where MaHD like '%" + txtMaHD.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvHD.DataSource = data;
+        }
+
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadComBoBox();
+    
+        }
+        public void TimKiemTheoTextChan()
+        {
+
+            //string query = " select * from HoaDon where like TenNV '%" + txtTimKiem.Text + "%' ";
+            //DataTable data = clsConnect.Instance.exQuery(query);
+            //cbTenNV.DataSource = data;
+            //cbTenNV.ValueMember = "MaNV";
+            //cbTenNV.DisplayMember = "TenNV";
+
+            string query = " select* from HoaDon hd, NhanVien nv,KhachHang kh  where hd.MaNV = nv.MaNV and hd.MaKH = kh.MaKH and nv.tenNv like N'%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvHD.DataSource = data;
+
+
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            
+            TimKiemTheoTextChan();
+           
+        }
+
+        private void txtNgayLap_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

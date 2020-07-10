@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lbChucVu = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -53,6 +52,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.time = new System.Windows.Forms.Label();
             this.btnfb = new Guna.UI.WinForms.GunaButton();
             this.btnDX = new Guna.UI.WinForms.GunaButton();
             this.btninsta = new Guna.UI.WinForms.GunaButton();
@@ -60,6 +60,8 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.lbChucVu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -100,17 +102,6 @@
             this.panel9.TabIndex = 6;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
-            // lbChucVu
-            // 
-            this.lbChucVu.AutoSize = true;
-            this.lbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChucVu.ForeColor = System.Drawing.Color.Beige;
-            this.lbChucVu.Location = new System.Drawing.Point(85, 29);
-            this.lbChucVu.Name = "lbChucVu";
-            this.lbChucVu.Size = new System.Drawing.Size(162, 22);
-            this.lbChucVu.TabIndex = 5;
-            this.lbChucVu.Text = "CẨM CẨM SHOP";
-            // 
             // panel8
             // 
             this.panel8.Location = new System.Drawing.Point(250, 44);
@@ -148,6 +139,7 @@
             this.panel2.Size = new System.Drawing.Size(250, 41);
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lbMenu
             // 
@@ -160,6 +152,7 @@
             this.lbMenu.Size = new System.Drawing.Size(68, 23);
             this.lbMenu.TabIndex = 0;
             this.lbMenu.Text = "MENU";
+            this.lbMenu.Click += new System.EventHandler(this.lbMenu_Click);
             // 
             // panel3
             // 
@@ -201,6 +194,7 @@
             this.gunaButton3.TabIndex = 8;
             this.gunaButton3.Text = "DANH MỤC";
             this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // gunaButton2
             // 
@@ -276,6 +270,7 @@
             this.btnNCC.TabIndex = 5;
             this.btnNCC.Text = "NHÀ CUNG CẤP";
             this.btnNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
             // btnPN
             // 
@@ -301,6 +296,7 @@
             this.btnPN.TabIndex = 4;
             this.btnPN.Text = "PHIẾU NHẬP";
             this.btnPN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPN.Click += new System.EventHandler(this.btnPN_Click);
             // 
             // btnHD
             // 
@@ -326,6 +322,7 @@
             this.btnHD.TabIndex = 3;
             this.btnHD.Text = "HÓA ĐƠN";
             this.btnHD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
             // 
             // btnKH
             // 
@@ -351,6 +348,7 @@
             this.btnKH.TabIndex = 2;
             this.btnKH.Text = "KHÁCH HÀNG";
             this.btnKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnKH.Click += new System.EventHandler(this.btnKH_Click);
             // 
             // btnNV
             // 
@@ -376,6 +374,7 @@
             this.btnNV.TabIndex = 1;
             this.btnNV.Text = "NHÂN VIÊN";
             this.btnNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnNV.Click += new System.EventHandler(this.btnNV_Click);
             // 
             // btnSP
             // 
@@ -424,6 +423,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
+            this.panel4.Controls.Add(this.time);
             this.panel4.Controls.Add(this.btnfb);
             this.panel4.Controls.Add(this.btnDX);
             this.panel4.Controls.Add(this.btninsta);
@@ -434,6 +434,16 @@
             this.panel4.Size = new System.Drawing.Size(868, 92);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(695, 56);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(49, 13);
+            this.time.TabIndex = 8;
+            this.time.Text = "00:00:00";
+            this.time.Click += new System.EventHandler(this.time_Click);
             // 
             // btnfb
             // 
@@ -547,11 +557,26 @@
             // 
             // pnMain
             // 
-            this.pnMain.Location = new System.Drawing.Point(250, 93);
+            this.pnMain.Location = new System.Drawing.Point(249, 93);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(868, 533);
+            this.pnMain.Size = new System.Drawing.Size(865, 533);
             this.pnMain.TabIndex = 3;
             this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // lbChucVu
+            // 
+            this.lbChucVu.AutoSize = true;
+            this.lbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChucVu.ForeColor = System.Drawing.Color.Beige;
+            this.lbChucVu.Location = new System.Drawing.Point(88, 31);
+            this.lbChucVu.Name = "lbChucVu";
+            this.lbChucVu.Size = new System.Drawing.Size(162, 22);
+            this.lbChucVu.TabIndex = 5;
+            this.lbChucVu.Text = "CẨM CẨM SHOP";
             // 
             // Form1
             // 
@@ -566,6 +591,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MENU";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -588,7 +614,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Label lbMenu;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
@@ -612,6 +637,9 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaButton btnfb;
         private System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label lbChucVu;
     }
 }
 

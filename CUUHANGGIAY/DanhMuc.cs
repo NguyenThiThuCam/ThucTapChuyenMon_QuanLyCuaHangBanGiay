@@ -139,5 +139,41 @@ namespace CUUHANGGIAY
 
             }
         }
+        public void TimKiemMa()
+        {
+            string query = " select *from LoaiSP where MaLoai like '%"+txtmaloai.Text+"%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvDM.DataSource = data;
+        }
+       
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemMa();              
+       
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            LoadDL();
+            LoadCombox();
+        }
+        public void TimKiemTheoTextChan()
+        {
+
+            string query = " select *from LoaiSP where MaLoai like '%" + txtTimKiem.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvDM.DataSource = data;
+
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            TimKiemTheoTextChan();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

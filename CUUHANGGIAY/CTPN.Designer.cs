@@ -50,6 +50,8 @@
             this.txtMauSac = new System.Windows.Forms.TextBox();
             this.txtSize = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 144);
+            this.label5.Location = new System.Drawing.Point(0, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 5;
@@ -145,7 +147,7 @@
             // cbTenNV
             // 
             this.cbTenNV.FormattingEnabled = true;
-            this.cbTenNV.Location = new System.Drawing.Point(101, 136);
+            this.cbTenNV.Location = new System.Drawing.Point(101, 123);
             this.cbTenNV.Name = "cbTenNV";
             this.cbTenNV.Size = new System.Drawing.Size(128, 21);
             this.cbTenNV.TabIndex = 13;
@@ -162,7 +164,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(477, 144);
+            this.label7.Location = new System.Drawing.Point(477, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 53;
@@ -188,7 +190,7 @@
             // 
             // txtTinhTrang
             // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(565, 144);
+            this.txtTinhTrang.Location = new System.Drawing.Point(565, 135);
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.Size = new System.Drawing.Size(128, 20);
             this.txtTinhTrang.TabIndex = 56;
@@ -196,7 +198,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 144);
+            this.label10.Location = new System.Drawing.Point(244, 131);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 13);
             this.label10.TabIndex = 57;
@@ -220,7 +222,7 @@
             // 
             // txtSize
             // 
-            this.txtSize.Location = new System.Drawing.Point(327, 144);
+            this.txtSize.Location = new System.Drawing.Point(327, 131);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(128, 20);
             this.txtSize.TabIndex = 60;
@@ -232,12 +234,21 @@
             this.txtSoLuong.Size = new System.Drawing.Size(128, 20);
             this.txtSoLuong.TabIndex = 61;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-6, 175);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(732, 179);
+            this.dataGridView1.TabIndex = 62;
+            // 
             // CTPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(723, 349);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtSize);
             this.Controls.Add(this.txtMauSac);
@@ -262,6 +273,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CTPN";
             this.Text = "CTPN";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +303,6 @@
         private System.Windows.Forms.TextBox txtMauSac;
         private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

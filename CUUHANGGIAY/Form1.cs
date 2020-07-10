@@ -23,6 +23,8 @@ namespace CUUHANGGIAY
         private void Form1_Load(object sender, EventArgs e)
         {
             loadform(new Logo());
+            timer3.Start();
+         
 
         }
 
@@ -111,16 +113,71 @@ namespace CUUHANGGIAY
 
         }
 
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            loadform(new HoaDon());
+        }
+
+        private void btnNCC_Click(object sender, EventArgs e)
+        {
+            loadform(new NhaCungCap());
+
+       
+               
+        }
+
+        private void btnPN_Click(object sender, EventArgs e)
+        {
+            loadform(new PhieuNhap());
+        }
+
+        private void btnKH_Click(object sender, EventArgs e)
+        {
+            loadform(new KhachHang());
+        }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            loadform(new DanhMuc());
+        }
+
+        private void btnNV_Click(object sender, EventArgs e)
+        {
+            loadform(new NhanVien());
+        }
+
+        private void lbMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        int i;
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            time.Text = DateTime.Now.ToString();
+
+        }
+
+        private void time_Click(object sender, EventArgs e)
+        {
+          
+
+           
+        }
+
         private void btnMail_Click(object sender, EventArgs e)
         {
-            Mail f = new Mail();
+            Mailll f = new Mailll();
             this.Hide();
             f.ShowDialog();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)

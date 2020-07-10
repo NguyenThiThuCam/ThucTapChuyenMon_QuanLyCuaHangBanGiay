@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
@@ -44,14 +45,6 @@
             this.txtLuong = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThongtinNV = new System.Windows.Forms.Label();
             this.txtmnv = new Guna.UI.WinForms.GunaTextBox();
             this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -63,6 +56,18 @@
             this.btnSua = new Guna.UI.WinForms.GunaButton();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnHienThi = new Guna.UI.WinForms.GunaButton();
+            this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -224,9 +229,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.dgv);
-            this.panel1.Location = new System.Drawing.Point(0, 241);
+            this.panel1.Controls.Add(this.lbThongtinNV);
+            this.panel1.Location = new System.Drawing.Point(0, 269);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(852, 254);
+            this.panel1.Size = new System.Drawing.Size(852, 226);
             this.panel1.TabIndex = 47;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -249,60 +255,12 @@
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.Name = "MaNV";
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Tên NV";
-            this.TenNV.Name = "TenNV";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // NgayVaoLam
-            // 
-            this.NgayVaoLam.DataPropertyName = "NgayVaoLam";
-            this.NgayVaoLam.HeaderText = "Ngày Vào Làm";
-            this.NgayVaoLam.Name = "NgayVaoLam";
-            // 
-            // Luong
-            // 
-            this.Luong.DataPropertyName = "Luong";
-            this.Luong.HeaderText = "Lương";
-            this.Luong.Name = "Luong";
-            // 
-            // SDTNV
-            // 
-            this.SDTNV.DataPropertyName = "SDTNV";
-            this.SDTNV.HeaderText = "SDT NhanVien";
-            this.SDTNV.Name = "SDTNV";
-            // 
-            // GmailNV
-            // 
-            this.GmailNV.DataPropertyName = "GmailNV";
-            this.GmailNV.HeaderText = "Gmail";
-            this.GmailNV.Name = "GmailNV";
-            // 
-            // TenTK
-            // 
-            this.TenTK.DataPropertyName = "TenTK";
-            this.TenTK.HeaderText = "Ten TK";
-            this.TenTK.Name = "TenTK";
-            // 
             // lbThongtinNV
             // 
             this.lbThongtinNV.AutoSize = true;
-            this.lbThongtinNV.BackColor = System.Drawing.Color.AliceBlue;
+            this.lbThongtinNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbThongtinNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongtinNV.Location = new System.Drawing.Point(3, 233);
+            this.lbThongtinNV.Location = new System.Drawing.Point(3, 0);
             this.lbThongtinNV.Name = "lbThongtinNV";
             this.lbThongtinNV.Size = new System.Drawing.Size(148, 13);
             this.lbThongtinNV.TabIndex = 47;
@@ -365,7 +323,7 @@
             this.btnlammoi.ForeColor = System.Drawing.Color.White;
             this.btnlammoi.Image = ((System.Drawing.Image)(resources.GetObject("btnlammoi.Image")));
             this.btnlammoi.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnlammoi.Location = new System.Drawing.Point(608, 179);
+            this.btnlammoi.Location = new System.Drawing.Point(573, 179);
             this.btnlammoi.Name = "btnlammoi";
             this.btnlammoi.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnlammoi.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -389,7 +347,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnTimKiem.Location = new System.Drawing.Point(461, 179);
+            this.btnTimKiem.Location = new System.Drawing.Point(428, 179);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnTimKiem.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -414,7 +372,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnXoa.Location = new System.Drawing.Point(317, 179);
+            this.btnXoa.Location = new System.Drawing.Point(287, 179);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnXoa.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -439,7 +397,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSua.Location = new System.Drawing.Point(172, 179);
+            this.btnSua.Location = new System.Drawing.Point(150, 179);
             this.btnSua.Name = "btnSua";
             this.btnSua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSua.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -464,7 +422,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnThem.Location = new System.Drawing.Point(23, 179);
+            this.btnThem.Location = new System.Drawing.Point(16, 179);
             this.btnThem.Name = "btnThem";
             this.btnThem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -479,7 +437,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -489,16 +447,125 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 9;
+            this.gunaElipse1.TargetControl = this.label1;
+            // 
+            // btnHienThi
+            // 
+            this.btnHienThi.AnimationHoverSpeed = 0.07F;
+            this.btnHienThi.AnimationSpeed = 0.03F;
+            this.btnHienThi.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnHienThi.BorderColor = System.Drawing.Color.Black;
+            this.btnHienThi.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnHienThi.FocusedColor = System.Drawing.Color.Empty;
+            this.btnHienThi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienThi.ForeColor = System.Drawing.Color.White;
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnHienThi.Location = new System.Drawing.Point(711, 179);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnHienThi.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnHienThi.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnHienThi.OnHoverImage = null;
+            this.btnHienThi.OnPressedColor = System.Drawing.Color.Black;
+            this.btnHienThi.Size = new System.Drawing.Size(113, 42);
+            this.btnHienThi.TabIndex = 64;
+            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTimKiem.BaseColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.FocusedBaseColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.Transparent;
+            this.txtTimKiem.FocusedForeColor = System.Drawing.Color.Black;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTimKiem.Location = new System.Drawing.Point(691, 237);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(160, 26);
+            this.txtTimKiem.TabIndex = 66;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 9;
+            this.gunaElipse2.TargetControl = this.txtTimKiem;
+            // 
+            // MaNV
+            // 
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã  NV";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TenNV
+            // 
+            this.TenNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên NV";
+            this.TenNV.Name = "TenNV";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // NgayVaoLam
+            // 
+            this.NgayVaoLam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayVaoLam.DataPropertyName = "NgayVaoLam";
+            this.NgayVaoLam.HeaderText = "Ngày Vào Làm";
+            this.NgayVaoLam.Name = "NgayVaoLam";
+            // 
+            // Luong
+            // 
+            this.Luong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Luong.DataPropertyName = "Luong";
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
+            // 
+            // SDTNV
+            // 
+            this.SDTNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDTNV.DataPropertyName = "SDTNV";
+            this.SDTNV.HeaderText = "SDT NV";
+            this.SDTNV.Name = "SDTNV";
+            // 
+            // GmailNV
+            // 
+            this.GmailNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GmailNV.DataPropertyName = "GmailNV";
+            this.GmailNV.HeaderText = "Gmail";
+            this.GmailNV.Name = "GmailNV";
+            // 
+            // TenTK
+            // 
+            this.TenTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenTK.DataPropertyName = "TenTK";
+            this.TenTK.HeaderText = "Ten TK";
+            this.TenTK.Name = "TenTK";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.txtMaTaiKhoan);
             this.Controls.Add(this.txtNgayvaolam);
             this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtmnv);
-            this.Controls.Add(this.lbThongtinNV);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.lbLuong);
@@ -519,10 +586,12 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NhanVien";
             this.Text = "NhanVien";
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -558,6 +627,10 @@
         private System.Windows.Forms.DateTimePicker txtNgaySinh;
         private System.Windows.Forms.DateTimePicker txtNgayvaolam;
         private System.Windows.Forms.ComboBox txtMaTaiKhoan;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaButton btnHienThi;
+        private Guna.UI.WinForms.GunaTextBox txtTimKiem;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
