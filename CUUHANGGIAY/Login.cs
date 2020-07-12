@@ -19,6 +19,7 @@ namespace CUUHANGGIAY
         {
             InitializeComponent();
         }
+        public int i;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -39,7 +40,7 @@ namespace CUUHANGGIAY
         {
 
         }
-
+      
         private void btnLogin_Click(object sender, EventArgs e)
         {
         //    SqlConnection camcam = new SqlConnection(@"Data Source = CAMCAM\SQLEXPRESS; Initial Catalog = CUAHANGGIAY; Integrated Security = True");
@@ -67,20 +68,34 @@ namespace CUUHANGGIAY
         //    catch (Exception ex)
         //    {
         //        MessageBox.Show("Lỗi kết nối.");
-        //    }
-        if(txtUser.Text=="CamCam"&& TxtPassword.Text== "2222")
+            if(txtUser.Text==""|| TxtPassword.Text=="")
             {
-                Form1 f = new Form1();
-                this.Hide();
-                f.ShowDialog();
-            }
-        else if(txtUser.Text==""&& TxtPassword.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn vui lòng nhập đầy đủ thông");
             }
             else
             {
-                MessageBox.Show("Bạn nhập sai tài khoản hoặc mật khẩu.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(txtUser.Text=="CamCam" && TxtPassword.Text=="2222")
+                {
+                    i = 2;
+                    MessageBox.Show("Cẩm Cẩm Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Form1 f = new Form1();
+                  
+                    
+                                this.Hide();
+                                f.ShowDialog();
+
+                }
+                else if(txtUser.Text=="HienNguyen"|| TxtPassword.Text=="3333")
+                {
+                    i = 3;
+                    MessageBox.Show(" Hiển Hiển Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form1 f = new Form1();
+                   
+                    this.Hide();
+                    f.ShowDialog();
+
+                }
+                
             }
         }
 

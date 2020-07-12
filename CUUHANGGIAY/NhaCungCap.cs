@@ -97,7 +97,7 @@ namespace CUUHANGGIAY
             {
                 try
                 {
-                    string query = "update NhaCungCap set TenNCC=N'" + cbTenNCC.Text + "',DiaChiNCC=N'"+txtMaNCC.Text+"',SDTNCC='"+txtSDT.Text+"',GmailNCC='"+txtMail.Text+"' where MaNCC='"+txtMaNCC.Text+"'";
+                    string query = "update NhaCungCap set TenNCC=N'" + cbTenNCC.Text + "',DiaChiNCC=N'"+txtDiaChi.Text+"',SDTNCC='"+txtSDT.Text+"',GmailNCC='"+txtMail.Text+"' where MaNCC='"+txtMaNCC.Text+"'";
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
@@ -152,17 +152,40 @@ namespace CUUHANGGIAY
             LoadDL();
             LoadCombobox();
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan(string valuatoFind)
         {
 
-            string query = " select *from NhaCungCap where MaNCC like '%" + txtTimKiem.Text + "%'";
+            string query = " select *from NhaCungCap where CONCAT( MaNCC,TenNCC,DiaChiNCC) like '%" + txtTimKiem.Text + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvNCC.DataSource = data;
 
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            TimKiemTheoTextChan();
+            TimKiemTheoTextChan(txtTimKiem.Text);
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (txtMaNCC.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+            try
+            {
+                string query = "delete NhaCungCap where MaNCC='" +txtMaNCC.Text+ "'";
+                DataTable data = clsConnect.Instance.exQuery(query);
+                MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDL();
+            }
+
+            catch
+            {
+                MessageBox.Show("Xóa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }

@@ -197,8 +197,9 @@ namespace CUUHANGGIAY
             txtmnv.Text = " ";
             
             txtMail.Text = " ";
-            //txtNgaySinh.Text = " ";
-            //txtNgayvaolam.Text = " ";
+            DateTime d = DateTime.Now;
+            txtNgaySinh.Text = d.ToString();
+            txtNgayvaolam.Text = d.ToString();
             txtSDT.Text = " ";
             txttenNV.Text = " ";
             txtMaTaiKhoan.Text =" ";
@@ -249,16 +250,16 @@ namespace CUUHANGGIAY
             LoadDL();
             LoadComBobox();
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan(string valuatoFind)
         {
 
-            string query = " select *from NhanVien nv,TaiKhoan tk where nv.MaTK=tk.MaTK and MaNV like '%" + txtTimKiem.Text + "%'";
+            string query = " select *from NhanVien nv,TaiKhoan tk where nv.MaTK=tk.MaTK and CONCAT( MaNV,TenNV,SDTNV,tk.TenTK) like '%" + valuatoFind + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgv.DataSource = data;
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            TimKiemTheoTextChan();
+            TimKiemTheoTextChan(txtTimKiem.Text);
 
         }
     }

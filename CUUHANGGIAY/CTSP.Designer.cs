@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTSP));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,21 +36,31 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtMaSP = new System.Windows.Forms.TextBox();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.txtTenLoaiSP = new System.Windows.Forms.TextBox();
-            this.txtMauSac = new System.Windows.Forms.TextBox();
-            this.txtSize = new System.Windows.Forms.TextBox();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtTonKho = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvCTSP = new System.Windows.Forms.DataGridView();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MauSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
+            this.btnThem = new Guna.UI.WinForms.GunaButton();
+            this.btnSua = new Guna.UI.WinForms.GunaButton();
+            this.txtTenSP = new System.Windows.Forms.ComboBox();
+            this.txtTenLoaiSP = new System.Windows.Forms.ComboBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.txtMauSac = new System.Windows.Forms.TextBox();
+            this.txtSize = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTSP)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 20);
+            this.label1.Location = new System.Drawing.Point(2, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 0;
@@ -58,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 54);
+            this.label2.Location = new System.Drawing.Point(2, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 1;
@@ -67,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(262, 20);
+            this.label3.Location = new System.Drawing.Point(262, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(262, 54);
+            this.label4.Location = new System.Drawing.Point(262, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 3;
@@ -85,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(262, 93);
+            this.label5.Location = new System.Drawing.Point(262, 117);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 4;
@@ -94,7 +105,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 126);
+            this.label6.Location = new System.Drawing.Point(6, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 5;
@@ -103,83 +114,219 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 90);
+            this.label7.Location = new System.Drawing.Point(2, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Tên Loại Phẩm:";
             // 
-            // txtMaSP
-            // 
-            this.txtMaSP.Location = new System.Drawing.Point(102, 17);
-            this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(128, 20);
-            this.txtMaSP.TabIndex = 7;
-            // 
-            // txtTenSP
-            // 
-            this.txtTenSP.Location = new System.Drawing.Point(103, 54);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(128, 20);
-            this.txtTenSP.TabIndex = 8;
-            // 
-            // txtTenLoaiSP
-            // 
-            this.txtTenLoaiSP.Location = new System.Drawing.Point(102, 90);
-            this.txtTenLoaiSP.Name = "txtTenLoaiSP";
-            this.txtTenLoaiSP.Size = new System.Drawing.Size(128, 20);
-            this.txtTenLoaiSP.TabIndex = 9;
-            // 
-            // txtMauSac
-            // 
-            this.txtMauSac.Location = new System.Drawing.Point(334, 17);
-            this.txtMauSac.Name = "txtMauSac";
-            this.txtMauSac.Size = new System.Drawing.Size(144, 20);
-            this.txtMauSac.TabIndex = 10;
-            // 
-            // txtSize
-            // 
-            this.txtSize.Location = new System.Drawing.Point(334, 54);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(144, 20);
-            this.txtSize.TabIndex = 11;
-            // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(334, 93);
+            this.txtGiaBan.Location = new System.Drawing.Point(334, 117);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(144, 20);
+            this.txtGiaBan.Size = new System.Drawing.Size(128, 20);
             this.txtGiaBan.TabIndex = 12;
             // 
             // txtTonKho
             // 
-            this.txtTonKho.Location = new System.Drawing.Point(103, 126);
+            this.txtTonKho.Location = new System.Drawing.Point(103, 150);
             this.txtTonKho.Name = "txtTonKho";
-            this.txtTonKho.Size = new System.Drawing.Size(129, 20);
+            this.txtTonKho.Size = new System.Drawing.Size(127, 20);
             this.txtTonKho.TabIndex = 13;
             // 
-            // dataGridView1
+            // dgvCTSP
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-8, 152);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 160);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvCTSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSP,
+            this.TenLoai,
+            this.TenSP,
+            this.MauSac,
+            this.Size,
+            this.GiaBan,
+            this.SoLuongTon});
+            this.dgvCTSP.Location = new System.Drawing.Point(-8, 185);
+            this.dgvCTSP.Name = "dgvCTSP";
+            this.dgvCTSP.Size = new System.Drawing.Size(651, 127);
+            this.dgvCTSP.TabIndex = 14;
+            this.dgvCTSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // MaSP
+            // 
+            this.MaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã SP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenLoai
+            // 
+            this.TenLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenLoai.DataPropertyName = "TenLoai";
+            this.TenLoai.HeaderText = "Tên Loại SP";
+            this.TenLoai.Name = "TenLoai";
+            // 
+            // TenSP
+            // 
+            this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên SP";
+            this.TenSP.Name = "TenSP";
+            // 
+            // MauSac
+            // 
+            this.MauSac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MauSac.DataPropertyName = "MauSac";
+            this.MauSac.HeaderText = "Màu Sắc";
+            this.MauSac.Name = "MauSac";
+            // 
+            // Size
+            // 
+            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Size.DataPropertyName = "Size";
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            // 
+            // GiaBan
+            // 
+            this.GiaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GiaBan.DataPropertyName = "GiaBan";
+            this.GiaBan.HeaderText = "Giá Bán";
+            this.GiaBan.Name = "GiaBan";
+            // 
+            // SoLuongTon
+            // 
+            this.SoLuongTon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuongTon.DataPropertyName = "SoLuongTon";
+            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
+            this.SoLuongTon.Name = "SoLuongTon";
+            // 
+            // btnBack
+            // 
+            this.btnBack.AnimationHoverSpeed = 0.07F;
+            this.btnBack.AnimationSpeed = 0.03F;
+            this.btnBack.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBack.BaseColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBack.BorderColor = System.Drawing.Color.Black;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBack.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnBack.Location = new System.Drawing.Point(3, -1);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.OnHoverBaseColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBack.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBack.OnHoverImage = null;
+            this.btnBack.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBack.Size = new System.Drawing.Size(44, 42);
+            this.btnBack.TabIndex = 64;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.AnimationHoverSpeed = 0.07F;
+            this.btnThem.AnimationSpeed = 0.03F;
+            this.btnThem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnThem.BorderColor = System.Drawing.Color.Black;
+            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnThem.Location = new System.Drawing.Point(489, 30);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThem.OnHoverImage = null;
+            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThem.Size = new System.Drawing.Size(113, 42);
+            this.btnThem.TabIndex = 65;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.AnimationHoverSpeed = 0.07F;
+            this.btnSua.AnimationSpeed = 0.03F;
+            this.btnSua.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
+            this.btnSua.BorderColor = System.Drawing.Color.Black;
+            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSua.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSua.Location = new System.Drawing.Point(489, 95);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSua.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSua.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSua.OnHoverImage = null;
+            this.btnSua.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSua.Size = new System.Drawing.Size(113, 42);
+            this.btnSua.TabIndex = 66;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.FormattingEnabled = true;
+            this.txtTenSP.Location = new System.Drawing.Point(102, 75);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(128, 21);
+            this.txtTenSP.TabIndex = 69;
+            this.txtTenSP.SelectedIndexChanged += new System.EventHandler(this.txtTenSP_SelectedIndexChanged);
+            // 
+            // txtTenLoaiSP
+            // 
+            this.txtTenLoaiSP.FormattingEnabled = true;
+            this.txtTenLoaiSP.Location = new System.Drawing.Point(102, 111);
+            this.txtTenLoaiSP.Name = "txtTenLoaiSP";
+            this.txtTenLoaiSP.Size = new System.Drawing.Size(128, 21);
+            this.txtTenLoaiSP.TabIndex = 70;
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.Location = new System.Drawing.Point(102, 41);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(128, 20);
+            this.txtMaSP.TabIndex = 73;
+            // 
+            // txtMauSac
+            // 
+            this.txtMauSac.Location = new System.Drawing.Point(334, 30);
+            this.txtMauSac.Name = "txtMauSac";
+            this.txtMauSac.Size = new System.Drawing.Size(128, 20);
+            this.txtMauSac.TabIndex = 74;
+            // 
+            // txtSize
+            // 
+            this.txtSize.Location = new System.Drawing.Point(334, 78);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(128, 20);
+            this.txtSize.TabIndex = 75;
             // 
             // CTSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(533, 309);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtTonKho);
-            this.Controls.Add(this.txtGiaBan);
+            this.ClientSize = new System.Drawing.Size(638, 308);
             this.Controls.Add(this.txtSize);
             this.Controls.Add(this.txtMauSac);
+            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtTenLoaiSP);
             this.Controls.Add(this.txtTenSP);
-            this.Controls.Add(this.txtMaSP);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.dgvCTSP);
+            this.Controls.Add(this.txtTonKho);
+            this.Controls.Add(this.txtGiaBan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -189,7 +336,8 @@
             this.Controls.Add(this.label1);
             this.Name = "CTSP";
             this.Text = "CTSP";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.CTSP_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,13 +352,23 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMaSP;
-        private System.Windows.Forms.TextBox txtTenSP;
-        private System.Windows.Forms.TextBox txtTenLoaiSP;
-        private System.Windows.Forms.TextBox txtMauSac;
-        private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.TextBox txtTonKho;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCTSP;
+        private Guna.UI.WinForms.GunaButton btnBack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MauSac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
+        private Guna.UI.WinForms.GunaButton btnThem;
+        private Guna.UI.WinForms.GunaButton btnSua;
+        private System.Windows.Forms.ComboBox txtTenSP;
+        private System.Windows.Forms.ComboBox txtTenLoaiSP;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.TextBox txtMauSac;
+        private System.Windows.Forms.TextBox txtSize;
     }
 }

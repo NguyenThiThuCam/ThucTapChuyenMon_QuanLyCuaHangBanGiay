@@ -13,6 +13,7 @@ namespace CUUHANGGIAY
 {
     public partial class PhieuNhap : Form
     {
+         private string strConn = @"Data Source=CAMCAM\SQLEXPRESS;Initial Catalog=CUAHANGGIAY;Integrated Security=True";
         public PhieuNhap()
         {
             InitializeComponent();
@@ -23,6 +24,9 @@ namespace CUUHANGGIAY
         {
             txtMaPN.Text = " ";
             cbTenNV.Text = " ";
+            DateTime d = DateTime.Now;
+            dateTimeNL.Text = d.ToString();
+           
             CbNCC.Text = "";
             cbTinhTrang.Text = "";
             txtTongTien.Text = "";
@@ -77,39 +81,70 @@ namespace CUUHANGGIAY
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
-           i= dgvPN.CurrentRow.Index;
+            i = dgvPN.CurrentRow.Index;
             txtMaPN.Text = dgvPN.Rows[i].Cells[0].Value.ToString();
-            DatetimeNS.Text =dgvPN.Rows[i].Cells[1].Value.ToString();
-            txtTongTien.Text= dgvPN.Rows[i].Cells[2].Value.ToString();
-           cbTinhTrang.Text= dgvPN.Rows[i].Cells[3].Value.ToString();
-           CbNCC.Text= dgvPN.Rows[i].Cells[4].Value.ToString();
-          cbTenNV.Text= dgvPN.Rows[i].Cells[5].Value.ToString();
+            dateTimeNL.Text = dgvPN.Rows[i].Cells[1].Value.ToString();
+            txtTongTien.Text = dgvPN.Rows[i].Cells[2].Value.ToString();
+            cbTinhTrang.Text = dgvPN.Rows[i].Cells[3].Value.ToString();
+            CbNCC.Text = dgvPN.Rows[i].Cells[4].Value.ToString();
+            cbTenNV.Text = dgvPN.Rows[i].Cells[5].Value.ToString();
 
+
+            if (dgvPN.Columns[e.ColumnIndex].Name == "ChiTiet")
+            {
+                CTPN ctpn = new CTPN(txtMaPN.Text, CbNCC.Text, cbTenNV.Text, dateTimeNL.Text, txtTongTien.Text,cbTinhTrang.Text);
+
+                ctpn.FormClosed += new FormClosedEventHandler(moform);
+                this.Hide();
+                ctpn.ShowDialog();
+            }
         }
-
+        private void moform(object sender, FormClosedEventArgs e)
+        {
+            this.Visible = true;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaPN.Text=="")
-            {
-                MessageBox.Show("Vui lòng nhập thông tin cần thêm.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            else
-            {
-                try
-                {
-                    string query = " insert into PhieuNhap values('"+txtMaPN.Text+"','"+DatetimeNS.Text+"','"+txtTongTien.Text+"',N'"+cbTinhTrang.Text+"',N'"+CbNCC.Text+"',N'"+cbTenNV.Text+"')";
-                    DataTable data = clsConnect.Instance.exQuery(query);
-                    MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK , MessageBoxIcon.Information);
-                    LoadDL();
-                    LoadComBobox();
-                }
-                catch
-                {
-                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string querry = "insert into PhieuNhap values(@ngaylap,@tongtiennhap,@tinhtrang,@mancc,@manv)";
+            SqlConnection conn = new SqlConnection(strConn);
+            conn.Open();
+            SqlCommand command = new SqlCommand(querry, conn);
 
-                }
+            command.Parameters.AddWithValue("@ngaylap", dateTimeNL.Value.ToString("yyyy/MM/dd"));
 
+            command.Parameters.AddWithValue("@tongtiennhap", 0);
+            command.Parameters.AddWithValue("@tinhtrang", false);
+            command.Parameters.AddWithValue("@mancc", CbNCC.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@manv", cbTenNV.SelectedValue.ToString());
+           
+            int a = command.ExecuteNonQuery();
+            if (a > 0)
+            {
+                PhieuNhap_Load(sender, e);
+                MessageBox.Show("thêm thanh cong");
             }
+            conn.Close();
+            //if (txtMaPN.Text=="")
+            //{
+            //    MessageBox.Show("Vui lòng nhập thông tin cần thêm.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        string query = " insert into PhieuNhap values('"+txtMaPN.Text+"','"+dateTimeNL.Text+"','"+txtTongTien.Text+"',N'"+cbTinhTrang.Text+"',N'"+CbNCC.Text+"',N'"+cbTenNV.Text+"')";
+            //        DataTable data = clsConnect.Instance.exQuery(query);
+            //        MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK , MessageBoxIcon.Information);
+            //        LoadDL();
+            //        LoadComBobox();
+            //    }
+            //    catch
+            //    {
+            //        MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //    }
+
+            //}
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -123,10 +158,11 @@ namespace CUUHANGGIAY
             {
                 try {
 
-                    string query = " update PhieuNhap set MaNCC='" + CbNCC.Text + "', NgayLap='" + DatetimeNS.Text + "',MaNV='"+cbTenNV.Text+"',TinhTrang='"+cbTinhTrang.Text+"',TongTienNhap='"+txtTongTien.Text+"'where MaPN='"+txtMaPN.Text+"'";
+                    string query = " update PhieuNhap set NgayLap='" + dateTimeNL.Text + "',TongTienNhap='" + txtTongTien.Text + "',TinhTrang='" + cbTinhTrang.Text + "' ,MaNCC='" + CbNCC.SelectedValue.ToString() + "',MaNV='"+cbTenNV.SelectedValue.ToString() + "'where MaPN='"+txtMaPN.Text+"'";
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
+                    lammoi();
                 }
                 catch
                 {
@@ -148,6 +184,7 @@ namespace CUUHANGGIAY
                 DataTable data = clsConnect.Instance.exQuery(query);
                 LoadDL();
                 MessageBox.Show("Xóa thành công.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lammoi();
 
             }
             catch
@@ -181,16 +218,16 @@ namespace CUUHANGGIAY
             LoadDL();
             LoadComBobox();
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan( string valuatoFind)
         {
-            string query = " select *from PhieuNhap pn,NhanVien nv,NhaCungCap ncc where pn.MaNV=nv.MaNV and MaPN like '%" + txtTimKiem.Text + "%'";
+            string query = " select *from PhieuNhap pn,NhanVien nv,NhaCungCap ncc where pn.MaNV=nv.MaNV and CONCAT( MaPN,nv.TenNV,ncc.TenNCC) like '%" + valuatoFind + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvPN.DataSource = data;
 
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            TimKiemTheoTextChan();
+            TimKiemTheoTextChan(txtTimKiem.Text);
         }
     }
 }

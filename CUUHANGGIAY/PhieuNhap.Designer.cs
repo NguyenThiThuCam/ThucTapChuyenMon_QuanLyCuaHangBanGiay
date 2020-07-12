@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.DatetimeNS = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeNL = new System.Windows.Forms.DateTimePicker();
             this.txtTongTien = new Guna.UI.WinForms.GunaTextBox();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.btnSua = new Guna.UI.WinForms.GunaButton();
@@ -60,6 +60,7 @@
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPN)).BeginInit();
             this.SuspendLayout();
@@ -147,14 +148,14 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "Ngày Lập:";
             // 
-            // DatetimeNS
+            // dateTimeNL
             // 
-            this.DatetimeNS.CustomFormat = "yyyy-MM-dd";
-            this.DatetimeNS.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatetimeNS.Location = new System.Drawing.Point(108, 95);
-            this.DatetimeNS.Name = "DatetimeNS";
-            this.DatetimeNS.Size = new System.Drawing.Size(160, 20);
-            this.DatetimeNS.TabIndex = 56;
+            this.dateTimeNL.CustomFormat = "yyyy-MM-dd";
+            this.dateTimeNL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeNL.Location = new System.Drawing.Point(108, 95);
+            this.dateTimeNL.Name = "dateTimeNL";
+            this.dateTimeNL.Size = new System.Drawing.Size(160, 20);
+            this.dateTimeNL.TabIndex = 56;
             // 
             // txtTongTien
             // 
@@ -319,6 +320,7 @@
             // 
             // dgvPN
             // 
+            this.dgvPN.AllowUserToDeleteRows = false;
             this.dgvPN.BackgroundColor = System.Drawing.Color.White;
             this.dgvPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -327,7 +329,8 @@
             this.TongTienNhap,
             this.TinhTrang,
             this.TenNCC,
-            this.MaNV});
+            this.MaNV,
+            this.ChiTiet});
             this.dgvPN.Location = new System.Drawing.Point(-1, 32);
             this.dgvPN.Name = "dgvPN";
             this.dgvPN.Size = new System.Drawing.Size(852, 212);
@@ -410,6 +413,8 @@
             this.MaPN.DataPropertyName = "MaPN";
             this.MaPN.HeaderText = "Mã Phiêu Nhập";
             this.MaPN.Name = "MaPN";
+            this.MaPN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaPN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // NgayLap
             // 
@@ -446,6 +451,13 @@
             this.MaNV.HeaderText = "Tên Nhân Viên";
             this.MaNV.Name = "MaNV";
             // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "Chi Tiết";
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTiet.Text = "";
+            // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +476,7 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtTongTien);
-            this.Controls.Add(this.DatetimeNS);
+            this.Controls.Add(this.dateTimeNL);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -495,7 +507,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker DatetimeNS;
+        private System.Windows.Forms.DateTimePicker dateTimeNL;
         private Guna.UI.WinForms.GunaTextBox txtTongTien;
         private Guna.UI.WinForms.GunaButton btnThem;
         private Guna.UI.WinForms.GunaButton btnSua;
@@ -517,5 +529,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
     }
 }

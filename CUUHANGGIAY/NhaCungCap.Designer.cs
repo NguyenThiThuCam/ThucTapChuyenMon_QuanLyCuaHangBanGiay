@@ -45,6 +45,11 @@
             this.txtDiaChi = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvNCC = new System.Windows.Forms.DataGridView();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GmailNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThongtinHD = new System.Windows.Forms.Label();
             this.cbTenNCC = new System.Windows.Forms.ComboBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -54,11 +59,6 @@
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
             this.txtMaNCC = new Guna.UI.WinForms.GunaTextBox();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GmailNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
@@ -301,6 +301,41 @@
             this.dgvNCC.TabIndex = 49;
             this.dgvNCC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellContentClick);
             // 
+            // MaNCC
+            // 
+            this.MaNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // DiaChiNCC
+            // 
+            this.DiaChiNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiaChiNCC.DataPropertyName = "DiaChiNCC";
+            this.DiaChiNCC.HeaderText = "Địa Chỉ Nhà Cung Cấp";
+            this.DiaChiNCC.Name = "DiaChiNCC";
+            // 
+            // SDTNCC
+            // 
+            this.SDTNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDTNCC.DataPropertyName = "SDTNCC";
+            this.SDTNCC.HeaderText = "SĐT Nhà Cung Cấp";
+            this.SDTNCC.Name = "SDTNCC";
+            // 
+            // GmailNCC
+            // 
+            this.GmailNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GmailNCC.DataPropertyName = "GmailNCC";
+            this.GmailNCC.HeaderText = "Gmail Nhà Cung Cấp";
+            this.GmailNCC.Name = "GmailNCC";
+            // 
             // lbThongtinHD
             // 
             this.lbThongtinHD.AutoSize = true;
@@ -377,6 +412,7 @@
             this.btnXoa.TabIndex = 62;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // gunaElipse3
             // 
@@ -416,41 +452,6 @@
             this.txtMaNCC.SelectedText = "";
             this.txtMaNCC.Size = new System.Drawing.Size(160, 26);
             this.txtMaNCC.TabIndex = 51;
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
-            this.MaNCC.Name = "MaNCC";
-            // 
-            // TenNCC
-            // 
-            this.TenNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenNCC.DataPropertyName = "TenNCC";
-            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
-            this.TenNCC.Name = "TenNCC";
-            // 
-            // DiaChiNCC
-            // 
-            this.DiaChiNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiaChiNCC.DataPropertyName = "DiaChiNCC";
-            this.DiaChiNCC.HeaderText = "Địa Chỉ Nhà Cung Cấp";
-            this.DiaChiNCC.Name = "DiaChiNCC";
-            // 
-            // SDTNCC
-            // 
-            this.SDTNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDTNCC.DataPropertyName = "SDTNCC";
-            this.SDTNCC.HeaderText = "SĐT Nhà Cung Cấp";
-            this.SDTNCC.Name = "SDTNCC";
-            // 
-            // GmailNCC
-            // 
-            this.GmailNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GmailNCC.DataPropertyName = "GmailNCC";
-            this.GmailNCC.HeaderText = "Gmail Nhà Cung Cấp";
-            this.GmailNCC.Name = "GmailNCC";
             // 
             // NhaCungCap
             // 

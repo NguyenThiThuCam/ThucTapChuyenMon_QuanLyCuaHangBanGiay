@@ -55,12 +55,15 @@
             this.btnHienThi = new Guna.UI.WinForms.GunaButton();
             this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IN = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.mahoadon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
@@ -198,12 +201,13 @@
             this.dgvHD.BackgroundColor = System.Drawing.Color.White;
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHD,
+            this.mahoadon,
             this.NgayLap,
             this.TongTien,
             this.TinhTrangHD,
             this.TenNV,
-            this.TenKH});
+            this.TenKH,
+            this.ChiTiet});
             this.dgvHD.Location = new System.Drawing.Point(-3, 17);
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.Size = new System.Drawing.Size(846, 180);
@@ -429,12 +433,40 @@
             this.gunaElipse2.Radius = 9;
             this.gunaElipse2.TargetControl = this.txtTimKiem;
             // 
-            // MaHD
+            // IN
             // 
-            this.MaHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaHD.DataPropertyName = "MaHD";
-            this.MaHD.HeaderText = "Mã HD";
-            this.MaHD.Name = "MaHD";
+            this.IN.AnimationHoverSpeed = 0.07F;
+            this.IN.AnimationSpeed = 0.03F;
+            this.IN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.IN.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.IN.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.IN.FocusedColor = System.Drawing.Color.Empty;
+            this.IN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.IN.ForeColor = System.Drawing.Color.Black;
+            this.IN.Image = ((System.Drawing.Image)(resources.GetObject("IN.Image")));
+            this.IN.ImageSize = new System.Drawing.Size(20, 20);
+            this.IN.Location = new System.Drawing.Point(130, 238);
+            this.IN.Name = "IN";
+            this.IN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.IN.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.IN.OnHoverForeColor = System.Drawing.Color.White;
+            this.IN.OnHoverImage = null;
+            this.IN.OnPressedColor = System.Drawing.Color.Black;
+            this.IN.Size = new System.Drawing.Size(121, 42);
+            this.IN.TabIndex = 65;
+            this.IN.Text = "IN HÓA ĐƠN";
+            this.IN.Click += new System.EventHandler(this.IN_Click);
+            // 
+            // gunaElipse3
+            // 
+            this.gunaElipse3.Radius = 9;
+            this.gunaElipse3.TargetControl = this.IN;
+            // 
+            // mahoadon
+            // 
+            this.mahoadon.DataPropertyName = "MaHD";
+            this.mahoadon.HeaderText = " Mã HĐ";
+            this.mahoadon.Name = "mahoadon";
             // 
             // NgayLap
             // 
@@ -471,12 +503,20 @@
             this.TenKH.HeaderText = "Tên KH";
             this.TenKH.Name = "TenKH";
             // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "Chi Tiết";
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(835, 447);
+            this.Controls.Add(this.IN);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.txtMaKH);
@@ -537,11 +577,14 @@
         private Guna.UI.WinForms.GunaButton btnHienThi;
         private Guna.UI.WinForms.GunaTextBox txtTimKiem;
         private Guna.UI.WinForms.GunaElipse gunaElipse2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private Guna.UI.WinForms.GunaButton IN;
+        private Guna.UI.WinForms.GunaElipse gunaElipse3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mahoadon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
     }
 }

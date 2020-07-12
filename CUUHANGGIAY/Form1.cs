@@ -19,12 +19,19 @@ namespace CUUHANGGIAY
         {
             InitializeComponent();
         }
-
+       public int r;
         private void Form1_Load(object sender, EventArgs e)
         {
             loadform(new Logo());
             timer3.Start();
-         
+            Login login = new Login();
+            r = login.i;
+            MessageBox.Show(r.ToString());
+           
+          
+
+
+
 
         }
 
@@ -110,7 +117,7 @@ namespace CUUHANGGIAY
 
         private void pnMain_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void btnHD_Click(object sender, EventArgs e)
@@ -120,7 +127,13 @@ namespace CUUHANGGIAY
 
         private void btnNCC_Click(object sender, EventArgs e)
         {
-            loadform(new NhaCungCap());
+           
+            if (r == 2)
+            {
+                loadform(new NhaCungCap());
+
+            }
+           
 
        
                
@@ -143,7 +156,12 @@ namespace CUUHANGGIAY
 
         private void btnNV_Click(object sender, EventArgs e)
         {
-            loadform(new NhanVien());
+            if(r==2)
+            {
+                loadform(new NhanVien());
+
+            }
+                     
         }
 
         private void lbMenu_Click(object sender, EventArgs e)
@@ -167,6 +185,11 @@ namespace CUUHANGGIAY
           
 
            
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnMail_Click(object sender, EventArgs e)

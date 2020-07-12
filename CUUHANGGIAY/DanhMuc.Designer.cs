@@ -316,6 +316,7 @@
             this.btnXoa.TabIndex = 38;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // txtTimKiem
             // 

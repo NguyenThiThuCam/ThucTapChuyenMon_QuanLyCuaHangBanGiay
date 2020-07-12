@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.lbChucVu = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -41,7 +42,7 @@
             this.lbMenu = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.btnThongKe = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.btnNCC = new Guna.UI.WinForms.GunaButton();
             this.btnPN = new Guna.UI.WinForms.GunaButton();
@@ -61,7 +62,6 @@
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lbChucVu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -101,6 +101,17 @@
             this.panel9.Size = new System.Drawing.Size(1029, 517);
             this.panel9.TabIndex = 6;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            // 
+            // lbChucVu
+            // 
+            this.lbChucVu.AutoSize = true;
+            this.lbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChucVu.ForeColor = System.Drawing.Color.Beige;
+            this.lbChucVu.Location = new System.Drawing.Point(88, 31);
+            this.lbChucVu.Name = "lbChucVu";
+            this.lbChucVu.Size = new System.Drawing.Size(162, 22);
+            this.lbChucVu.TabIndex = 5;
+            this.lbChucVu.Text = "CẨM CẨM SHOP";
             // 
             // panel8
             // 
@@ -158,7 +169,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Gold;
             this.panel3.Controls.Add(this.gunaButton3);
-            this.panel3.Controls.Add(this.gunaButton2);
+            this.panel3.Controls.Add(this.btnThongKe);
             this.panel3.Controls.Add(this.gunaButton1);
             this.panel3.Controls.Add(this.btnNCC);
             this.panel3.Controls.Add(this.btnPN);
@@ -196,30 +207,31 @@
             this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
-            // gunaButton2
+            // btnThongKe
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackColor = System.Drawing.Color.Gold;
-            this.gunaButton2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
-            this.gunaButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaButton2.Location = new System.Drawing.Point(0, 385);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(250, 48);
-            this.gunaButton2.TabIndex = 7;
-            this.gunaButton2.Text = "THỐNG KÊ";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnThongKe.AnimationHoverSpeed = 0.07F;
+            this.btnThongKe.AnimationSpeed = 0.03F;
+            this.btnThongKe.BackColor = System.Drawing.Color.Gold;
+            this.btnThongKe.BaseColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.BorderColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThongKe.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThongKe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 385);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnThongKe.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThongKe.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThongKe.OnHoverImage = null;
+            this.btnThongKe.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThongKe.Size = new System.Drawing.Size(250, 48);
+            this.btnThongKe.TabIndex = 7;
+            this.btnThongKe.Text = "THỐNG KÊ";
+            this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // gunaButton1
             // 
@@ -357,7 +369,7 @@
             this.btnNV.BackColor = System.Drawing.Color.Gold;
             this.btnNV.BaseColor = System.Drawing.Color.Transparent;
             this.btnNV.BorderColor = System.Drawing.Color.Transparent;
-            this.btnNV.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnNV.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnNV.FocusedColor = System.Drawing.Color.Empty;
             this.btnNV.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNV.ForeColor = System.Drawing.Color.Black;
@@ -567,17 +579,6 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // lbChucVu
-            // 
-            this.lbChucVu.AutoSize = true;
-            this.lbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChucVu.ForeColor = System.Drawing.Color.Beige;
-            this.lbChucVu.Location = new System.Drawing.Point(88, 31);
-            this.lbChucVu.Name = "lbChucVu";
-            this.lbChucVu.Size = new System.Drawing.Size(162, 22);
-            this.lbChucVu.TabIndex = 5;
-            this.lbChucVu.Text = "CẨM CẨM SHOP";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,7 +629,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI.WinForms.GunaButton gunaButton3;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
+        private Guna.UI.WinForms.GunaButton btnThongKe;
         private Guna.UI.WinForms.GunaButton btninsta;
         private Guna.UI.WinForms.GunaButton btnMail;
         private Guna.UI.WinForms.GunaButton btnDX;

@@ -59,7 +59,8 @@ namespace CUUHANGGIAY
             txtMaHD.Text = " ";
             txtMaKH.Text = " ";
             cbTenNV.Text = " ";
-            //txtNgayLap.Text = " ";
+            DateTime d = DateTime.Now;
+            txtNgayLap.Text = d.ToString();
             txtTongTien.Text = " ";
             txtTinhTrang.Text = " ";
         }
@@ -80,7 +81,19 @@ namespace CUUHANGGIAY
 
             cbTenNV.Text=dgvHD.Rows[i].Cells[4].Value.ToString();
            txtMaKH.Text=dgvHD.Rows[i].Cells[5].Value.ToString();
+            if (dgvHD.Columns[e.ColumnIndex].Name == "ChiTiet")
+            {
+                CTHD cthd = new CTHD(txtMaHD.Text, cbTenNV.Text,txtMaKH.Text,txtNgayLap.Text,txtTongTien.Text, txtTinhTrang.Text);
 
+                cthd.FormClosed += new FormClosedEventHandler(moform);
+                this.Hide();
+                cthd.ShowDialog();
+            }
+
+        }
+        private void moform(object sender, FormClosedEventArgs e)
+        {
+            this.Visible = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -169,7 +182,7 @@ namespace CUUHANGGIAY
             LoadComBoBox();
     
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan( )
         {
 
             //string query = " select * from HoaDon where like TenNV '%" + txtTimKiem.Text + "%' ";
@@ -178,7 +191,7 @@ namespace CUUHANGGIAY
             //cbTenNV.ValueMember = "MaNV";
             //cbTenNV.DisplayMember = "TenNV";
 
-            string query = " select* from HoaDon hd, NhanVien nv,KhachHang kh  where hd.MaNV = nv.MaNV and hd.MaKH = kh.MaKH and nv.tenNv like N'%" + txtTimKiem.Text + "%'";
+            string query = " select* from HoaDon hd, NhanVien nv,KhachHang kh  where hd.MaNV = nv.MaNV and hd.MaKH = kh.MaKH and  nv.tenNv like N'%" + txtTimKiem.Text + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvHD.DataSource = data;
 
@@ -197,5 +210,16 @@ namespace CUUHANGGIAY
         {
 
         }
+        public static int mahd;
+        private void IN_Click(object sender, EventArgs e)
+        {
+            mahd = Convert.ToInt32(txtMaHD.Text.Trim());
+            this.Hide();
+            InHoaDon back = new InHoaDon();
+            back.Visible = true;
+
+           
+        }
+      
     }
 }

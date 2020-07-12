@@ -157,23 +157,45 @@ namespace CUUHANGGIAY
             LoadDL();
             LoadCombox();
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan(string valuatoFind)
         {
 
-            string query = " select *from LoaiSP where MaLoai like '%" + txtTimKiem.Text + "%'";
+            string query = " select *from LoaiSP where CONCAT(MaLoai,TenLoai) like '%" + valuatoFind + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvDM.DataSource = data;
 
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            TimKiemTheoTextChan();
+            TimKiemTheoTextChan(txtTimKiem.Text);
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (txtmaloai.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+            try {
+                string query = "delete LoaiSP where MaLoai='" + txtmaloai.Text + "'";
+                DataTable data = clsConnect.Instance.exQuery(query);
+                MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDL();
+            }
+
+            catch
+            {
+                MessageBox.Show("Xóa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }

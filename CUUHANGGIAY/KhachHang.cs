@@ -25,7 +25,8 @@ namespace CUUHANGGIAY
             cbMaKH.Text = " ";
             txtTenKH.Text = " ";
             txtSDT.Text = " ";
-         //   txtNgaySinh.Text = " ";
+            DateTime d = DateTime.Now;
+          txtNgaySinh.Text = d.ToString();
             txtGmail.Text = " ";
             txtDiaChi.Text = " ";
         }
@@ -186,9 +187,9 @@ namespace CUUHANGGIAY
             LoadDL();
             
         }
-        public void TimKiemTheoTextChan()
+        public void TimKiemTheoTextChan( string valuatoFind)
         {
-            string query = " select *from KhachHang where MaKH like '%" + txtTimKiem.Text + "%'";
+            string query = " select *from KhachHang where CONCAT( MaKH,TenKH,DiaChi) like '%" + valuatoFind + "%'";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvKH.DataSource = data;
 
@@ -196,7 +197,7 @@ namespace CUUHANGGIAY
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            TimKiemTheoTextChan();
+            TimKiemTheoTextChan(txtTimKiem.Text);
         }
     }
     }
