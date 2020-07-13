@@ -277,3 +277,4 @@ C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\zh-CHS\Microsoft.Rep
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\RdlCompile.cache
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\RdlCompile.compiled
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.TonKho.resources

@@ -60,6 +60,8 @@
             this.btnHienThi = new Guna.UI.WinForms.GunaButton();
             this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +70,7 @@
             this.SDTNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -248,7 +251,8 @@
             this.Luong,
             this.SDTNV,
             this.GmailNV,
-            this.TenTK});
+            this.TenTK,
+            this.ChucVu});
             this.dgv.Location = new System.Drawing.Point(-1, 32);
             this.dgv.Name = "dgv";
             this.dgv.Size = new System.Drawing.Size(852, 218);
@@ -499,6 +503,23 @@
             this.gunaElipse2.Radius = 9;
             this.gunaElipse2.TargetControl = this.txtTimKiem;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(584, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Ngày Vào Làm:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(681, 136);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 68;
+            // 
             // MaNV
             // 
             this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -555,11 +576,19 @@
             this.TenTK.HeaderText = "Ten TK";
             this.TenTK.Name = "TenTK";
             // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức Vụ";
+            this.ChucVu.Name = "ChucVu";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.txtMaTaiKhoan);
@@ -639,5 +668,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDTNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn GmailNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

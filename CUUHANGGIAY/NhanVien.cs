@@ -160,23 +160,23 @@ namespace CUUHANGGIAY
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (txtmnv.Text=="") {
-                MessageBox.Show("Vui lòng chọn dòng xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-                }
-            try
-            {
+            //if (txtmnv.Text=="") {
+            //    MessageBox.Show("Vui lòng chọn dòng xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //    }
+            //try
+            //{
                 string query = "delete NhanVien where MaNV='" + txtmnv.Text + "'";
                 DataTable data = clsConnect.Instance.exQuery(query);
                 
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDL();
-                lammoi();
-            }
-            catch {
-                MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    lammoi();
+            //}
+            //catch {
+            //    MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
+            //}
 
         }
         public void TimKiemMa()
@@ -228,6 +228,7 @@ namespace CUUHANGGIAY
             txtMail.Text= dgv.Rows[i].Cells[6].Value.ToString();
             txtNgayvaolam.Text = dgv.Rows[i].Cells[3].Value.ToString();
             txtLuong.Text = dgv.Rows[i].Cells[4].Value.ToString();
+           comboBox1.Text = dgv.Rows[i].Cells[8].Value.ToString();
         }
 
         private void txtNgayvaolam_TextChanged(object sender, EventArgs e)

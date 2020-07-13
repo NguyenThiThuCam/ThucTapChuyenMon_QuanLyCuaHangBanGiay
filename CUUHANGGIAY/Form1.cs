@@ -15,25 +15,40 @@ namespace CUUHANGGIAY
 {
     public partial class Form1 : Form
     {
+        public string tentk;
         public Form1()
         {
             InitializeComponent();
         }
-       public int r;
+        public int r;
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadform(new Logo());
-            timer3.Start();
-            Login login = new Login();
-            r = login.i;
-            MessageBox.Show(r.ToString());
-           
-          
-
-
-
-
+        //    // loadform(new Logo());
+        //    timer3.Start();
+        //    //Login login = new Login();
+        //    //r = login.i;
+        //    //MessageBox.Show(r.ToString());
+        //    string query = " select *from TaiKhoan where MaTK='" + txtUser.Text + "' and MatKhau='" + TxtPassword.Text + "' ";
+        //    DataTable data = clsConnect.Instance.exQuery(query);
+        //    NhanVien nv = data.Columns
+        //        if (nv != null)
+        //    {
+        //        if (nv.CHUCVU.ToString().Equals("Thu Ngân"))
+        //        {
+        //            btnPN.Enabled = false;
+        //            btnThongKe.Enabled = false;
+        //            btnThuChi.Enabled = false;
+        //        }
+        //    }
+        //}
+        //loadform(new Logo());
         }
+
+
+        
+
+
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
