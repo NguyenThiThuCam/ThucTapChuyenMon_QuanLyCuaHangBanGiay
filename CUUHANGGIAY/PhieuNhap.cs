@@ -94,8 +94,7 @@ namespace CUUHANGGIAY
             {
                 CTPN ctpn = new CTPN(txtMaPN.Text, CbNCC.Text, cbTenNV.Text, dateTimeNL.Text, txtTongTien.Text,cbTinhTrang.Text);
 
-                ctpn.FormClosed += new FormClosedEventHandler(moform);
-                this.Hide();
+                
                 ctpn.ShowDialog();
             }
         }

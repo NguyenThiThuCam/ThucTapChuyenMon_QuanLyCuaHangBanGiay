@@ -39,6 +39,14 @@ namespace CUUHANGGIAY
             conn.Close();
             return data;
         }
+        public int updateTaiKhoan(string query)
+        {
+            SqlConnection conn = new SqlConnection(conStr);
+            conn.Open();
+            SqlCommand command = new SqlCommand(query, conn);
+            int a = command.ExecuteNonQuery();
+            return a;
+        }
 
 
 

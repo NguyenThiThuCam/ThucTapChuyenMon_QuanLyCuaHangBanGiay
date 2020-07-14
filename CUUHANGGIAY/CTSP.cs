@@ -116,8 +116,7 @@ namespace CUUHANGGIAY
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SanPham back = new SanPham();
-            back.Visible = true;
+            
         }
 
         private void txtTenSP_TextChanged(object sender, EventArgs e)
@@ -152,6 +151,37 @@ namespace CUUHANGGIAY
 
         private void txtTenSP_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+       
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (txtMaSP.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                try
+                {
+                    string query = "update  CTSP set MauSac=N'"+txtMauSac.Text+"',Size='"+txtSize.Text+"',GiaBan='"+txtGiaBan.Text+"'   where MASP='" + ma + "'";
+                    DataTable data = clsConnect.Instance.exQuery(query);
+                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadDL();
+                   
+                }
+                catch
+                {
+                    MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
 
         }
     }

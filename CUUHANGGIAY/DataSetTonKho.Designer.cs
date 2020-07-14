@@ -24,7 +24,7 @@ namespace CUUHANGGIAY {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSetTonKho : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private tonkhoDataTable tabletonkho;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace CUUHANGGIAY {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["tonkho"] != null)) {
+                    base.Tables.Add(new tonkhoDataTable(ds.Tables["tonkho"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CUUHANGGIAY {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public tonkhoDataTable tonkho {
             get {
-                return this.tableDataTable1;
+                return this.tabletonkho;
             }
         }
         
@@ -152,8 +152,8 @@ namespace CUUHANGGIAY {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["tonkho"] != null)) {
+                    base.Tables.Add(new tonkhoDataTable(ds.Tables["tonkho"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CUUHANGGIAY {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tabletonkho = ((tonkhoDataTable)(base.Tables["tonkho"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tabletonkho != null)) {
+                    this.tabletonkho.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace CUUHANGGIAY {
             this.Namespace = "http://tempuri.org/DataSetTonKho.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tabletonkho = new tonkhoDataTable();
+            base.Tables.Add(this.tabletonkho);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializetonkho() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace CUUHANGGIAY {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void tonkhoRowChangeEventHandler(object sender, tonkhoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class tonkhoDataTable : global::System.Data.TypedTableBase<tonkhoRow> {
             
             private global::System.Data.DataColumn columnMaSP;
             
@@ -287,7 +287,7 @@ namespace CUUHANGGIAY {
             
             private global::System.Data.DataColumn columnMaLoai;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columnMaSP1;
             
             private global::System.Data.DataColumn columnMauSac;
             
@@ -297,14 +297,14 @@ namespace CUUHANGGIAY {
             
             private global::System.Data.DataColumn columnSoLuongTon;
             
-            private global::System.Data.DataColumn columnExpr2;
+            private global::System.Data.DataColumn columnMaLoai1;
             
             private global::System.Data.DataColumn columnTenLoai;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public tonkhoDataTable() {
+                this.TableName = "tonkho";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +312,7 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal tonkhoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,7 +329,7 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tonkhoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -368,9 +368,9 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn MaSP1Column {
                 get {
-                    return this.columnExpr1;
+                    return this.columnMaSP1;
                 }
             }
             
@@ -408,9 +408,9 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Expr2Column {
+            public global::System.Data.DataColumn MaLoai1Column {
                 get {
-                    return this.columnExpr2;
+                    return this.columnMaLoai1;
                 }
             }
             
@@ -433,66 +433,66 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row this[int index] {
+            public tonkhoRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((tonkhoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event tonkhoRowChangeEventHandler tonkhoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event tonkhoRowChangeEventHandler tonkhoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event tonkhoRowChangeEventHandler tonkhoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event tonkhoRowChangeEventHandler tonkhoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddtonkhoRow(tonkhoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string MaSP, string TenSP, string HinhAnh, string MaLoai, string Expr1, string MauSac, string Size, int GiaBan, int SoLuongTon, string Expr2, string TenLoai) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public tonkhoRow AddtonkhoRow(string MaSP, string TenSP, string HinhAnh, string MaLoai, string MaSP1, string MauSac, string Size, int GiaBan, int SoLuongTon, string MaLoai1, string TenLoai) {
+                tonkhoRow rowtonkhoRow = ((tonkhoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaSP,
                         TenSP,
                         HinhAnh,
                         MaLoai,
-                        Expr1,
+                        MaSP1,
                         MauSac,
                         Size,
                         GiaBan,
                         SoLuongTon,
-                        Expr2,
+                        MaLoai1,
                         TenLoai};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                rowtonkhoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtonkhoRow);
+                return rowtonkhoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row FindByMaSPExpr1MauSacSizeExpr2(string MaSP, string Expr1, string MauSac, string Size, string Expr2) {
-                return ((DataTable1Row)(this.Rows.Find(new object[] {
+            public tonkhoRow FindByMaSPMaSP1MauSacSizeMaLoai1(string MaSP, string MaSP1, string MauSac, string Size, string MaLoai1) {
+                return ((tonkhoRow)(this.Rows.Find(new object[] {
                             MaSP,
-                            Expr1,
+                            MaSP1,
                             MauSac,
                             Size,
-                            Expr2})));
+                            MaLoai1})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                tonkhoDataTable cln = ((tonkhoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -500,7 +500,7 @@ namespace CUUHANGGIAY {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new tonkhoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -510,12 +510,12 @@ namespace CUUHANGGIAY {
                 this.columnTenSP = base.Columns["TenSP"];
                 this.columnHinhAnh = base.Columns["HinhAnh"];
                 this.columnMaLoai = base.Columns["MaLoai"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnMaSP1 = base.Columns["MaSP1"];
                 this.columnMauSac = base.Columns["MauSac"];
                 this.columnSize = base.Columns["Size"];
                 this.columnGiaBan = base.Columns["GiaBan"];
                 this.columnSoLuongTon = base.Columns["SoLuongTon"];
-                this.columnExpr2 = base.Columns["Expr2"];
+                this.columnMaLoai1 = base.Columns["MaLoai1"];
                 this.columnTenLoai = base.Columns["TenLoai"];
             }
             
@@ -530,8 +530,8 @@ namespace CUUHANGGIAY {
                 base.Columns.Add(this.columnHinhAnh);
                 this.columnMaLoai = new global::System.Data.DataColumn("MaLoai", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaLoai);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
+                this.columnMaSP1 = new global::System.Data.DataColumn("MaSP1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaSP1);
                 this.columnMauSac = new global::System.Data.DataColumn("MauSac", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMauSac);
                 this.columnSize = new global::System.Data.DataColumn("Size", typeof(string), null, global::System.Data.MappingType.Element);
@@ -540,56 +540,56 @@ namespace CUUHANGGIAY {
                 base.Columns.Add(this.columnGiaBan);
                 this.columnSoLuongTon = new global::System.Data.DataColumn("SoLuongTon", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuongTon);
-                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr2);
+                this.columnMaLoai1 = new global::System.Data.DataColumn("MaLoai1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaLoai1);
                 this.columnTenLoai = new global::System.Data.DataColumn("TenLoai", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenLoai);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaSP,
-                                this.columnExpr1,
+                                this.columnMaSP1,
                                 this.columnMauSac,
                                 this.columnSize,
-                                this.columnExpr2}, true));
+                                this.columnMaLoai1}, true));
                 this.columnMaSP.AllowDBNull = false;
                 this.columnMaSP.MaxLength = 40;
                 this.columnTenSP.MaxLength = 50;
                 this.columnHinhAnh.MaxLength = 50;
                 this.columnMaLoai.MaxLength = 40;
-                this.columnExpr1.AllowDBNull = false;
-                this.columnExpr1.MaxLength = 40;
+                this.columnMaSP1.AllowDBNull = false;
+                this.columnMaSP1.MaxLength = 40;
                 this.columnMauSac.AllowDBNull = false;
                 this.columnMauSac.MaxLength = 40;
                 this.columnSize.AllowDBNull = false;
                 this.columnSize.MaxLength = 40;
-                this.columnExpr2.AllowDBNull = false;
-                this.columnExpr2.MaxLength = 40;
+                this.columnMaLoai1.AllowDBNull = false;
+                this.columnMaLoai1.MaxLength = 40;
                 this.columnTenLoai.MaxLength = 40;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public tonkhoRow NewtonkhoRow() {
+                return ((tonkhoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new tonkhoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(tonkhoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.tonkhoRowChanged != null)) {
+                    this.tonkhoRowChanged(this, new tonkhoRowChangeEvent(((tonkhoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -597,8 +597,8 @@ namespace CUUHANGGIAY {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.tonkhoRowChanging != null)) {
+                    this.tonkhoRowChanging(this, new tonkhoRowChangeEvent(((tonkhoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -606,8 +606,8 @@ namespace CUUHANGGIAY {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.tonkhoRowDeleted != null)) {
+                    this.tonkhoRowDeleted(this, new tonkhoRowChangeEvent(((tonkhoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -615,14 +615,14 @@ namespace CUUHANGGIAY {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.tonkhoRowDeleting != null)) {
+                    this.tonkhoRowDeleting(this, new tonkhoRowChangeEvent(((tonkhoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemovetonkhoRow(tonkhoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -649,7 +649,7 @@ namespace CUUHANGGIAY {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "tonkhoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -693,25 +693,25 @@ namespace CUUHANGGIAY {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class tonkhoRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private tonkhoDataTable tabletonkho;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal tonkhoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tabletonkho = ((tonkhoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MaSP {
                 get {
-                    return ((string)(this[this.tableDataTable1.MaSPColumn]));
+                    return ((string)(this[this.tabletonkho.MaSPColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.MaSPColumn] = value;
+                    this[this.tabletonkho.MaSPColumn] = value;
                 }
             }
             
@@ -720,14 +720,14 @@ namespace CUUHANGGIAY {
             public string TenSP {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.TenSPColumn]));
+                        return ((string)(this[this.tabletonkho.TenSPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenSP\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenSP\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.TenSPColumn] = value;
+                    this[this.tabletonkho.TenSPColumn] = value;
                 }
             }
             
@@ -736,14 +736,14 @@ namespace CUUHANGGIAY {
             public string HinhAnh {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.HinhAnhColumn]));
+                        return ((string)(this[this.tabletonkho.HinhAnhColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HinhAnh\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HinhAnh\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.HinhAnhColumn] = value;
+                    this[this.tabletonkho.HinhAnhColumn] = value;
                 }
             }
             
@@ -752,25 +752,25 @@ namespace CUUHANGGIAY {
             public string MaLoai {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.MaLoaiColumn]));
+                        return ((string)(this[this.tabletonkho.MaLoaiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaLoai\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaLoai\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.MaLoaiColumn] = value;
+                    this[this.tabletonkho.MaLoaiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Expr1 {
+            public string MaSP1 {
                 get {
-                    return ((string)(this[this.tableDataTable1.Expr1Column]));
+                    return ((string)(this[this.tabletonkho.MaSP1Column]));
                 }
                 set {
-                    this[this.tableDataTable1.Expr1Column] = value;
+                    this[this.tabletonkho.MaSP1Column] = value;
                 }
             }
             
@@ -778,10 +778,10 @@ namespace CUUHANGGIAY {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MauSac {
                 get {
-                    return ((string)(this[this.tableDataTable1.MauSacColumn]));
+                    return ((string)(this[this.tabletonkho.MauSacColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.MauSacColumn] = value;
+                    this[this.tabletonkho.MauSacColumn] = value;
                 }
             }
             
@@ -789,10 +789,10 @@ namespace CUUHANGGIAY {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Size {
                 get {
-                    return ((string)(this[this.tableDataTable1.SizeColumn]));
+                    return ((string)(this[this.tabletonkho.SizeColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.SizeColumn] = value;
+                    this[this.tabletonkho.SizeColumn] = value;
                 }
             }
             
@@ -801,14 +801,14 @@ namespace CUUHANGGIAY {
             public int GiaBan {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable1.GiaBanColumn]));
+                        return ((int)(this[this.tabletonkho.GiaBanColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GiaBan\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GiaBan\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.GiaBanColumn] = value;
+                    this[this.tabletonkho.GiaBanColumn] = value;
                 }
             }
             
@@ -817,25 +817,25 @@ namespace CUUHANGGIAY {
             public int SoLuongTon {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable1.SoLuongTonColumn]));
+                        return ((int)(this[this.tabletonkho.SoLuongTonColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SoLuongTon\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SoLuongTon\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.SoLuongTonColumn] = value;
+                    this[this.tabletonkho.SoLuongTonColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Expr2 {
+            public string MaLoai1 {
                 get {
-                    return ((string)(this[this.tableDataTable1.Expr2Column]));
+                    return ((string)(this[this.tabletonkho.MaLoai1Column]));
                 }
                 set {
-                    this[this.tableDataTable1.Expr2Column] = value;
+                    this[this.tabletonkho.MaLoai1Column] = value;
                 }
             }
             
@@ -844,87 +844,87 @@ namespace CUUHANGGIAY {
             public string TenLoai {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.TenLoaiColumn]));
+                        return ((string)(this[this.tabletonkho.TenLoaiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenLoai\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenLoai\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.TenLoaiColumn] = value;
+                    this[this.tabletonkho.TenLoaiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTenSPNull() {
-                return this.IsNull(this.tableDataTable1.TenSPColumn);
+                return this.IsNull(this.tabletonkho.TenSPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTenSPNull() {
-                this[this.tableDataTable1.TenSPColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.TenSPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsHinhAnhNull() {
-                return this.IsNull(this.tableDataTable1.HinhAnhColumn);
+                return this.IsNull(this.tabletonkho.HinhAnhColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetHinhAnhNull() {
-                this[this.tableDataTable1.HinhAnhColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.HinhAnhColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsMaLoaiNull() {
-                return this.IsNull(this.tableDataTable1.MaLoaiColumn);
+                return this.IsNull(this.tabletonkho.MaLoaiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetMaLoaiNull() {
-                this[this.tableDataTable1.MaLoaiColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.MaLoaiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGiaBanNull() {
-                return this.IsNull(this.tableDataTable1.GiaBanColumn);
+                return this.IsNull(this.tabletonkho.GiaBanColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGiaBanNull() {
-                this[this.tableDataTable1.GiaBanColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.GiaBanColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSoLuongTonNull() {
-                return this.IsNull(this.tableDataTable1.SoLuongTonColumn);
+                return this.IsNull(this.tabletonkho.SoLuongTonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSoLuongTonNull() {
-                this[this.tableDataTable1.SoLuongTonColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.SoLuongTonColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTenLoaiNull() {
-                return this.IsNull(this.tableDataTable1.TenLoaiColumn);
+                return this.IsNull(this.tabletonkho.TenLoaiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTenLoaiNull() {
-                this[this.tableDataTable1.TenLoaiColumn] = global::System.Convert.DBNull;
+                this[this.tabletonkho.TenLoaiColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -932,22 +932,22 @@ namespace CUUHANGGIAY {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class tonkhoRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private tonkhoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public tonkhoRowChangeEvent(tonkhoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row Row {
+            public tonkhoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -975,7 +975,7 @@ namespace CUUHANGGIAY.DataSetTonKhoTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
+    public partial class tonkhoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -989,7 +989,7 @@ namespace CUUHANGGIAY.DataSetTonKhoTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DataTable1TableAdapter() {
+        public tonkhoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1086,17 +1086,17 @@ namespace CUUHANGGIAY.DataSetTonKhoTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DataTable1";
+            tableMapping.DataSetTable = "tonkho";
             tableMapping.ColumnMappings.Add("MaSP", "MaSP");
             tableMapping.ColumnMappings.Add("TenSP", "TenSP");
             tableMapping.ColumnMappings.Add("HinhAnh", "HinhAnh");
             tableMapping.ColumnMappings.Add("MaLoai", "MaLoai");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("MaSP1", "MaSP1");
             tableMapping.ColumnMappings.Add("MauSac", "MauSac");
             tableMapping.ColumnMappings.Add("Size", "Size");
             tableMapping.ColumnMappings.Add("GiaBan", "GiaBan");
             tableMapping.ColumnMappings.Add("SoLuongTon", "SoLuongTon");
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
+            tableMapping.ColumnMappings.Add("MaLoai1", "MaLoai1");
             tableMapping.ColumnMappings.Add("TenLoai", "TenLoai");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1114,18 +1114,16 @@ namespace CUUHANGGIAY.DataSetTonKhoTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        SanPham.MaSP, SanPham.TenSP, SanPham.HinhAnh, SanPham.MaLoai, CTSP.MaSP AS Expr1, CTSP.MauSac, CTSP.Size, CTSP.GiaBan, CTSP.SoLuongTon, LoaiSP.MaLoai AS Expr2, LoaiSP.TenLoai
-FROM            SanPham INNER JOIN
-                         LoaiSP ON SanPham.MaLoai = LoaiSP.MaLoai INNER JOIN
-                         CTSP ON SanPham.MaSP = CTSP.MaSP";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.tonkho";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetTonKho.DataTable1DataTable dataTable) {
+        public virtual int Fill(DataSetTonKho.tonkhoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1138,9 +1136,9 @@ FROM            SanPham INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetTonKho.DataTable1DataTable GetData() {
+        public virtual DataSetTonKho.tonkhoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetTonKho.DataTable1DataTable dataTable = new DataSetTonKho.DataTable1DataTable();
+            DataSetTonKho.tonkhoDataTable dataTable = new DataSetTonKho.tonkhoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

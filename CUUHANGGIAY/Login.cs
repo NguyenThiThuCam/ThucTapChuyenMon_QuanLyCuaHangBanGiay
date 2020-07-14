@@ -28,7 +28,9 @@ namespace CUUHANGGIAY
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            GuiMail back = new GuiMail();
+            back.Visible = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,86 +42,35 @@ namespace CUUHANGGIAY
         {
 
         }
-       
+        string User = "";
+
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //    SqlConnection camcam = new SqlConnection(@"Data Source = CAMCAM\SQLEXPRESS; Initial Catalog = CUAHANGGIAY; Integrated Security = True");
-            //    try
-            //    {
-            //        camcam.Open();
-            //        string TK = txtUser.Text;
-            //        string MK = TxtPassword.Text;
-            //        string Sql = " select *from TaiKhoan where TenTK= '" + TK + "' and MatKhau='" + MK + "'";
-            //        SqlCommand command = new SqlCommand(Sql, camcam);
-            //        SqlDataReader data = command.ExecuteReader();
-            //        if (data.Read() == true)
-            //        {
-            //            MessageBox.Show("Đăng nhập thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            //            Form1 f = new Form1();
-            //            this.Hide();
-            //            f.ShowDialog();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Sai mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        }
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Lỗi kết nối.");
-
-
-            //string query = " select *from TaiKhoan where MaTK='"  + "' and MatKhau='" + TxtPassword.Text + "' ";
-           // DataTable data = clsConnect.Instance.exQuery(query);
-            //if (txtUser.Text == "" || TxtPassword.Text == "")
-            //{
-            //    MessageBox.Show("Bạn vui lòng nhập đầy đủ thông");
-            //}
-            //else
-            //{
-            //    if (data.Rows.Count>0)
-            //    {
-            //        i = 2;
-            //        MessageBox.Show("Cẩm Cẩm Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        Form1 f = new Form1();
-
-
-            //        this.Hide();
-            //        f.ShowDialog();
-
-            //    }
-            //}
             
-                string query = " select TenTK, MatKhau from TaiKhoan";
-                DataTable data = clsConnect.Instance.exQuery(query);
-                //TaiKhoan tk = quanli.TAIKHOAN.FirstOrDefault(p => p.MATK.Trim() == txtTK.Text.Trim() && p.PASS.Trim() == txtPass.Text.Trim());
-                //if (txtUser.Text != null)
-                //{
-                //    Form1 f = new Form1();
-                //    this.Hide();
-                //    this.Show();
-                //    f.tentk = txtUser.Text;
-                //    f.ShowDialog();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("BẠN NHẬP SAI TK HOẶC MK", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                //}
-            for(int i = 0; i < data.Rows.Count; i++)
+            string query = " select Banhang,quanli from TaiKhoan where TenTK like'" + txtUser.Text.Trim()+ "' and MatKhau like'" + TxtPassword.Text + "' ";
+            Console.WriteLine(query);
+             DataTable data = clsConnect.Instance.exQuery(query);
+            
+           if(data.Rows.Count>0)
             {
-                if(data.Rows[i][0].Equals(txtUser.Text))
-                {
-                    Form1 f = new Form1();
-                    this.Hide();
-                    this.Show();
-                    f.tentk = txtUser.Text;
-                    f.ShowDialog();
-                }
+                bool ktbh = Boolean.Parse(data.Rows[0][0].ToString());
+                bool kt = Boolean.Parse(data.Rows[0][1].ToString());
+                User = txtUser.Text;
+                MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form1 f = new Form1();
+                f.tentk = User;
+                f.kt = kt;
+                f.ktbh = ktbh;
+                this.Hide();
+                f.ShowDialog();
             }
-            MessageBox.Show("Sai roi, ngao a");
-                
-        }
+            else
+            {
+                MessageBox.Show("Sai mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }               
+        }
     }
 }

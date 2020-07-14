@@ -74,7 +74,7 @@
             // 
             this.lbForgot.AutoSize = true;
             this.lbForgot.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbForgot.Location = new System.Drawing.Point(518, 371);
+            this.lbForgot.Location = new System.Drawing.Point(525, 365);
             this.lbForgot.Name = "lbForgot";
             this.lbForgot.Size = new System.Drawing.Size(175, 22);
             this.lbForgot.TabIndex = 9;
@@ -129,7 +129,7 @@
             this.btnLogin.Image = null;
             this.btnLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogin.Location = new System.Drawing.Point(552, 306);
+            this.btnLogin.Location = new System.Drawing.Point(553, 288);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.Gold;
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;

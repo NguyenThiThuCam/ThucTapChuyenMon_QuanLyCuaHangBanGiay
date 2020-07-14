@@ -43,6 +43,12 @@
             this.txtDiaChi = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GmailKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThongtinKH = new System.Windows.Forms.Label();
             this.cbMaKH = new Guna.UI.WinForms.GunaTextBox();
             this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -56,12 +62,8 @@
             this.btnSua = new Guna.UI.WinForms.GunaButton();
             this.btnThem = new Guna.UI.WinForms.GunaButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GmailKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -223,6 +225,48 @@
             this.dgvKH.TabIndex = 49;
             this.dgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellContentClick);
             // 
+            // MaKH
+            // 
+            this.MaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.Name = "MaKH";
+            // 
+            // TenKH
+            // 
+            this.TenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên Khách Hàng";
+            this.TenKH.Name = "TenKH";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT Khách Hàng";
+            this.SDT.Name = "SDT";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ Khách Hàng";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // GmailKH
+            // 
+            this.GmailKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GmailKH.DataPropertyName = "GmailKH";
+            this.GmailKH.HeaderText = "Gmail Khách Hàng";
+            this.GmailKH.Name = "GmailKH";
+            // 
             // lbThongtinKH
             // 
             this.lbThongtinKH.AutoSize = true;
@@ -275,7 +319,7 @@
             this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.Transparent;
             this.txtTimKiem.FocusedForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.Location = new System.Drawing.Point(691, 228);
+            this.txtTimKiem.Location = new System.Drawing.Point(649, 232);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.SelectedText = "";
@@ -444,53 +488,39 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // MaKH
+            // gunaButton1
             // 
-            this.MaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã Khách Hàng";
-            this.MaKH.Name = "MaKH";
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(13, 13);
+            this.gunaButton1.Location = new System.Drawing.Point(768, 233);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(37, 22);
+            this.gunaButton1.TabIndex = 76;
             // 
-            // TenKH
+            // gunaElipse3
             // 
-            this.TenKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên Khách Hàng";
-            this.TenKH.Name = "TenKH";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT Khách Hàng";
-            this.SDT.Name = "SDT";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ Khách Hàng";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // GmailKH
-            // 
-            this.GmailKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GmailKH.DataPropertyName = "GmailKH";
-            this.GmailKH.HeaderText = "Gmail Khách Hàng";
-            this.GmailKH.Name = "GmailKH";
+            this.gunaElipse3.Radius = 9;
+            this.gunaElipse3.TargetControl = this.gunaButton1;
             // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 486);
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.txtNgaySinh);
@@ -559,5 +589,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn GmailKH;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse3;
     }
 }

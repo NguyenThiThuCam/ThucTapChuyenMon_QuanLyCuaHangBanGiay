@@ -16,32 +16,24 @@ namespace CUUHANGGIAY
     public partial class Form1 : Form
     {
         public string tentk;
+        public bool ktbh, kt;
         public Form1()
         {
             InitializeComponent();
         }
-        public int r;
+      
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
-        //    // loadform(new Logo());
-        //    timer3.Start();
-        //    //Login login = new Login();
-        //    //r = login.i;
-        //    //MessageBox.Show(r.ToString());
-        //    string query = " select *from TaiKhoan where MaTK='" + txtUser.Text + "' and MatKhau='" + TxtPassword.Text + "' ";
-        //    DataTable data = clsConnect.Instance.exQuery(query);
-        //    NhanVien nv = data.Columns
-        //        if (nv != null)
-        //    {
-        //        if (nv.CHUCVU.ToString().Equals("Thu Ngân"))
-        //        {
-        //            btnPN.Enabled = false;
-        //            btnThongKe.Enabled = false;
-        //            btnThuChi.Enabled = false;
-        //        }
-        //    }
-        //}
-        //loadform(new Logo());
+            if (!kt)
+            {
+                btnNV.Enabled = false;
+                btnThongKe.Enabled = false;
+            }
+         loadform(new Logo());
+           timer3.Start();
+        
         }
 
 
@@ -106,6 +98,7 @@ namespace CUUHANGGIAY
             Process.Start("https://www.instagram.com/thucam3112/?hl=vi");
 
         }
+        
         // Hàm gọi form !
         private void loadform(object formload)
         {
@@ -142,16 +135,14 @@ namespace CUUHANGGIAY
 
         private void btnNCC_Click(object sender, EventArgs e)
         {
-           
-            if (r == 2)
-            {
-                loadform(new NhaCungCap());
+            loadform(new NhaCungCap());
 
-            }
-           
 
-       
-               
+            
+
+
+
+
         }
 
         private void btnPN_Click(object sender, EventArgs e)
@@ -171,12 +162,9 @@ namespace CUUHANGGIAY
 
         private void btnNV_Click(object sender, EventArgs e)
         {
-            if(r==2)
-            {
-                loadform(new NhanVien());
+            loadform(new NhanVien());
+           
 
-            }
-                     
         }
 
         private void lbMenu_Click(object sender, EventArgs e)
@@ -204,7 +192,12 @@ namespace CUUHANGGIAY
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            loadform(new Thongke());
+        }
 
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            loadform(new TonKho());
         }
 
         private void btnMail_Click(object sender, EventArgs e)

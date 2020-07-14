@@ -110,8 +110,7 @@ namespace CUUHANGGIAY
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HoaDon back = new HoaDon();
-            back.Visible = true;
+            
         }
 
         private void datetimeNL_ValueChanged(object sender, EventArgs e)

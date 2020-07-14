@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTSP));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,13 +48,12 @@
             this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
-            this.btnThem = new Guna.UI.WinForms.GunaButton();
-            this.btnSua = new Guna.UI.WinForms.GunaButton();
             this.txtTenSP = new System.Windows.Forms.ComboBox();
             this.txtTenLoaiSP = new System.Windows.Forms.ComboBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtMauSac = new System.Windows.Forms.TextBox();
             this.txtSize = new System.Windows.Forms.TextBox();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTSP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,54 +224,6 @@
             this.btnBack.TabIndex = 64;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnThem
-            // 
-            this.btnThem.AnimationHoverSpeed = 0.07F;
-            this.btnThem.AnimationSpeed = 0.03F;
-            this.btnThem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
-            this.btnThem.BorderColor = System.Drawing.Color.Black;
-            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnThem.Location = new System.Drawing.Point(489, 30);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnThem.OnHoverImage = null;
-            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
-            this.btnThem.Size = new System.Drawing.Size(113, 42);
-            this.btnThem.TabIndex = 65;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.AnimationHoverSpeed = 0.07F;
-            this.btnSua.AnimationSpeed = 0.03F;
-            this.btnSua.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(118)))), ((int)(((byte)(95)))));
-            this.btnSua.BorderColor = System.Drawing.Color.Black;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSua.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSua.Location = new System.Drawing.Point(489, 95);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnSua.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSua.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSua.OnHoverImage = null;
-            this.btnSua.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSua.Size = new System.Drawing.Size(113, 42);
-            this.btnSua.TabIndex = 66;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtTenSP
             // 
             this.txtTenSP.FormattingEnabled = true;
@@ -310,6 +262,11 @@
             this.txtSize.Size = new System.Drawing.Size(128, 20);
             this.txtSize.TabIndex = 75;
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 9;
+            this.gunaElipse1.TargetControl = this;
+            // 
             // CTSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,8 +278,6 @@
             this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtTenLoaiSP);
             this.Controls.Add(this.txtTenSP);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvCTSP);
             this.Controls.Add(this.txtTonKho);
@@ -334,6 +289,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CTSP";
             this.Text = "CTSP";
             this.Load += new System.EventHandler(this.CTSP_Load);
@@ -363,12 +319,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
-        private Guna.UI.WinForms.GunaButton btnThem;
-        private Guna.UI.WinForms.GunaButton btnSua;
         private System.Windows.Forms.ComboBox txtTenSP;
         private System.Windows.Forms.ComboBox txtTenLoaiSP;
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtMauSac;
         private System.Windows.Forms.TextBox txtSize;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

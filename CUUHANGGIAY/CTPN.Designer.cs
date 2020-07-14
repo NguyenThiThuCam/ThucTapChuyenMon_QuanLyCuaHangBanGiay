@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTPN));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,9 +265,9 @@
             this.NgayLap,
             this.ThanhTien,
             this.TinhTrang});
-            this.dgvCTPN.Location = new System.Drawing.Point(-5, 208);
+            this.dgvCTPN.Location = new System.Drawing.Point(1, 257);
             this.dgvCTPN.Name = "dgvCTPN";
-            this.dgvCTPN.Size = new System.Drawing.Size(766, 183);
+            this.dgvCTPN.Size = new System.Drawing.Size(754, 183);
             this.dgvCTPN.TabIndex = 62;
             this.dgvCTPN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPN_CellContentClick);
             // 
@@ -370,12 +372,17 @@
             this.btnBack.TabIndex = 63;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 9;
+            this.gunaElipse1.TargetControl = this;
+            // 
             // CTPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(756, 388);
+            this.ClientSize = new System.Drawing.Size(756, 444);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvCTPN);
             this.Controls.Add(this.txtSoLuong);
@@ -400,6 +407,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CTPN";
             this.Text = "CTPN";
             this.Load += new System.EventHandler(this.CTPN_Load);
@@ -446,5 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private Guna.UI.WinForms.GunaButton btnBack;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

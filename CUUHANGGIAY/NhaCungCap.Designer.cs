@@ -59,6 +59,7 @@
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
             this.txtMaNCC = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
@@ -429,7 +430,7 @@
             this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.Transparent;
             this.txtTimKiem.FocusedForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.Location = new System.Drawing.Point(680, 263);
+            this.txtTimKiem.Location = new System.Drawing.Point(649, 270);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.SelectedText = "";
@@ -453,12 +454,35 @@
             this.txtMaNCC.Size = new System.Drawing.Size(160, 26);
             this.txtMaNCC.TabIndex = 51;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(808, 268);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(34, 30);
+            this.gunaButton1.TabIndex = 64;
+            // 
             // NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnHienThi);
@@ -521,5 +545,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDTNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn GmailNCC;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

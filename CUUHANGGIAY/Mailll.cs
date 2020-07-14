@@ -115,5 +115,10 @@ namespace CUUHANGGIAY
             i = dgvMail.CurrentRow.Index;
             txtTo.Text = dgvMail.Rows[i].Cells[5].Value.ToString();
         }
+
+        private void txtTo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

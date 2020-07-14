@@ -102,8 +102,12 @@ namespace CUUHANGGIAY
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PhieuNhap back = new PhieuNhap();
-            back.Visible = true;
+            
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

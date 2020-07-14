@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.txtMaPN = new Guna.UI.WinForms.GunaTextBox();
@@ -48,12 +49,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbThongtinNV = new System.Windows.Forms.Label();
             this.dgvPN = new System.Windows.Forms.DataGridView();
-            this.cbTenNV = new System.Windows.Forms.ComboBox();
-            this.CbNCC = new System.Windows.Forms.ComboBox();
-            this.cbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.btnHienThi = new Guna.UI.WinForms.GunaButton();
-            this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.MaPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTienNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +56,13 @@
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbTenNV = new System.Windows.Forms.ComboBox();
+            this.CbNCC = new System.Windows.Forms.ComboBox();
+            this.cbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.btnHienThi = new Guna.UI.WinForms.GunaButton();
+            this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPN)).BeginInit();
             this.SuspendLayout();
@@ -337,6 +339,60 @@
             this.dgvPN.TabIndex = 0;
             this.dgvPN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
+            // MaPN
+            // 
+            this.MaPN.DataPropertyName = "MaPN";
+            this.MaPN.HeaderText = "Mã Phiêu Nhập";
+            this.MaPN.Name = "MaPN";
+            this.MaPN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaPN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayLap.DataPropertyName = "NgayLap";
+            this.NgayLap.HeaderText = "Ngày Lập";
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // TongTienNhap
+            // 
+            this.TongTienNhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TongTienNhap.DataPropertyName = "TongTienNhap";
+            this.TongTienNhap.HeaderText = "Tổng Tiền Nhập";
+            this.TongTienNhap.Name = "TongTienNhap";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Tình Trạng";
+            this.TinhTrang.Name = "TinhTrang";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // MaNV
+            // 
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNV.DataPropertyName = "TenNV";
+            this.MaNV.HeaderText = "Tên Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "Chi Tiết";
+            this.ChiTiet.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ChiTiet.HeaderText = "Chi Tiết";
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChiTiet.Text = "";
+            // 
             // cbTenNV
             // 
             this.cbTenNV.FormattingEnabled = true;
@@ -395,7 +451,7 @@
             this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.Transparent;
             this.txtTimKiem.FocusedForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.Location = new System.Drawing.Point(691, 213);
+            this.txtTimKiem.Location = new System.Drawing.Point(650, 216);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.SelectedText = "";
@@ -408,55 +464,27 @@
             this.gunaElipse1.Radius = 9;
             this.gunaElipse1.TargetControl = this.txtTimKiem;
             // 
-            // MaPN
+            // gunaButton1
             // 
-            this.MaPN.DataPropertyName = "MaPN";
-            this.MaPN.HeaderText = "Mã Phiêu Nhập";
-            this.MaPN.Name = "MaPN";
-            this.MaPN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaPN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayLap.DataPropertyName = "NgayLap";
-            this.NgayLap.HeaderText = "Ngày Lập";
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // TongTienNhap
-            // 
-            this.TongTienNhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TongTienNhap.DataPropertyName = "TongTienNhap";
-            this.TongTienNhap.HeaderText = "Tổng Tiền Nhập";
-            this.TongTienNhap.Name = "TongTienNhap";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Tình Trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // TenNCC
-            // 
-            this.TenNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenNCC.DataPropertyName = "TenNCC";
-            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
-            this.TenNCC.Name = "TenNCC";
-            // 
-            // MaNV
-            // 
-            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaNV.DataPropertyName = "TenNV";
-            this.MaNV.HeaderText = "Tên Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // ChiTiet
-            // 
-            this.ChiTiet.HeaderText = "Chi Tiết";
-            this.ChiTiet.Name = "ChiTiet";
-            this.ChiTiet.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChiTiet.Text = "";
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(811, 213);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(38, 30);
+            this.gunaButton1.TabIndex = 72;
             // 
             // PhieuNhap
             // 
@@ -464,6 +492,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(852, 491);
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.cbTinhTrang);
@@ -530,5 +559,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

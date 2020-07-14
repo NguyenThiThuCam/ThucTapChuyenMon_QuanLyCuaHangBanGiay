@@ -66,8 +66,7 @@ namespace CUUHANGGIAY
         {
            
             this.Hide();
-            Form1 back = new Form1();
-            back.Visible = true;
+            
            
         }
 

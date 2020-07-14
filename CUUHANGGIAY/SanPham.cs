@@ -117,14 +117,9 @@ namespace CUUHANGGIAY
             if(dgvSP.Columns[e.ColumnIndex].Name== "ChiTiet")
             {
                 CTSP ctsp = new CTSP(txtMaSP.Text, cbTenSP.Text, cbMaLoai.Text);
-                //string query = "select ct.MauSac,ct.Size,ct.SoLuongTon from CTSP ct,SanPham sp where sp.MaSP=ct.MaSP";
-                //DataTable data = clsConnect.Instance.exQuery(query);
-
-                //string query = "select sp.MaSP,sp.TenSP,lsp.TenLoai,ct.MauSac,ct.Size,ct.GiaBan,ct.SoLuongTon from CTSP ct,SanPham sp,LoaiSP lsp where sp.MaLoai=lsp.MaLoai ";
-                //DataTable data = clsConnect.Instance.exQuery(query);
-
-                ctsp.FormClosed += new FormClosedEventHandler(moform);
-                this.Hide();
+                
+                //ctsp.FormClosed += new FormClosedEventHandler(moform);
+                //this.Hide();
                 ctsp.ShowDialog();
             }
         }

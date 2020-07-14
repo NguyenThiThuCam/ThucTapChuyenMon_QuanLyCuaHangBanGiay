@@ -85,8 +85,7 @@ namespace CUUHANGGIAY
             {
                 CTHD cthd = new CTHD(txtMaHD.Text, cbTenNV.Text,txtMaKH.Text,txtNgayLap.Text,txtTongTien.Text, txtTinhTrang.Text);
 
-                cthd.FormClosed += new FormClosedEventHandler(moform);
-                this.Hide();
+                
                 cthd.ShowDialog();
             }
 
@@ -213,8 +212,10 @@ namespace CUUHANGGIAY
         public static int mahd;
         private void IN_Click(object sender, EventArgs e)
         {
-            mahd = Convert.ToInt32(txtMaHD.Text.Trim());
-            this.Hide();
+            try { mahd = Convert.ToInt32(txtMaHD.Text.Trim()); }
+            catch { }
+            
+            
             InHoaDon back = new InHoaDon();
             back.Visible = true;
 

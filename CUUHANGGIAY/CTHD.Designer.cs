@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTHD));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,16 +52,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.datetimeNL = new System.Windows.Forms.DateTimePicker();
             this.dgvCT = new System.Windows.Forms.DataGridView();
-            this.btnBack = new Guna.UI.WinForms.GunaButton();
-            this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MauSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MauSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtKH = new System.Windows.Forms.TextBox();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -254,6 +256,55 @@
             this.dgvCT.TabIndex = 22;
             this.dgvCT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCT_CellContentClick);
             // 
+            // MaSP
+            // 
+            this.MaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã SP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên SP";
+            this.TenSP.Name = "TenSP";
+            // 
+            // MauSac
+            // 
+            this.MauSac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MauSac.DataPropertyName = "MauSac";
+            this.MauSac.HeaderText = "Màu Sắc";
+            this.MauSac.Name = "MauSac";
+            // 
+            // Size
+            // 
+            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Size.DataPropertyName = "Size";
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            // 
+            // SoLuongBan
+            // 
+            this.SoLuongBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuongBan.DataPropertyName = "SoLuongBan";
+            this.SoLuongBan.HeaderText = "SLB";
+            this.SoLuongBan.Name = "SoLuongBan";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
+            // TinhTrangHD
+            // 
+            this.TinhTrangHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TinhTrangHD.DataPropertyName = "TinhTrangHD";
+            this.TinhTrangHD.HeaderText = "Tình Trạng HD";
+            this.TinhTrangHD.Name = "TinhTrangHD";
+            // 
             // btnBack
             // 
             this.btnBack.AnimationHoverSpeed = 0.07F;
@@ -274,58 +325,9 @@
             this.btnBack.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBack.OnHoverImage = null;
             this.btnBack.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBack.Size = new System.Drawing.Size(129, 42);
+            this.btnBack.Size = new System.Drawing.Size(69, 42);
             this.btnBack.TabIndex = 23;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // TinhTrangHD
-            // 
-            this.TinhTrangHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TinhTrangHD.DataPropertyName = "TinhTrangHD";
-            this.TinhTrangHD.HeaderText = "Tình Trạng HD";
-            this.TinhTrangHD.Name = "TinhTrangHD";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            // 
-            // SoLuongBan
-            // 
-            this.SoLuongBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuongBan.DataPropertyName = "SoLuongBan";
-            this.SoLuongBan.HeaderText = "SLB";
-            this.SoLuongBan.Name = "SoLuongBan";
-            // 
-            // Size
-            // 
-            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Size.DataPropertyName = "Size";
-            this.Size.HeaderText = "Size";
-            this.Size.Name = "Size";
-            // 
-            // MauSac
-            // 
-            this.MauSac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MauSac.DataPropertyName = "MauSac";
-            this.MauSac.HeaderText = "Màu Sắc";
-            this.MauSac.Name = "MauSac";
-            // 
-            // TenSP
-            // 
-            this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên SP";
-            this.TenSP.Name = "TenSP";
-            // 
-            // MaSP
-            // 
-            this.MaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã SP";
-            this.MaSP.Name = "MaSP";
             // 
             // label12
             // 
@@ -342,6 +344,11 @@
             this.txtKH.Name = "txtKH";
             this.txtKH.Size = new System.Drawing.Size(128, 20);
             this.txtKH.TabIndex = 25;
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 9;
+            this.gunaElipse1.TargetControl = this;
             // 
             // CTHD
             // 
@@ -374,6 +381,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CTHD";
             this.Text = "CTHD";
             this.Load += new System.EventHandler(this.CTHD_Load);
@@ -417,5 +425,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangHD;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtKH;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

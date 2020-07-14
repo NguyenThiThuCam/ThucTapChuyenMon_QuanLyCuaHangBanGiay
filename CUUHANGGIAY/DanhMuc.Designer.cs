@@ -50,6 +50,7 @@
             this.btnXoa = new Guna.UI.WinForms.GunaButton();
             this.txtTimKiem = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM)).BeginInit();
@@ -324,10 +325,10 @@
             this.txtTimKiem.BorderColor = System.Drawing.Color.Transparent;
             this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTimKiem.FocusedBaseColor = System.Drawing.Color.Transparent;
-            this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.FocusedBorderColor = System.Drawing.Color.White;
             this.txtTimKiem.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.Location = new System.Drawing.Point(5, 192);
+            this.txtTimKiem.Location = new System.Drawing.Point(15, 192);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.SelectedText = "";
@@ -340,11 +341,34 @@
             this.gunaElipse2.Radius = 9;
             this.gunaElipse2.TargetControl = this.txtTimKiem;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(171, 193);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.LightSteelBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(133, 30);
+            this.gunaButton1.TabIndex = 40;
+            // 
             // DanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 447);
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnHienThi);
@@ -393,5 +417,6 @@
         private Guna.UI.WinForms.GunaButton btnXoa;
         private Guna.UI.WinForms.GunaTextBox txtTimKiem;
         private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

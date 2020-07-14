@@ -103,6 +103,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -160,6 +161,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTonKho.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMK.Designer.cs">
+      <DependentUpon>DoiMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +203,18 @@
     <Compile Include="Mailll.Designer.cs">
       <DependentUpon>Mailll.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuiMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiMail.Designer.cs">
+      <DependentUpon>GuiMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaXN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaXN2.Designer.cs">
+      <DependentUpon>MaXN2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +248,12 @@
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongke.Designer.cs">
+      <DependentUpon>Thongke.cs</DependentUpon>
+    </Compile>
     <Compile Include="TonKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +277,9 @@
     <EmbeddedResource Include="DanhMuc.resx">
       <DependentUpon>DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoiMK.resx">
+      <DependentUpon>DoiMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +297,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mailll.resx">
       <DependentUpon>Mailll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuiMail.resx">
+      <DependentUpon>GuiMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaXN2.resx">
+      <DependentUpon>MaXN2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
@@ -293,9 +327,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportTonKho.rdlc" />
     <EmbeddedResource Include="ReportHoaDon.rdlc" />
     <EmbeddedResource Include="SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongke.resx">
+      <DependentUpon>Thongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TonKho.resx">
       <DependentUpon>TonKho.cs</DependentUpon>
