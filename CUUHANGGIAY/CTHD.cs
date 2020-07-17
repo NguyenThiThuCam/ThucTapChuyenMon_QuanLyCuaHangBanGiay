@@ -82,6 +82,9 @@ namespace CUUHANGGIAY
         {
             LoadDL();
             LoadChiTietPN();
+            LoadCombobox();
+            LoadComboboxMaSP();
+            LoadComboboxMauSac();
 
         }
 
@@ -117,5 +120,41 @@ namespace CUUHANGGIAY
         {
 
         }
+        public void LoadCombobox()
+        {
+            string query = "select *from SanPham";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            txtTenSP.DataSource = data;
+            txtTenSP.ValueMember = "MaSP";
+
+            txtTenSP.DisplayMember = "TenSP";
+        }
+        public void LoadComboboxMaSP()
+        {
+            string query = "select *from SanPham";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            txtMaSP.DataSource = data;
+            txtMaSP.ValueMember = "MaSP";
+            
+
+            
+        }
+        public void LoadComboboxMauSac()
+        {
+            string query = "select *from CTSP";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            txtMaSac.DataSource = data;
+            txtMaSac.ValueMember = "MauSac";
+            txtSize.DataSource = data;
+            txtSize.ValueMember = "Size";
+
+        }
+       
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
+

@@ -228,7 +228,7 @@ namespace CUUHANGGIAY
             txtMail.Text= dgv.Rows[i].Cells[6].Value.ToString();
             txtNgayvaolam.Text = dgv.Rows[i].Cells[3].Value.ToString();
             txtLuong.Text = dgv.Rows[i].Cells[4].Value.ToString();
-           comboBox1.Text = dgv.Rows[i].Cells[8].Value.ToString();
+           //comboBox1.Text = dgv.Rows[i].Cells[8].Value.ToString();
         }
 
         private void txtNgayvaolam_TextChanged(object sender, EventArgs e)

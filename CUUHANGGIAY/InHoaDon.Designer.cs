@@ -31,25 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InHoaDon));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportChuanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataReport = new CUUHANGGIAY.DataReport();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataReport = new CUUHANGGIAY.DataReport();
-            this.reportChuanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportChuanTableAdapter = new CUUHANGGIAY.DataReportTableAdapters.reportChuanTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportChuanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataReport)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportChuanBindingSource
+            // 
+            this.reportChuanBindingSource.DataMember = "reportChuan";
+            this.reportChuanBindingSource.DataSource = this.DataReport;
+            // 
+            // DataReport
+            // 
+            this.DataReport.DataSetName = "DataReport";
+            this.DataReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gunaElipse1
             // 
             this.gunaElipse1.Radius = 9;
+            this.gunaElipse1.TargetControl = this;
             // 
             // gunaElipse2
             // 
             this.gunaElipse2.Radius = 9;
+            this.gunaElipse2.TargetControl = this;
             // 
             // btnBack
             // 
@@ -93,16 +105,6 @@
             this.reportViewer1.TabIndex = 15;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // DataReport
-            // 
-            this.DataReport.DataSetName = "DataReport";
-            this.DataReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportChuanBindingSource
-            // 
-            this.reportChuanBindingSource.DataMember = "reportChuan";
-            this.reportChuanBindingSource.DataSource = this.DataReport;
-            // 
             // reportChuanTableAdapter
             // 
             this.reportChuanTableAdapter.ClearBeforeFill = true;
@@ -119,8 +121,8 @@
             this.Name = "InHoaDon";
             this.Text = "InHoaDon";
             this.Load += new System.EventHandler(this.InHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportChuanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataReport)).EndInit();
             this.ResumeLayout(false);
 
         }

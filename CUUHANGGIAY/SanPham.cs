@@ -18,8 +18,8 @@ namespace CUUHANGGIAY
             InitializeComponent();
             LoadDL();
             LoadCombobox();
-            //cbMaLoai.SelectedIndex = -1;
-          
+            cbMaLoai.SelectedIndex = -1;
+
         }
         public void LoadDL()
         {
@@ -47,7 +47,10 @@ namespace CUUHANGGIAY
             cbTenSP.Text = " ";
             cbMaLoai.Text = " ";
             txtMaSP.Text = " ";
-            
+            pthinh.BackgroundImage = null;
+           
+
+
 
         }
         private void btnlammoi_Click(object sender, EventArgs e)
@@ -76,17 +79,17 @@ namespace CUUHANGGIAY
             else
             {
                 try
-              {
+                {
                     string query = "insert into SanPham values('" + txtMaSP.Text + "',N'" + cbTenSP.Text + "','" + fileImage + "','" + cbMaLoai.SelectedValue.ToString() + "')";
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
-                    
+
 
                 }
-               catch
-               {
-                   MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                catch
+                {
+                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -139,7 +142,7 @@ namespace CUUHANGGIAY
             {
                 try
                 {
-                    string query = "update SanPham set TenSP=N'"+cbTenSP.Text+"', TenLoai=N'"+cbMaLoai.SelectedValue.ToString()+"' where MaSP='"+txtMaSP.Text+"' ";
+                    string query = "update SanPham set TenSP=N'"+cbTenSP.Text+"', MaLoai=N'"+cbMaLoai.SelectedValue.ToString()+"',HinhAnh='"+fileImage+"' where MaSP='"+txtMaSP.Text+"' ";
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
@@ -151,8 +154,8 @@ namespace CUUHANGGIAY
                     MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-            }
         }
+    }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -176,15 +179,15 @@ namespace CUUHANGGIAY
 
             }
         }
-        //public void TimKiemMa()
-        //{
-        //    string query = " select *from SanPham where MaSP like N'%" + txtMaSP.Text + "%'";
-        //    DataTable data = clsConnect.Instance.exQuery(query);
-        //    dgvSP.DataSource = data;
-        //}
+        public void TimKiemMa()
+        {
+            string query = " select *from SanPham where MaSP like N'%" + txtMaSP.Text + "%'";
+            DataTable data = clsConnect.Instance.exQuery(query);
+            dgvSP.DataSource = data;
+        }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-          //  TimKiemMa();
+            TimKiemMa();
 
         }
 
@@ -248,8 +251,7 @@ namespace CUUHANGGIAY
                 if (x< 125)
                 {
                     a = 1;
-                   
-
+                  
 
                 }
                 

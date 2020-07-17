@@ -34,6 +34,7 @@
             this.txtmaxn = new System.Windows.Forms.TextBox();
             this.btnSent = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -82,12 +83,17 @@
             this.gunaElipse1.Radius = 9;
             this.gunaElipse1.TargetControl = this.btnSent;
             // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 9;
+            this.gunaElipse2.TargetControl = this;
+            // 
             // MaXN2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(335, 168);
+            this.ClientSize = new System.Drawing.Size(322, 192);
             this.Controls.Add(this.btnSent);
             this.Controls.Add(this.txtmaxn);
             this.Controls.Add(this.label1);
@@ -106,5 +112,6 @@
         private System.Windows.Forms.TextBox txtmaxn;
         private Guna.UI.WinForms.GunaButton btnSent;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
     }
 }

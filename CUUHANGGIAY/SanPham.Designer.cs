@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham));
             this.lbMaSP = new System.Windows.Forms.Label();
             this.cbTenSP = new System.Windows.Forms.ComboBox();
@@ -71,7 +71,7 @@
             // lbMaSP
             // 
             this.lbMaSP.AutoSize = true;
-            this.lbMaSP.BackColor = System.Drawing.Color.NavajoWhite;
+            this.lbMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbMaSP.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaSP.Location = new System.Drawing.Point(163, 50);
             this.lbMaSP.Name = "lbMaSP";
@@ -91,7 +91,7 @@
             // lbTenSP
             // 
             this.lbTenSP.AutoSize = true;
-            this.lbTenSP.BackColor = System.Drawing.Color.NavajoWhite;
+            this.lbTenSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbTenSP.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenSP.Location = new System.Drawing.Point(482, 43);
             this.lbTenSP.Name = "lbTenSP";
@@ -118,13 +118,13 @@
             // laMaloai
             // 
             this.laMaloai.AutoSize = true;
-            this.laMaloai.BackColor = System.Drawing.Color.NavajoWhite;
+            this.laMaloai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.laMaloai.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.laMaloai.Location = new System.Drawing.Point(163, 95);
             this.laMaloai.Name = "laMaloai";
-            this.laMaloai.Size = new System.Drawing.Size(51, 14);
+            this.laMaloai.Size = new System.Drawing.Size(58, 14);
             this.laMaloai.TabIndex = 7;
-            this.laMaloai.Text = "Mã Loại:";
+            this.laMaloai.Text = "Tên Loại:";
             // 
             // cbMaLoai
             // 
@@ -192,9 +192,9 @@
             // ChiTiet
             // 
             this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "Chi Tiết";
-            this.ChiTiet.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "Chi Tiết";
+            this.ChiTiet.DefaultCellStyle = dataGridViewCellStyle3;
             this.ChiTiet.HeaderText = "Chi Tiết";
             this.ChiTiet.Name = "ChiTiet";
             // 
@@ -262,12 +262,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.Location = new System.Drawing.Point(471, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 29);
             this.button1.TabIndex = 74;
-            this.button1.Text = "Ảnh:";
+            this.button1.Text = "Chọn Ảnh";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

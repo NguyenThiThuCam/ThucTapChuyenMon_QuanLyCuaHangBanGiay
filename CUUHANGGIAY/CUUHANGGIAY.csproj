@@ -156,10 +156,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetHD.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetTonKho.Designer.cs">
+    <Compile Include="DataSetTKho.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetTonKho.xsd</DependentUpon>
+      <DependentUpon>DataSetTKho.xsd</DependentUpon>
     </Compile>
     <Compile Include="DoiMK.cs">
       <SubType>Form</SubType>
@@ -327,8 +327,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportTonKho.rdlc" />
     <EmbeddedResource Include="ReportHoaDon.rdlc" />
+    <EmbeddedResource Include="ReportTK.rdlc" />
     <EmbeddedResource Include="SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,16 +360,16 @@
     <None Include="DataSetHD.xss">
       <DependentUpon>DataSetHD.xsd</DependentUpon>
     </None>
-    <None Include="DataSetTonKho.xsc">
-      <DependentUpon>DataSetTonKho.xsd</DependentUpon>
+    <None Include="DataSetTKho.xsc">
+      <DependentUpon>DataSetTKho.xsd</DependentUpon>
     </None>
-    <None Include="DataSetTonKho.xsd">
+    <None Include="DataSetTKho.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetTonKho.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetTKho.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetTonKho.xss">
-      <DependentUpon>DataSetTonKho.xsd</DependentUpon>
+    <None Include="DataSetTKho.xss">
+      <DependentUpon>DataSetTKho.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

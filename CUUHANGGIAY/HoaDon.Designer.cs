@@ -66,6 +66,10 @@
             this.IN = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTenSP = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtsoluongban = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
@@ -537,12 +541,54 @@
             this.gunaButton1.Size = new System.Drawing.Size(38, 30);
             this.gunaButton1.TabIndex = 66;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(156, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 14);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Tên Sản Phẩm:";
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.FormattingEnabled = true;
+            this.txtTenSP.Location = new System.Drawing.Point(279, 212);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(160, 21);
+            this.txtTenSP.TabIndex = 68;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.NavajoWhite;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(257, 254);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 14);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Số Lượng:";
+            // 
+            // txtsoluongban
+            // 
+            this.txtsoluongban.FormattingEnabled = true;
+            this.txtsoluongban.Location = new System.Drawing.Point(327, 247);
+            this.txtsoluongban.Name = "txtsoluongban";
+            this.txtsoluongban.Size = new System.Drawing.Size(160, 21);
+            this.txtsoluongban.TabIndex = 70;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(835, 447);
+            this.Controls.Add(this.txtsoluongban);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTenSP);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.IN);
             this.Controls.Add(this.txtTimKiem);
@@ -615,5 +661,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox txtTenSP;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox txtsoluongban;
     }
 }

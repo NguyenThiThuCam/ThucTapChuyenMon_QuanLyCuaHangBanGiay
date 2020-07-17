@@ -27,6 +27,7 @@ namespace CUUHANGGIAY
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvHD.AutoGenerateColumns = false;
             dgvHD.DataSource = data;
+
         } public void LoadComBoBox()
         {
             string query = " select * from NhanVien ";
@@ -52,8 +53,10 @@ namespace CUUHANGGIAY
             LoadDL();
             LoadComBoBox();
             loadkh();
+           
 
         }
+       
         void lammoi()
         {
             txtMaHD.Text = " ";
@@ -109,11 +112,15 @@ namespace CUUHANGGIAY
             command.Parameters.AddWithValue("@tinhtranghd", false);
             command.Parameters.AddWithValue("@manv", cbTenNV.SelectedValue.ToString());
             command.Parameters.AddWithValue("@makh", txtMaKH.SelectedValue.ToString());
+            
+
+
+
             int a = command.ExecuteNonQuery();
             if (a > 0)
             {
                 HoaDon_Load(sender, e);
-                MessageBox.Show("thêm thanh cong");
+                MessageBox.Show("Thêm thành công","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             conn.Close();
        

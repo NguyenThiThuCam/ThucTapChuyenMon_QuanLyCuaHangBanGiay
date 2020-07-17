@@ -95,8 +95,7 @@ namespace CUUHANGGIAY
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 back = new Form1();
-            back.Visible = true;
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

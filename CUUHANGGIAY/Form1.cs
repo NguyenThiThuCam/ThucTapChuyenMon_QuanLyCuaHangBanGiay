@@ -30,6 +30,7 @@ namespace CUUHANGGIAY
             {
                 btnNV.Enabled = false;
                 btnThongKe.Enabled = false;
+               btnTonKho.Enabled = false;
             }
          loadform(new Logo());
            timer3.Start();
@@ -203,8 +204,7 @@ namespace CUUHANGGIAY
         private void btnMail_Click(object sender, EventArgs e)
         {
             Mailll f = new Mailll();
-            this.Hide();
-            f.ShowDialog();
+            f.Visible = true;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

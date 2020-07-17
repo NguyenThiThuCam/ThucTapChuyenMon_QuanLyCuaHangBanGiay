@@ -61,11 +61,18 @@ namespace CUUHANGGIAY
                         MaXN2 ma = new MaXN2();
                         ma.matk = matk;
                         ma.otp = maxn;
+                        this.Hide();
                         ma.ShowDialog();
+
+
+                       
+                        //MaXN2 back = new MaXN2();
+                        //ma.Visible = true;
+                        //Application.Exit();
                     }
                     else
                     {
-                        MessageBox.Show("Gmail không đúng");
+                        MessageBox.Show("Gmail không đúng","Thông  Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
 
                 
@@ -74,7 +81,7 @@ namespace CUUHANGGIAY
             }
             else
             {
-                MessageBox.Show("Tên Tài Khoản Không Đúng");
+                MessageBox.Show("Tên tài khoản không đúng","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
 

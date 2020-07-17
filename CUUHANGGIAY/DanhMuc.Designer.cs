@@ -211,7 +211,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.dgvDM);
             this.panel1.Controls.Add(this.lbThongtinDM);
             this.panel1.Location = new System.Drawing.Point(0, 228);

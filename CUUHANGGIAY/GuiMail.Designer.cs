@@ -36,6 +36,7 @@
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.SuspendLayout();
             // 
             // txtGmail
@@ -48,7 +49,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 73);
+            this.label1.Location = new System.Drawing.Point(14, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
@@ -87,11 +88,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 28);
+            this.label2.Location = new System.Drawing.Point(14, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Nhập Mail:";
+            this.label2.Text = "Nhập tài khoản:";
             // 
             // txtTK
             // 
@@ -99,6 +100,11 @@
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(111, 20);
             this.txtTK.TabIndex = 11;
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 9;
+            this.gunaElipse2.TargetControl = this;
             // 
             // GuiMail
             // 
@@ -128,5 +134,6 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTK;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
     }
 }

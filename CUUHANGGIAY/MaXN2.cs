@@ -31,11 +31,14 @@ namespace CUUHANGGIAY
             {
                 DoiMK doiMK = new DoiMK();
                 doiMK.matk = matk;
+                
+                this.Hide();
                 doiMK.ShowDialog();
+               
             }
             else
             {
-                MessageBox.Show("ma otp khong dung");
+                MessageBox.Show("Mã OTP không đúng","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
     }

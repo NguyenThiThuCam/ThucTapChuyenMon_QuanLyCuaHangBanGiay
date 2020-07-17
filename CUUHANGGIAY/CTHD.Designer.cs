@@ -40,12 +40,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.TextBox();
-            this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.txtMaSac = new System.Windows.Forms.TextBox();
-            this.txtSize = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
@@ -63,6 +59,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtKH = new System.Windows.Forms.TextBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.txtMaSP = new System.Windows.Forms.ComboBox();
+            this.txtTenSP = new System.Windows.Forms.ComboBox();
+            this.txtMaSac = new System.Windows.Forms.ComboBox();
+            this.txtSize = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,13 +153,6 @@
             this.txtMaHD.Size = new System.Drawing.Size(128, 20);
             this.txtMaHD.TabIndex = 10;
             // 
-            // txtMaSP
-            // 
-            this.txtMaSP.Location = new System.Drawing.Point(110, 101);
-            this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(128, 20);
-            this.txtMaSP.TabIndex = 11;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -169,33 +162,12 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Tình Trạng:";
             // 
-            // txtTenSP
-            // 
-            this.txtTenSP.Location = new System.Drawing.Point(110, 158);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(128, 20);
-            this.txtTenSP.TabIndex = 13;
-            // 
             // txtTenNV
             // 
             this.txtTenNV.Location = new System.Drawing.Point(344, 44);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(128, 20);
             this.txtTenNV.TabIndex = 14;
-            // 
-            // txtMaSac
-            // 
-            this.txtMaSac.Location = new System.Drawing.Point(344, 101);
-            this.txtMaSac.Name = "txtMaSac";
-            this.txtMaSac.Size = new System.Drawing.Size(128, 20);
-            this.txtMaSac.TabIndex = 15;
-            // 
-            // txtSize
-            // 
-            this.txtSize.Location = new System.Drawing.Point(344, 158);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(128, 20);
-            this.txtSize.TabIndex = 16;
             // 
             // txtSoLuong
             // 
@@ -250,9 +222,9 @@
             this.SoLuongBan,
             this.ThanhTien,
             this.TinhTrangHD});
-            this.dgvCT.Location = new System.Drawing.Point(-2, 240);
+            this.dgvCT.Location = new System.Drawing.Point(-2, 266);
             this.dgvCT.Name = "dgvCT";
-            this.dgvCT.Size = new System.Drawing.Size(791, 159);
+            this.dgvCT.Size = new System.Drawing.Size(791, 129);
             this.dgvCT.TabIndex = 22;
             this.dgvCT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCT_CellContentClick);
             // 
@@ -350,12 +322,48 @@
             this.gunaElipse1.Radius = 9;
             this.gunaElipse1.TargetControl = this;
             // 
+            // txtMaSP
+            // 
+            this.txtMaSP.FormattingEnabled = true;
+            this.txtMaSP.Location = new System.Drawing.Point(101, 108);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(121, 21);
+            this.txtMaSP.TabIndex = 27;
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.FormattingEnabled = true;
+            this.txtTenSP.Location = new System.Drawing.Point(101, 158);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(121, 21);
+            this.txtTenSP.TabIndex = 28;
+            // 
+            // txtMaSac
+            // 
+            this.txtMaSac.FormattingEnabled = true;
+            this.txtMaSac.Location = new System.Drawing.Point(336, 108);
+            this.txtMaSac.Name = "txtMaSac";
+            this.txtMaSac.Size = new System.Drawing.Size(121, 21);
+            this.txtMaSac.TabIndex = 29;
+            // 
+            // txtSize
+            // 
+            this.txtSize.FormattingEnabled = true;
+            this.txtSize.Location = new System.Drawing.Point(351, 160);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(121, 21);
+            this.txtSize.TabIndex = 30;
+            // 
             // CTHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(786, 394);
+            this.Controls.Add(this.txtSize);
+            this.Controls.Add(this.txtMaSac);
+            this.Controls.Add(this.txtTenSP);
+            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtKH);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnBack);
@@ -365,12 +373,8 @@
             this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.txtSize);
-            this.Controls.Add(this.txtMaSac);
             this.Controls.Add(this.txtTenNV);
-            this.Controls.Add(this.txtTenSP);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtMaHD);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -403,12 +407,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaHD;
-        private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.TextBox txtMaSac;
-        private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.TextBox txtTinhTrang;
@@ -426,5 +426,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtKH;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private System.Windows.Forms.ComboBox txtMaSac;
+        private System.Windows.Forms.ComboBox txtTenSP;
+        private System.Windows.Forms.ComboBox txtMaSP;
+        private System.Windows.Forms.ComboBox txtSize;
     }
 }

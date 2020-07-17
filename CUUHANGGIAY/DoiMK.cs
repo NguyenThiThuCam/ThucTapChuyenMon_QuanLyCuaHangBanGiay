@@ -27,12 +27,12 @@ namespace CUUHANGGIAY
         {
             if (txtpass.Text == "" || txtpassmoi.Text == "")
             {
-                MessageBox.Show("Chưa nhập đủ");
+                MessageBox.Show("Chưa nhập đủ","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
             if (txtpass.Text != txtpassmoi.Text)
             {
-                MessageBox.Show("Mật khẩu không trùng nhau");
+                MessageBox.Show("Mật khẩu không trùng nhau","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
             if(txtpass.Text.Equals(txtpassmoi.Text))
@@ -40,11 +40,15 @@ namespace CUUHANGGIAY
                 string query = " update taikhoan set matkhau='"+txtpassmoi.Text+"' where MaTK like '" + matk + "' ";
                 int data = clsConnect.Instance.updateTaiKhoan(query);
                 if(data>0)
-                    MessageBox.Show("doi thanh cong");
+                    MessageBox.Show("Đổi mật khẩu thành công.","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Hide();
+                Login back = new Login();
+                back.Visible = true;
             }
+           
             else
             {
-                MessageBox.Show("mat khau chua trung");
+                MessageBox.Show("Mật khẩu chưa trùng.","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
         }
