@@ -22,6 +22,7 @@ namespace CUUHANGGIAY
         {
             string query = " select *from LoaiSp";
             DataTable data = clsConnect.Instance.exQuery(query);
+            dgvDM.AutoGenerateColumns = false;
             dgvDM.DataSource = data;
         } public void LoadCombox()
         {
@@ -52,6 +53,7 @@ namespace CUUHANGGIAY
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            txtmaloai.Enabled = false;
             if (txtmaloai.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,19 +83,13 @@ namespace CUUHANGGIAY
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
+            txtmaloai.Enabled = true;
             lammoi();
-        }
-
-        private void dgvDM_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i;
-            i = dgvDM.CurrentRow.Index;
-            txtmaloai.Text = dgvDM.Rows[i].Cells[0].Value.ToString();
-            cbLoaigiay.Text = dgvDM.Rows[i].Cells[1].Value.ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtmaloai.Enabled = true;
             if (txtmaloai.Text == "" ||cbLoaigiay.Text=="")
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần thêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,11 +103,12 @@ namespace CUUHANGGIAY
                     MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
                     LoadCombox();
+                    lammoi();
 
                 }
                 catch
                 {
-                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã có mã", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
               
@@ -196,6 +193,20 @@ namespace CUUHANGGIAY
                 MessageBox.Show("Xóa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+        }
+
+        private void dgvDM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvDM_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtmaloai.Enabled = false;
+            int i;
+            i = dgvDM.CurrentRow.Index;
+            txtmaloai.Text = dgvDM.Rows[i].Cells[0].Value.ToString();
+            cbLoaigiay.Text = dgvDM.Rows[i].Cells[1].Value.ToString();
         }
     }
 }

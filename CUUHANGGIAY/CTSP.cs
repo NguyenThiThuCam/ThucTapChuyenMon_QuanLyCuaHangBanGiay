@@ -43,7 +43,7 @@ namespace CUUHANGGIAY
         //}
         public void LoadDL()
         {
-            string query = "select sp.MaSP,sp.TenSP,lsp.TenLoai,ct.MauSac,ct.Size,ct.GiaBan,ct.SoLuongTon from CTSP ct,SanPham sp,LoaiSP lsp where sp.MaLoai=lsp.MaLoai ";
+            string query = "select sp.MaSP,lsp.TenLoai,sp.TenSP,ct.MauSac,ct.Size,ct.GiaBan,ct.SoLuongTon from SanPham sp,CTSP ct,LoaiSP lsp where sp.MaSP='"+ma+"' and ct.masp='"+ma+"' and sp.MaLoai=lsp.MaLoai";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvCTSP.DataSource = data;
 
@@ -183,6 +183,42 @@ namespace CUUHANGGIAY
                 }
             }
 
+        }
+
+        private void txtSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtTonKho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

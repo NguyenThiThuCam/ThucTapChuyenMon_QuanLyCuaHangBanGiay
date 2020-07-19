@@ -18,12 +18,12 @@ namespace CUUHANGGIAY
             InitializeComponent();
             LoadDL();
             LoadCombobox();
-            cbMaLoai.SelectedIndex = -1;
+       
 
         }
         public void LoadDL()
         {
-            string query = "select *from SanPham sp,LoaiSP lsp where sp.MaLoai=lsp.MaLoai";
+            string query = " select sp.MaSP,sp.TenSP,sp.HinhAnh ,lsp.TenLoai from SanPham sp,LoaiSP lsp where sp.MaLoai=lsp.MaLoai";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvSP.AutoGenerateColumns = false;
             dgvSP.DataSource = data;
@@ -33,20 +33,19 @@ namespace CUUHANGGIAY
             DataTable data = clsConnect.Instance.exQuery(query);
             cbMaLoai.DataSource = data;
             cbMaLoai.ValueMember = "MaLoai";
-           
             cbMaLoai.DisplayMember = "TenLoai";
 
         }
-
+        
         private void lbMaKH_Click(object sender, EventArgs e)
         {
 
         }
-        void lammoi()
+        public void lammoi()
         {
-            cbTenSP.Text = " ";
-            cbMaLoai.Text = " ";
-            txtMaSP.Text = " ";
+            cbTenSP.Text = "";
+            cbMaLoai.Text = "";
+            txtMaSP.Text = "";
             pthinh.BackgroundImage = null;
            
 
@@ -69,14 +68,18 @@ namespace CUUHANGGIAY
         {
 
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        public bool kiemtra()
         {
-            if (txtMaSP.Text == "")
+            if (txtMaSP.Text == "" || cbTenSP.Text == "" || cbMaLoai.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
+                return false;
+            } else
+            return true;
+        }
+        public void them()
+        {
+            if(kiemtra())
             {
                 try
                 {
@@ -84,49 +87,44 @@ namespace CUUHANGGIAY
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDL();
+                    lammoi();
 
 
-                }
-                catch
+                } 
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    if (ex.GetType() == typeof(SqlException)) // Chỗ này nếu CSDL của bạn là Access thì ko phải là SqlException đâu nhé
+                    {
+                        if (ex.Message.Contains("PRIMARY KEY"))
+                        {
+                            MessageBox.Show("Mã sản phẩm đã tồn tại");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        throw ex;
+                    }
                 }
             }
+           
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            txtMaSP.Enabled = true;
+
+            them();
         }
         private string fileImage = "";
 
         private void dgvSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dgvSP.CurrentRow.Index;
-            txtMaSP.Text=dgvSP.Rows[i].Cells[0].Value.ToString();
-            cbTenSP.Text=dgvSP.Rows[i].Cells[1].Value.ToString();
-            cbMaLoai.Text=dgvSP.Rows[i].Cells[3].Value.ToString();
-            string image = dgvSP.Rows[i].Cells[2].Value.ToString();
 
-            if (image != "")
-            {
-                Image imageb = new Bitmap(@image);
-                pthinh.BackgroundImage = imageb;
-                pthinh.SizeMode = PictureBoxSizeMode.StretchImage;
-                fileImage = image;
-            }
-            else
-            {
-                pthinh.BackgroundImage = null;
-                fileImage = "";
-            }
-            if(dgvSP.Columns[e.ColumnIndex].Name== "ChiTiet")
-            {
-                CTSP ctsp = new CTSP(txtMaSP.Text, cbTenSP.Text, cbMaLoai.Text);
-                
-                //ctsp.FormClosed += new FormClosedEventHandler(moform);
-                //this.Hide();
-                ctsp.ShowDialog();
-            }
         }
-      
+
         private void moform(object sender, FormClosedEventArgs e)
         {
             this.Visible = true;
@@ -134,28 +132,35 @@ namespace CUUHANGGIAY
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(txtMaSP.Text=="")
-            {
-                MessageBox.Show("Vui lòng nhập thông tin cần sửa.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                try
+           
+                txtMaSP.Enabled = true;
+                if (txtMaSP.Text == "")
                 {
-                    string query = "update SanPham set TenSP=N'"+cbTenSP.Text+"', MaLoai=N'"+cbMaLoai.SelectedValue.ToString()+"',HinhAnh='"+fileImage+"' where MaSP='"+txtMaSP.Text+"' ";
-                    DataTable data = clsConnect.Instance.exQuery(query);
-                    MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDL();
-                    LoadCombobox();
-
+                    MessageBox.Show("Vui lòng nhập thông tin cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    try
+                    {
+                        string query = "update SanPham set TenSP=N'" + cbTenSP.Text + "', MaLoai=N'" + cbMaLoai.SelectedValue.ToString() + "',HinhAnh='" + fileImage + "' where MaSP='" + txtMaSP.Text + "' ";
+                        DataTable data = clsConnect.Instance.exQuery(query);
+                        MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDL();
+                        lammoi();
+                        LoadCombobox();
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
+            
+           
         }
-    }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -175,7 +180,7 @@ namespace CUUHANGGIAY
             }
             catch
             {
-                MessageBox.Show("Xóa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sản phẩm đã bán không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -235,6 +240,43 @@ namespace CUUHANGGIAY
 
             
         }
+
+        private void txtMaSP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaSP.Enabled = false;
+            int i;
+            i = dgvSP.CurrentRow.Index;
+            txtMaSP.Text = dgvSP.Rows[i].Cells[0].Value.ToString();
+            cbTenSP.Text = dgvSP.Rows[i].Cells[1].Value.ToString();
+            cbMaLoai.Text = dgvSP.Rows[i].Cells[3].Value.ToString();
+            string image = dgvSP.Rows[i].Cells[2].Value.ToString();
+
+            if (image != "")
+            {
+                Image imageb = new Bitmap(@image);
+                pthinh.BackgroundImage = imageb;
+                pthinh.SizeMode = PictureBoxSizeMode.StretchImage;
+                fileImage = image;
+            }
+            else
+            {
+                pthinh.BackgroundImage = null;
+                fileImage = "";
+            }
+
+        }
+
+        private void dgvSP_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+          
+        }
+
 
         Random random = new Random();
         private void timer1_Tick(object sender, EventArgs e)

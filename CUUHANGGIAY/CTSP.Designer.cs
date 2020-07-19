@@ -126,6 +126,7 @@
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(128, 20);
             this.txtGiaBan.TabIndex = 12;
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
             // txtTonKho
             // 
@@ -133,6 +134,7 @@
             this.txtTonKho.Name = "txtTonKho";
             this.txtTonKho.Size = new System.Drawing.Size(127, 20);
             this.txtTonKho.TabIndex = 13;
+            this.txtTonKho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTonKho_KeyPress);
             // 
             // dgvCTSP
             // 
@@ -250,7 +252,7 @@
             // 
             // txtMauSac
             // 
-            this.txtMauSac.Location = new System.Drawing.Point(334, 30);
+            this.txtMauSac.Location = new System.Drawing.Point(334, 44);
             this.txtMauSac.Name = "txtMauSac";
             this.txtMauSac.Size = new System.Drawing.Size(128, 20);
             this.txtMauSac.TabIndex = 74;
@@ -261,6 +263,7 @@
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(128, 20);
             this.txtSize.TabIndex = 75;
+            this.txtSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSize_KeyPress);
             // 
             // gunaElipse1
             // 

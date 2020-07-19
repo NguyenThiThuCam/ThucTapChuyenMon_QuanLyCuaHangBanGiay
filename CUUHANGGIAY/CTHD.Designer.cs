@@ -44,7 +44,6 @@
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.datetimeNL = new System.Windows.Forms.DateTimePicker();
             this.dgvCT = new System.Windows.Forms.DataGridView();
@@ -54,7 +53,7 @@
             this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangHD = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txtKH = new System.Windows.Forms.TextBox();
@@ -63,6 +62,7 @@
             this.txtTenSP = new System.Windows.Forms.ComboBox();
             this.txtMaSac = new System.Windows.Forms.ComboBox();
             this.txtSize = new System.Windows.Forms.ComboBox();
+            this.txtTinhTrang = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,6 +175,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(128, 20);
             this.txtSoLuong.TabIndex = 17;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // txtThanhTien
             // 
@@ -183,13 +184,7 @@
             this.txtThanhTien.Size = new System.Drawing.Size(128, 20);
             this.txtThanhTien.TabIndex = 18;
             this.txtThanhTien.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // txtTinhTrang
-            // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(616, 161);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(128, 20);
-            this.txtTinhTrang.TabIndex = 19;
+            this.txtThanhTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThanhTien_KeyPress);
             // 
             // label11
             // 
@@ -212,6 +207,8 @@
             // 
             // dgvCT
             // 
+            this.dgvCT.AllowUserToAddRows = false;
+            this.dgvCT.AllowUserToDeleteRows = false;
             this.dgvCT.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -224,8 +221,10 @@
             this.TinhTrangHD});
             this.dgvCT.Location = new System.Drawing.Point(-2, 266);
             this.dgvCT.Name = "dgvCT";
-            this.dgvCT.Size = new System.Drawing.Size(791, 129);
+            this.dgvCT.ReadOnly = true;
+            this.dgvCT.Size = new System.Drawing.Size(789, 129);
             this.dgvCT.TabIndex = 22;
+            this.dgvCT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCT_CellClick);
             this.dgvCT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCT_CellContentClick);
             // 
             // MaSP
@@ -234,6 +233,7 @@
             this.MaSP.DataPropertyName = "MaSP";
             this.MaSP.HeaderText = "Mã SP";
             this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
             // 
             // TenSP
             // 
@@ -241,6 +241,7 @@
             this.TenSP.DataPropertyName = "TenSP";
             this.TenSP.HeaderText = "Tên SP";
             this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
             // 
             // MauSac
             // 
@@ -248,6 +249,7 @@
             this.MauSac.DataPropertyName = "MauSac";
             this.MauSac.HeaderText = "Màu Sắc";
             this.MauSac.Name = "MauSac";
+            this.MauSac.ReadOnly = true;
             // 
             // Size
             // 
@@ -255,6 +257,7 @@
             this.Size.DataPropertyName = "Size";
             this.Size.HeaderText = "Size";
             this.Size.Name = "Size";
+            this.Size.ReadOnly = true;
             // 
             // SoLuongBan
             // 
@@ -262,6 +265,7 @@
             this.SoLuongBan.DataPropertyName = "SoLuongBan";
             this.SoLuongBan.HeaderText = "SLB";
             this.SoLuongBan.Name = "SoLuongBan";
+            this.SoLuongBan.ReadOnly = true;
             // 
             // ThanhTien
             // 
@@ -269,13 +273,17 @@
             this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
             // 
             // TinhTrangHD
             // 
             this.TinhTrangHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TinhTrangHD.DataPropertyName = "TinhTrangHD";
-            this.TinhTrangHD.HeaderText = "Tình Trạng HD";
+            this.TinhTrangHD.HeaderText = "Đã Thanh Toán";
             this.TinhTrangHD.Name = "TinhTrangHD";
+            this.TinhTrangHD.ReadOnly = true;
+            this.TinhTrangHD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TinhTrangHD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnBack
             // 
@@ -341,7 +349,7 @@
             // txtMaSac
             // 
             this.txtMaSac.FormattingEnabled = true;
-            this.txtMaSac.Location = new System.Drawing.Point(336, 108);
+            this.txtMaSac.Location = new System.Drawing.Point(344, 100);
             this.txtMaSac.Name = "txtMaSac";
             this.txtMaSac.Size = new System.Drawing.Size(121, 21);
             this.txtMaSac.TabIndex = 29;
@@ -349,10 +357,22 @@
             // txtSize
             // 
             this.txtSize.FormattingEnabled = true;
-            this.txtSize.Location = new System.Drawing.Point(351, 160);
+            this.txtSize.Location = new System.Drawing.Point(344, 168);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(121, 21);
             this.txtSize.TabIndex = 30;
+            this.txtSize.SelectedIndexChanged += new System.EventHandler(this.txtSize_SelectedIndexChanged);
+            this.txtSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSize_KeyPress);
+            // 
+            // txtTinhTrang
+            // 
+            this.txtTinhTrang.AutoSize = true;
+            this.txtTinhTrang.Location = new System.Drawing.Point(616, 160);
+            this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.Size = new System.Drawing.Size(94, 17);
+            this.txtTinhTrang.TabIndex = 31;
+            this.txtTinhTrang.Text = "Đã thanh tóan";
+            this.txtTinhTrang.UseVisualStyleBackColor = true;
             // 
             // CTHD
             // 
@@ -360,6 +380,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(786, 394);
+            this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.txtSize);
             this.Controls.Add(this.txtMaSac);
             this.Controls.Add(this.txtTenSP);
@@ -370,7 +391,6 @@
             this.Controls.Add(this.dgvCT);
             this.Controls.Add(this.datetimeNL);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtTenNV);
@@ -411,18 +431,10 @@
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtThanhTien;
-        private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker datetimeNL;
         private System.Windows.Forms.DataGridView dgvCT;
         private Guna.UI.WinForms.GunaButton btnBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MauSac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangHD;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtKH;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
@@ -430,5 +442,13 @@
         private System.Windows.Forms.ComboBox txtTenSP;
         private System.Windows.Forms.ComboBox txtMaSP;
         private System.Windows.Forms.ComboBox txtSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MauSac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TinhTrangHD;
+        private System.Windows.Forms.CheckBox txtTinhTrang;
     }
 }

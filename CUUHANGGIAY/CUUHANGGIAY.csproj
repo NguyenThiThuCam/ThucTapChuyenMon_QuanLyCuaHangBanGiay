@@ -69,9 +69,8 @@
       <HintPath>..\..\..\..\Desktop\BTL_API\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI_WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\..\..\..\..\Windows\SysWOW64\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -254,6 +253,12 @@
     <Compile Include="Thongke.Designer.cs">
       <DependentUpon>Thongke.cs</DependentUpon>
     </Compile>
+    <Compile Include="TK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TK.Designer.cs">
+      <DependentUpon>TK.cs</DependentUpon>
+    </Compile>
     <Compile Include="TonKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Thongke.resx">
       <DependentUpon>Thongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TK.resx">
+      <DependentUpon>TK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TonKho.resx">
       <DependentUpon>TonKho.cs</DependentUpon>

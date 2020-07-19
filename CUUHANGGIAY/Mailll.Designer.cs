@@ -33,7 +33,9 @@
             this.txtFile = new Guna.UI.WinForms.GunaTextBox();
             this.txtTo = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnAttach = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnSent = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -47,8 +49,6 @@
             this.GmailKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThongtinHD = new System.Windows.Forms.Label();
             this.btnBack = new Guna.UI.WinForms.GunaButton();
-            this.btnSent = new Guna.UI.WinForms.GunaButton();
-            this.btnAttach = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMail)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.txtFile.Size = new System.Drawing.Size(160, 30);
             this.txtFile.TabIndex = 4;
             this.txtFile.Text = "File";
+            this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             // 
             // txtTo
             // 
@@ -93,10 +94,60 @@
             this.gunaElipse1.Radius = 9;
             this.gunaElipse1.TargetControl = this.btnAttach;
             // 
+            // btnAttach
+            // 
+            this.btnAttach.AnimationHoverSpeed = 0.07F;
+            this.btnAttach.AnimationSpeed = 0.03F;
+            this.btnAttach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAttach.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAttach.BorderColor = System.Drawing.Color.Black;
+            this.btnAttach.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAttach.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAttach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAttach.ForeColor = System.Drawing.Color.Black;
+            this.btnAttach.Image = ((System.Drawing.Image)(resources.GetObject("btnAttach.Image")));
+            this.btnAttach.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAttach.Location = new System.Drawing.Point(307, 47);
+            this.btnAttach.Name = "btnAttach";
+            this.btnAttach.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAttach.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAttach.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAttach.OnHoverImage = null;
+            this.btnAttach.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAttach.Size = new System.Drawing.Size(113, 42);
+            this.btnAttach.TabIndex = 5;
+            this.btnAttach.Text = "Attach";
+            this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
+            // 
             // gunaElipse2
             // 
             this.gunaElipse2.Radius = 9;
             this.gunaElipse2.TargetControl = this.btnSent;
+            // 
+            // btnSent
+            // 
+            this.btnSent.AnimationHoverSpeed = 0.07F;
+            this.btnSent.AnimationSpeed = 0.03F;
+            this.btnSent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSent.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSent.BorderColor = System.Drawing.Color.Black;
+            this.btnSent.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSent.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSent.ForeColor = System.Drawing.Color.Black;
+            this.btnSent.Image = ((System.Drawing.Image)(resources.GetObject("btnSent.Image")));
+            this.btnSent.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSent.Location = new System.Drawing.Point(307, 118);
+            this.btnSent.Name = "btnSent";
+            this.btnSent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSent.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSent.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSent.OnHoverImage = null;
+            this.btnSent.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSent.Size = new System.Drawing.Size(113, 42);
+            this.btnSent.TabIndex = 8;
+            this.btnSent.Text = "SENT";
+            this.btnSent.Click += new System.EventHandler(this.btnSent_Click);
             // 
             // gunaElipse3
             // 
@@ -214,56 +265,6 @@
             this.btnBack.Size = new System.Drawing.Size(129, 42);
             this.btnBack.TabIndex = 13;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnSent
-            // 
-            this.btnSent.AnimationHoverSpeed = 0.07F;
-            this.btnSent.AnimationSpeed = 0.03F;
-            this.btnSent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSent.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSent.BorderColor = System.Drawing.Color.Black;
-            this.btnSent.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSent.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSent.ForeColor = System.Drawing.Color.Black;
-            this.btnSent.Image = ((System.Drawing.Image)(resources.GetObject("btnSent.Image")));
-            this.btnSent.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSent.Location = new System.Drawing.Point(307, 118);
-            this.btnSent.Name = "btnSent";
-            this.btnSent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSent.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSent.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSent.OnHoverImage = null;
-            this.btnSent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSent.Size = new System.Drawing.Size(113, 42);
-            this.btnSent.TabIndex = 8;
-            this.btnSent.Text = "SENT";
-            this.btnSent.Click += new System.EventHandler(this.btnSent_Click);
-            // 
-            // btnAttach
-            // 
-            this.btnAttach.AnimationHoverSpeed = 0.07F;
-            this.btnAttach.AnimationSpeed = 0.03F;
-            this.btnAttach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAttach.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAttach.BorderColor = System.Drawing.Color.Black;
-            this.btnAttach.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAttach.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAttach.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAttach.ForeColor = System.Drawing.Color.Black;
-            this.btnAttach.Image = ((System.Drawing.Image)(resources.GetObject("btnAttach.Image")));
-            this.btnAttach.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAttach.Location = new System.Drawing.Point(307, 47);
-            this.btnAttach.Name = "btnAttach";
-            this.btnAttach.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAttach.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAttach.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAttach.OnHoverImage = null;
-            this.btnAttach.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAttach.Size = new System.Drawing.Size(113, 42);
-            this.btnAttach.TabIndex = 5;
-            this.btnAttach.Text = "Attach";
-            this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
             // 
             // Mailll
             // 

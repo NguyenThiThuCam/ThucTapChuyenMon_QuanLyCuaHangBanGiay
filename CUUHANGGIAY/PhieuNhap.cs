@@ -75,19 +75,13 @@ namespace CUUHANGGIAY
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
+            txtMaPN.Enabled = true;
             lammoi();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dgvPN.CurrentRow.Index;
-            txtMaPN.Text = dgvPN.Rows[i].Cells[0].Value.ToString();
-            dateTimeNL.Text = dgvPN.Rows[i].Cells[1].Value.ToString();
-            txtTongTien.Text = dgvPN.Rows[i].Cells[2].Value.ToString();
-            cbTinhTrang.Text = dgvPN.Rows[i].Cells[3].Value.ToString();
-            CbNCC.Text = dgvPN.Rows[i].Cells[4].Value.ToString();
-            cbTenNV.Text = dgvPN.Rows[i].Cells[5].Value.ToString();
+           
 
 
             if (dgvPN.Columns[e.ColumnIndex].Name == "ChiTiet")
@@ -214,8 +208,7 @@ namespace CUUHANGGIAY
 
         private void btnHienThi_Click(object sender, EventArgs e)
         {
-            LoadDL();
-            LoadComBobox();
+            
         }
         public void TimKiemTheoTextChan( string valuatoFind)
         {
@@ -227,6 +220,37 @@ namespace CUUHANGGIAY
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             TimKiemTheoTextChan(txtTimKiem.Text);
+        }
+
+        private void txtTongTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTongTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void dgvPN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaPN.Enabled = false;
+            int i;
+            i = dgvPN.CurrentRow.Index;
+            txtMaPN.Text = dgvPN.Rows[i].Cells[0].Value.ToString();
+            dateTimeNL.Text = dgvPN.Rows[i].Cells[1].Value.ToString();
+            txtTongTien.Text = dgvPN.Rows[i].Cells[2].Value.ToString();
+            cbTinhTrang.Text = dgvPN.Rows[i].Cells[3].Value.ToString();
+            CbNCC.Text = dgvPN.Rows[i].Cells[4].Value.ToString();
+            cbTenNV.Text = dgvPN.Rows[i].Cells[5].Value.ToString();
+
         }
     }
 }

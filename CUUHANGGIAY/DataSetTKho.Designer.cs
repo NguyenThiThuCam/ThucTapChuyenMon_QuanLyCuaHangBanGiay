@@ -283,15 +283,7 @@ namespace CUUHANGGIAY {
             
             private global::System.Data.DataColumn columnTenSP;
             
-            private global::System.Data.DataColumn columnMaLoai;
-            
-            private global::System.Data.DataColumn columnTenLoai;
-            
-            private global::System.Data.DataColumn columnMauSac;
-            
-            private global::System.Data.DataColumn columnSize;
-            
-            private global::System.Data.DataColumn columnSoLuongSP;
+            private global::System.Data.DataColumn columnSoLuong;
             
             private global::System.Data.DataColumn columnSoLuongBan;
             
@@ -348,41 +340,9 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn MaLoaiColumn {
+            public global::System.Data.DataColumn SoLuongColumn {
                 get {
-                    return this.columnMaLoai;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TenLoaiColumn {
-                get {
-                    return this.columnTenLoai;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn MauSacColumn {
-                get {
-                    return this.columnMauSac;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SizeColumn {
-                get {
-                    return this.columnSize;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SoLuongSPColumn {
-                get {
-                    return this.columnSoLuongSP;
+                    return this.columnSoLuong;
                 }
             }
             
@@ -439,29 +399,17 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tonkhoRow AddtonkhoRow(string MaSP, string TenSP, string MaLoai, string TenLoai, string MauSac, string Size, int SoLuongSP, int SoLuongBan, int SoLuongTon) {
+            public tonkhoRow AddtonkhoRow(string MaSP, string TenSP, int SoLuong, int SoLuongBan, int SoLuongTon) {
                 tonkhoRow rowtonkhoRow = ((tonkhoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaSP,
                         TenSP,
-                        MaLoai,
-                        TenLoai,
-                        MauSac,
-                        Size,
-                        SoLuongSP,
+                        SoLuong,
                         SoLuongBan,
                         SoLuongTon};
                 rowtonkhoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtonkhoRow);
                 return rowtonkhoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tonkhoRow FindByMaSPMaLoai(string MaSP, string MaLoai) {
-                return ((tonkhoRow)(this.Rows.Find(new object[] {
-                            MaSP,
-                            MaLoai})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -483,11 +431,7 @@ namespace CUUHANGGIAY {
             internal void InitVars() {
                 this.columnMaSP = base.Columns["MaSP"];
                 this.columnTenSP = base.Columns["TenSP"];
-                this.columnMaLoai = base.Columns["MaLoai"];
-                this.columnTenLoai = base.Columns["TenLoai"];
-                this.columnMauSac = base.Columns["MauSac"];
-                this.columnSize = base.Columns["Size"];
-                this.columnSoLuongSP = base.Columns["SoLuongSP"];
+                this.columnSoLuong = base.Columns["SoLuong"];
                 this.columnSoLuongBan = base.Columns["SoLuongBan"];
                 this.columnSoLuongTon = base.Columns["SoLuongTon"];
             }
@@ -499,33 +443,15 @@ namespace CUUHANGGIAY {
                 base.Columns.Add(this.columnMaSP);
                 this.columnTenSP = new global::System.Data.DataColumn("TenSP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenSP);
-                this.columnMaLoai = new global::System.Data.DataColumn("MaLoai", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaLoai);
-                this.columnTenLoai = new global::System.Data.DataColumn("TenLoai", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTenLoai);
-                this.columnMauSac = new global::System.Data.DataColumn("MauSac", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMauSac);
-                this.columnSize = new global::System.Data.DataColumn("Size", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSize);
-                this.columnSoLuongSP = new global::System.Data.DataColumn("SoLuongSP", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSoLuongSP);
+                this.columnSoLuong = new global::System.Data.DataColumn("SoLuong", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSoLuong);
                 this.columnSoLuongBan = new global::System.Data.DataColumn("SoLuongBan", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuongBan);
                 this.columnSoLuongTon = new global::System.Data.DataColumn("SoLuongTon", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuongTon);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMaSP,
-                                this.columnMaLoai}, true));
                 this.columnMaSP.AllowDBNull = false;
                 this.columnMaSP.MaxLength = 40;
                 this.columnTenSP.MaxLength = 50;
-                this.columnMaLoai.AllowDBNull = false;
-                this.columnMaLoai.MaxLength = 40;
-                this.columnTenLoai.MaxLength = 40;
-                this.columnMauSac.AllowDBNull = false;
-                this.columnMauSac.MaxLength = 40;
-                this.columnSize.AllowDBNull = false;
-                this.columnSize.MaxLength = 40;
                 this.columnSoLuongBan.ReadOnly = true;
                 this.columnSoLuongTon.ReadOnly = true;
             }
@@ -697,66 +623,17 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string MaLoai {
-                get {
-                    return ((string)(this[this.tabletonkho.MaLoaiColumn]));
-                }
-                set {
-                    this[this.tabletonkho.MaLoaiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string TenLoai {
+            public int SoLuong {
                 get {
                     try {
-                        return ((string)(this[this.tabletonkho.TenLoaiColumn]));
+                        return ((int)(this[this.tabletonkho.SoLuongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenLoai\' in table \'tonkho\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SoLuong\' in table \'tonkho\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletonkho.TenLoaiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string MauSac {
-                get {
-                    return ((string)(this[this.tabletonkho.MauSacColumn]));
-                }
-                set {
-                    this[this.tabletonkho.MauSacColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Size {
-                get {
-                    return ((string)(this[this.tabletonkho.SizeColumn]));
-                }
-                set {
-                    this[this.tabletonkho.SizeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int SoLuongSP {
-                get {
-                    try {
-                        return ((int)(this[this.tabletonkho.SoLuongSPColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SoLuongSP\' in table \'tonkho\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletonkho.SoLuongSPColumn] = value;
+                    this[this.tabletonkho.SoLuongColumn] = value;
                 }
             }
             
@@ -806,26 +683,14 @@ namespace CUUHANGGIAY {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTenLoaiNull() {
-                return this.IsNull(this.tabletonkho.TenLoaiColumn);
+            public bool IsSoLuongNull() {
+                return this.IsNull(this.tabletonkho.SoLuongColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTenLoaiNull() {
-                this[this.tabletonkho.TenLoaiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSoLuongSPNull() {
-                return this.IsNull(this.tabletonkho.SoLuongSPColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSoLuongSPNull() {
-                this[this.tabletonkho.SoLuongSPColumn] = global::System.Convert.DBNull;
+            public void SetSoLuongNull() {
+                this[this.tabletonkho.SoLuongColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1014,11 +879,7 @@ namespace CUUHANGGIAY.DataSetTKhoTableAdapters {
             tableMapping.DataSetTable = "tonkho";
             tableMapping.ColumnMappings.Add("MaSP", "MaSP");
             tableMapping.ColumnMappings.Add("TenSP", "TenSP");
-            tableMapping.ColumnMappings.Add("MaLoai", "MaLoai");
-            tableMapping.ColumnMappings.Add("TenLoai", "TenLoai");
-            tableMapping.ColumnMappings.Add("MauSac", "MauSac");
-            tableMapping.ColumnMappings.Add("Size", "Size");
-            tableMapping.ColumnMappings.Add("SoLuongSP", "SoLuongSP");
+            tableMapping.ColumnMappings.Add("SoLuong", "SoLuong");
             tableMapping.ColumnMappings.Add("SoLuongBan", "SoLuongBan");
             tableMapping.ColumnMappings.Add("SoLuongTon", "SoLuongTon");
             this._adapter.TableMappings.Add(tableMapping);

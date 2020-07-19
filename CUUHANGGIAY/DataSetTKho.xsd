@@ -23,11 +23,7 @@
             <Mappings>
               <Mapping SourceColumn="MaSP" DataSetColumn="MaSP" />
               <Mapping SourceColumn="TenSP" DataSetColumn="TenSP" />
-              <Mapping SourceColumn="MaLoai" DataSetColumn="MaLoai" />
-              <Mapping SourceColumn="TenLoai" DataSetColumn="TenLoai" />
-              <Mapping SourceColumn="MauSac" DataSetColumn="MauSac" />
-              <Mapping SourceColumn="Size" DataSetColumn="Size" />
-              <Mapping SourceColumn="SoLuongSP" DataSetColumn="SoLuongSP" />
+              <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
               <Mapping SourceColumn="SoLuongBan" DataSetColumn="SoLuongBan" />
               <Mapping SourceColumn="SoLuongTon" DataSetColumn="SoLuongTon" />
             </Mappings>
@@ -58,35 +54,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaLoai" msprop:Generator_ColumnVarNameInTable="columnMaLoai" msprop:Generator_ColumnPropNameInRow="MaLoai" msprop:Generator_ColumnPropNameInTable="MaLoaiColumn" msprop:Generator_UserColumnName="MaLoai">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TenLoai" msprop:Generator_ColumnVarNameInTable="columnTenLoai" msprop:Generator_ColumnPropNameInRow="TenLoai" msprop:Generator_ColumnPropNameInTable="TenLoaiColumn" msprop:Generator_UserColumnName="TenLoai" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MauSac" msprop:Generator_ColumnVarNameInTable="columnMauSac" msprop:Generator_ColumnPropNameInRow="MauSac" msprop:Generator_ColumnPropNameInTable="MauSacColumn" msprop:Generator_UserColumnName="MauSac">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Size" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_UserColumnName="Size">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SoLuongSP" msprop:Generator_ColumnVarNameInTable="columnSoLuongSP" msprop:Generator_ColumnPropNameInRow="SoLuongSP" msprop:Generator_ColumnPropNameInTable="SoLuongSPColumn" msprop:Generator_UserColumnName="SoLuongSP" type="xs:int" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
               <xs:element name="SoLuongBan" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSoLuongBan" msprop:Generator_ColumnPropNameInRow="SoLuongBan" msprop:Generator_ColumnPropNameInTable="SoLuongBanColumn" msprop:Generator_UserColumnName="SoLuongBan" type="xs:int" minOccurs="0" />
               <xs:element name="SoLuongTon" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSoLuongTon" msprop:Generator_ColumnPropNameInRow="SoLuongTon" msprop:Generator_ColumnPropNameInTable="SoLuongTonColumn" msprop:Generator_UserColumnName="SoLuongTon" type="xs:int" minOccurs="0" />
             </xs:sequence>
@@ -94,10 +62,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:tonkho" />
-      <xs:field xpath="mstns:MaSP" />
-      <xs:field xpath="mstns:MaLoai" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

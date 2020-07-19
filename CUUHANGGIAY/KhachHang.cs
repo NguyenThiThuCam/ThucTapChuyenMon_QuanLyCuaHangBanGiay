@@ -22,17 +22,18 @@ namespace CUUHANGGIAY
         }
         void lammoi()
         {
-            cbMaKH.Text = " ";
-            txtTenKH.Text = " ";
-            txtSDT.Text = " ";
+            cbMaKH.Text = "";
+            txtTenKH.Text = "";
+            txtSDT.Text = "";
             DateTime d = DateTime.Now;
           txtNgaySinh.Text = d.ToString();
-            txtGmail.Text = " ";
-            txtDiaChi.Text = " ";
+            txtGmail.Text = "";
+            txtDiaChi.Text = "";
         }
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
+            cbMaKH.Enabled = true;
             lammoi();
         }
         public void LoadDL()
@@ -49,14 +50,7 @@ namespace CUUHANGGIAY
 
         private void dgvKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dgvKH.CurrentRow.Index;
-            cbMaKH.Text = dgvKH.Rows[i].Cells[0].Value.ToString();
-            txtTenKH.Text = dgvKH.Rows[i].Cells[1].Value.ToString();
-            txtNgaySinh.Text = dgvKH.Rows[i].Cells[2].Value.ToString();
-            txtSDT.Text = dgvKH.Rows[i].Cells[3].Value.ToString();
-            txtDiaChi.Text = dgvKH.Rows[i].Cells[4].Value.ToString();
-            txtGmail.Text = dgvKH.Rows[i].Cells[5].Value.ToString();
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -81,18 +75,14 @@ namespace CUUHANGGIAY
         private void btnThem_Click(object sender, EventArgs e)
 
         {
-            if (cbMaKH.Text == ""||txtTenKH.Text=="" )
+            if (cbMaKH.Text == ""||txtTenKH.Text==""||txtDiaChi.Text==""||txtNgaySinh.Text==""||txtGmail.Text==""||txtSDT.Text==""  )
             {
                 MessageBox.Show(" Vui lòng nhập thông tin đầy đủ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
             }
             else
             {
-                //if (KiemTraMa(cbMaKH.Text) == true)
-                //{
-                //    MessageBox.Show(" trung ma");
-                //    return;
-                //}
+                
                
                 try
                     {
@@ -100,10 +90,11 @@ namespace CUUHANGGIAY
                         DataTable data = clsConnect.Instance.exQuery(query);
                         MessageBox.Show(" Thêm Thành Công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         LoadDL();
+                       lammoi();
                     }
                 catch
                     {
-                        MessageBox.Show(" Thêm thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show(" Khách hàng đã lưu thông tin","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                 }               
                
@@ -111,7 +102,7 @@ namespace CUUHANGGIAY
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (cbMaKH.Text == "")
+            if (cbMaKH.Text == "" || txtTenKH.Text == "" || txtDiaChi.Text == "" || txtNgaySinh.Text == "" || txtGmail.Text == "" || txtSDT.Text == "")
             {
                 MessageBox.Show(" Vui lòng nhập thông tin cần sửa","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
@@ -125,11 +116,12 @@ namespace CUUHANGGIAY
                     DataTable data = clsConnect.Instance.exQuery(query);
                     MessageBox.Show(" Sửa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     LoadDL();
+                    lammoi();
 
                 }
                 catch
                 {
-                    MessageBox.Show(" Sửa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                
             }
@@ -137,47 +129,37 @@ namespace CUUHANGGIAY
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+
             if (cbMaKH.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn dòng xóa","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             try
             {
-                string query = " delete KhachHang where MaKH='" + cbMaKH.Text + "'";
+                string query = " delete KhachHang where MaKH= '" + cbMaKH.Text + "'";
                 DataTable data = clsConnect.Instance.exQuery(query);
-               
-                MessageBox.Show(" Xóa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 LoadDL();
-                
+                MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lammoi();
+
             }
             catch
             {
-                MessageBox.Show(" Xóa thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Xóa thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-           
-
-
-
-
-
-
         }
 
         private void txtNgaySinh_ValueChanged(object sender, EventArgs e)
         {
 
         }
-        public void TimKiemMa()
-        {
-            string query = " select *from KhachHang where MaKH like '%" + cbMaKH.Text + "%'";
-            DataTable data = clsConnect.Instance.exQuery(query);
-            dgvKH.DataSource = data;
-        }
+        
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            TimKiemMa();
+            
 
 
         }
@@ -198,6 +180,36 @@ namespace CUUHANGGIAY
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             TimKiemTheoTextChan(txtTimKiem.Text);
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbMaKH.Enabled = false;
+            int i;
+            i = dgvKH.CurrentRow.Index;
+            cbMaKH.Text = dgvKH.Rows[i].Cells[0].Value.ToString();
+            txtTenKH.Text = dgvKH.Rows[i].Cells[1].Value.ToString();
+            txtNgaySinh.Text = dgvKH.Rows[i].Cells[2].Value.ToString();
+            txtSDT.Text = dgvKH.Rows[i].Cells[3].Value.ToString();
+            txtDiaChi.Text = dgvKH.Rows[i].Cells[4].Value.ToString();
+            txtGmail.Text = dgvKH.Rows[i].Cells[5].Value.ToString();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
     }

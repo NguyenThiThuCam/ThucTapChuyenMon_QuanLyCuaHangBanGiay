@@ -109,5 +109,46 @@ namespace CUUHANGGIAY
         {
 
         }
+
+        private void txtSize_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtThanhTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

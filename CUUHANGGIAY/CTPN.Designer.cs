@@ -150,6 +150,7 @@
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(128, 20);
             this.txtThanhTien.TabIndex = 11;
+            this.txtThanhTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThanhTien_KeyPress);
             // 
             // cbTenNCC
             // 
@@ -241,6 +242,8 @@
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(128, 20);
             this.txtSize.TabIndex = 60;
+            this.txtSize.TextChanged += new System.EventHandler(this.txtSize_TextChanged);
+            this.txtSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSize_KeyPress);
             // 
             // txtSoLuong
             // 
@@ -248,6 +251,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(128, 20);
             this.txtSoLuong.TabIndex = 61;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // dgvCTPN
             // 

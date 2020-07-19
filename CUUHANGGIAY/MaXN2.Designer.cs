@@ -52,6 +52,7 @@
             this.txtmaxn.Name = "txtmaxn";
             this.txtmaxn.Size = new System.Drawing.Size(133, 20);
             this.txtmaxn.TabIndex = 1;
+            this.txtmaxn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmaxn_KeyPress);
             // 
             // btnSent
             // 

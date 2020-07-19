@@ -119,5 +119,10 @@ namespace CUUHANGGIAY
         {
 
         }
+
+        private void txtFile_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

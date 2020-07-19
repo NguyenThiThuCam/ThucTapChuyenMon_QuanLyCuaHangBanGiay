@@ -1,7 +1,6 @@
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.exe.config
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.exe
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\bin\Debug\CUUHANGGIAY.pdb
-C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csprojAssemblyReference.cache
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Form1.resources
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Properties.Resources.resources
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csproj.GenerateResource.cache
@@ -282,3 +281,5 @@ C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.Thongke.
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.DoiMK.resources
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.GuiMail.resources
 C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.MaXN2.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.TK.resources
+C:\Users\Cam\source\repos\CUUHANGGIAY\CUUHANGGIAY\obj\Debug\CUUHANGGIAY.csprojAssemblyReference.cache

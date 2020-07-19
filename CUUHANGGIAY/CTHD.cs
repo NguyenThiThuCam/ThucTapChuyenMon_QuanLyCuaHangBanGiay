@@ -57,7 +57,16 @@ namespace CUUHANGGIAY
         }
         public void LoadDL()
         {
-            string query = "select hd.MaHD,sp.MaSP,sp.TenSP,nv.TenNV,ct.MauSac,ct.Size,ct.SoLuongBan,ct.ThanhTien,hd.TinhTrangHD,hd.NgayLap,kh.TenKH from HoaDon HD,CTHD ct,SanPham sp,NhanVien nv,KhachHang kh where HD.MaNV = nv.MaNV and hd.MaHD = ct.MaHD and sp.MaSP = ct.MaSP";
+            string a = "";
+            if (txtTinhTrang.Checked)
+            {
+                a = "True";
+            }
+            else if (txtTinhTrang.Checked = false)
+            {
+                a = "False";
+            }
+            string query = "select sp.MaSP,sp.TenSP,ct.MauSac,ct.Size,ct.SoLuongBan from HoaDon HD,CTHD ct,SanPham sp,NhanVien nv,KhachHang kh where ct.mahd='" + mahd + "'and hd.mahd='"+mahd+"'and HD.MaNV=nv.MaNV and HD.MaKH=kh.MaKH";
             DataTable data = clsConnect.Instance.exQuery(query);
             dgvCT.DataSource = data;
             string query2 = "select sp.MaSP,sp.TenSP,ct.MauSac,ct.Size,ct.SoLuongBan from HoaDon HD,CTHD ct,SanPham sp,NhanVien nv,KhachHang kh where ct.mahd='" + mahd + "'";
@@ -90,19 +99,6 @@ namespace CUUHANGGIAY
 
         private void dgvCT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dgvCT.CurrentRow.Index;
-            txtMaHD.Text = dgvCT.Rows[i].Cells[0].Value.ToString();
-            txtMaSP.Text=dgvCT.Rows[i].Cells[1].Value.ToString();
-            txtTenSP.Text= dgvCT.Rows[i].Cells[2].Value.ToString();
-            txtTenNV.Text= dgvCT.Rows[i].Cells[3].Value.ToString();
-            txtMaSac.Text= dgvCT.Rows[i].Cells[4].Value.ToString();
-            txtSize.Text= dgvCT.Rows[i].Cells[5].Value.ToString();
-            txtSoLuong.Text= dgvCT.Rows[i].Cells[6].Value.ToString();
-            txtThanhTien.Text= dgvCT.Rows[i].Cells[7].Value.ToString();
-            txtTinhTrang.Text= dgvCT.Rows[i].Cells[8].Value.ToString();
-            datetimeNL.Text = dgvCT.Rows[i].Cells[9].Value.ToString();
-            txtKH.Text= dgvCT.Rows[i].Cells[10].Value.ToString();
         }
 
         private void btnlammoi_Click(object sender, EventArgs e)
@@ -154,6 +150,65 @@ namespace CUUHANGGIAY
         {
 
 
+        }
+
+        private void dgvCT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int i;
+            i = dgvCT.CurrentRow.Index;
+            txtMaHD.Text = dgvCT.Rows[i].Cells[0].Value.ToString();
+            txtMaSP.Text = dgvCT.Rows[i].Cells[1].Value.ToString();
+            txtTenSP.Text = dgvCT.Rows[i].Cells[2].Value.ToString();
+            txtTenNV.Text = dgvCT.Rows[i].Cells[3].Value.ToString();
+            txtMaSac.Text = dgvCT.Rows[i].Cells[4].Value.ToString();
+            txtSize.Text = dgvCT.Rows[i].Cells[5].Value.ToString();
+            txtSoLuong.Text = dgvCT.Rows[i].Cells[6].Value.ToString();
+            txtThanhTien.Text = dgvCT.Rows[i].Cells[7].Value.ToString();
+            txtTinhTrang.Text = dgvCT.Rows[i].Cells[8].Value.ToString();
+            datetimeNL.Text = dgvCT.Rows[i].Cells[9].Value.ToString();
+            txtKH.Text = dgvCT.Rows[i].Cells[10].Value.ToString();
+        }
+
+        private void txtSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtThanhTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                DialogResult dtr = MessageBox.Show("Mời bạn nhập số", "Thông Báo", MessageBoxButtons.OK);
+                if (dtr == DialogResult.OK)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
